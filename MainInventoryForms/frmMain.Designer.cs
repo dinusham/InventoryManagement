@@ -32,9 +32,7 @@
             this.usersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsTool = new System.Windows.Forms.ToolStripMenuItem();
             this.panelUsers = new System.Windows.Forms.Panel();
-            this.panelSettings = new System.Windows.Forms.Panel();
             this.menuNav.SuspendLayout();
-            this.panelUsers.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuNav
@@ -83,21 +81,11 @@
             // panelUsers
             // 
             this.panelUsers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(228)))), ((int)(((byte)(248)))));
-            this.panelUsers.Controls.Add(this.panelSettings);
             this.panelUsers.Location = new System.Drawing.Point(160, 0);
             this.panelUsers.Name = "panelUsers";
             this.panelUsers.Padding = new System.Windows.Forms.Padding(10);
             this.panelUsers.Size = new System.Drawing.Size(1197, 860);
             this.panelUsers.TabIndex = 1;
-            // 
-            // panelSettings
-            // 
-            this.panelSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(228)))), ((int)(((byte)(248)))));
-            this.panelSettings.Location = new System.Drawing.Point(8, 8);
-            this.panelSettings.Name = "panelSettings";
-            this.panelSettings.Padding = new System.Windows.Forms.Padding(10);
-            this.panelSettings.Size = new System.Drawing.Size(1197, 860);
-            this.panelSettings.TabIndex = 2;
             // 
             // frmMain
             // 
@@ -115,7 +103,6 @@
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.menuNav.ResumeLayout(false);
             this.menuNav.PerformLayout();
-            this.panelUsers.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -124,7 +111,6 @@
         private System.Windows.Forms.ToolStripMenuItem usersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem settingsTool;
         private System.Windows.Forms.Panel panelUsers;
-        private System.Windows.Forms.Panel panelSettings;
 
         #endregion
     }

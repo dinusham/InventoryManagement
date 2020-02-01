@@ -24,17 +24,26 @@ namespace MainInventoryForms
 
         private void usersToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            panelUsers.Visible = true;
+            //panelSettings.Visible = false;
+            //panelMain.Visible = false;
+            frmAdminList frmAdminList = new frmAdminList();
+            frmAdminList.Show();
         }
 
         private void settingsTool_Click(object sender, EventArgs e)
         {
-
+            //panelUsers.Visible = false;
+            //panelSettings.Visible = true;
+            //panelMain.Visible = false;
         }
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-
+            panelUsers.Visible = false;
+            //panelSettings.Visible = false;
+            //panelMain.Visible = true;
+            //label1.Visible = true;
         }
     }
 }
