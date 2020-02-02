@@ -70,6 +70,7 @@
   <ItemGroup>
     <Compile Include="Admin.cs" />
     <Compile Include="DatabaseConnection.cs" />
+    <Compile Include="DataDTOs\UserDTO.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">

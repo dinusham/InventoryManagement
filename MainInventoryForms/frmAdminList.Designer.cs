@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnAdminAdd = new System.Windows.Forms.Button();
             this.btnAdminEdit = new System.Windows.Forms.Button();
             this.btnAdminDelete = new System.Windows.Forms.Button();
@@ -42,31 +42,33 @@
             // 
             this.btnAdminAdd.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnAdminAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.btnAdminAdd.Location = new System.Drawing.Point(1028, 80);
+            this.btnAdminAdd.Location = new System.Drawing.Point(1026, 53);
             this.btnAdminAdd.Name = "btnAdminAdd";
             this.btnAdminAdd.Padding = new System.Windows.Forms.Padding(1);
             this.btnAdminAdd.Size = new System.Drawing.Size(107, 36);
             this.btnAdminAdd.TabIndex = 0;
             this.btnAdminAdd.Text = "Add New";
             this.btnAdminAdd.UseVisualStyleBackColor = false;
+            this.btnAdminAdd.Click += new System.EventHandler(this.btnAdminAdd_Click);
             // 
             // btnAdminEdit
             // 
             this.btnAdminEdit.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnAdminEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.btnAdminEdit.Location = new System.Drawing.Point(1028, 122);
+            this.btnAdminEdit.Location = new System.Drawing.Point(1026, 100);
             this.btnAdminEdit.Name = "btnAdminEdit";
             this.btnAdminEdit.Padding = new System.Windows.Forms.Padding(1);
             this.btnAdminEdit.Size = new System.Drawing.Size(107, 36);
             this.btnAdminEdit.TabIndex = 1;
             this.btnAdminEdit.Text = "Edit";
             this.btnAdminEdit.UseVisualStyleBackColor = false;
+            this.btnAdminEdit.Click += new System.EventHandler(this.btnAdminEdit_Click);
             // 
             // btnAdminDelete
             // 
             this.btnAdminDelete.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnAdminDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.btnAdminDelete.Location = new System.Drawing.Point(1028, 164);
+            this.btnAdminDelete.Location = new System.Drawing.Point(1026, 148);
             this.btnAdminDelete.Name = "btnAdminDelete";
             this.btnAdminDelete.Padding = new System.Windows.Forms.Padding(1);
             this.btnAdminDelete.Size = new System.Drawing.Size(107, 36);
@@ -81,15 +83,15 @@
             this.dataGridViewAdmin.AllowUserToResizeColumns = false;
             this.dataGridViewAdmin.AllowUserToResizeRows = false;
             this.dataGridViewAdmin.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(1);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewAdmin.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(1);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewAdmin.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewAdmin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewAdmin.Location = new System.Drawing.Point(3, 53);
             this.dataGridViewAdmin.MultiSelect = false;
@@ -100,14 +102,15 @@
             this.dataGridViewAdmin.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridViewAdmin.RowTemplate.Height = 24;
             this.dataGridViewAdmin.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewAdmin.Size = new System.Drawing.Size(967, 751);
+            this.dataGridViewAdmin.Size = new System.Drawing.Size(967, 785);
             this.dataGridViewAdmin.TabIndex = 4;
+            this.dataGridViewAdmin.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataRowDouble_Click);
             // 
             // btnAdminSearch
             // 
             this.btnAdminSearch.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnAdminSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.btnAdminSearch.Location = new System.Drawing.Point(1028, 8);
+            this.btnAdminSearch.Location = new System.Drawing.Point(863, 11);
             this.btnAdminSearch.Name = "btnAdminSearch";
             this.btnAdminSearch.Padding = new System.Windows.Forms.Padding(1);
             this.btnAdminSearch.Size = new System.Drawing.Size(107, 36);
@@ -117,7 +120,7 @@
             // 
             // textBoxSearchAdmin
             // 
-            this.textBoxSearchAdmin.Location = new System.Drawing.Point(699, 20);
+            this.textBoxSearchAdmin.Location = new System.Drawing.Point(586, 21);
             this.textBoxSearchAdmin.Name = "textBoxSearchAdmin";
             this.textBoxSearchAdmin.Size = new System.Drawing.Size(271, 22);
             this.textBoxSearchAdmin.TabIndex = 5;
@@ -126,7 +129,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1169, 808);
+            this.ClientSize = new System.Drawing.Size(1181, 840);
             this.Controls.Add(this.textBoxSearchAdmin);
             this.Controls.Add(this.dataGridViewAdmin);
             this.Controls.Add(this.btnAdminSearch);

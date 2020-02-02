@@ -27,7 +27,12 @@ namespace MainInventoryForms
             panelUsers.Visible = true;
             //panelSettings.Visible = false;
             //panelMain.Visible = false;
-            frmAdminList frmAdminList = new frmAdminList();
+            var frmAdminList = new frmAdminList();
+            frmAdminList.TopLevel = false;
+            frmAdminList.AutoScroll = true;
+            frmAdminList.FormBorderStyle = FormBorderStyle.None;
+            panelUsers.Controls.Add(frmAdminList);
+
             frmAdminList.Show();
         }
 
