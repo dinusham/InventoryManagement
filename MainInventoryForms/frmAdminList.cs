@@ -177,5 +177,33 @@ namespace MainInventoryForms
                 MessageBox.Show("Please select a user to edit");
             }
         }
+
+        private void btnAdminDelete_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewAdmin.SelectedRows.Count > 0)
+            {
+                DataGridViewRow dataRow = dataGridViewAdmin.SelectedRows[0];
+                int.TryParse(dataRow.Cells["id"].Value.ToString(), out int id);
+                if (id < 0)
+                {
+                    MessageBox.Show("Invalid user id");
+                    return;
+                }
+                else
+                {
+                    int success = Admin.DeleteUser(id);
+                    if (success > 0)
+                    {
+                        MessageBox.Show("successfully deleted");
+                        frmAdminList_Load(sender, e);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a user to delete");
+                return;
+            }
+        }
     }
 }

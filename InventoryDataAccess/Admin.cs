@@ -45,5 +45,17 @@ namespace InventoryDataAccess
             }
             return -1;
         }
+
+        public static int DeleteUser(int userId)
+        {
+            string query = "Delete FROM admin WHERE id = " + userId;
+
+            DataTable usersTable = DatabaseConnection.ConnectWithServer(query);
+            if (usersTable != null)
+            {
+                return 1;
+            }
+            return -1;
+        }
     }
 }
