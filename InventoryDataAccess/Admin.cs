@@ -52,7 +52,7 @@ namespace InventoryDataAccess
                 "is_active FROM admin WHERE id = " + adminId;
 
             DataTable usersTable = DatabaseConnection.ConnectWithServer(query);
-            if (usersTable != null)
+            if (usersTable != null && usersTable.Rows.Count > 0)
             {
                 DataRow dataRow = usersTable.Rows[0];
                 return new AdminDTO

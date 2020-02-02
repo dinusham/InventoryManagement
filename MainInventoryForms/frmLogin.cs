@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using InventoryDataAccess;
+using System;
 using System.Windows.Forms;
 
 namespace MainInventoryForms
@@ -28,17 +22,33 @@ namespace MainInventoryForms
             {
                 MessageBox.Show("Cannot be empty userName or password");
             }
-            else if (loginUserName.Text == "aaa" && loginPassword.Text == "aaa")
+            else
             {
-                //frmLogin frmLogin = new frmLogin();
-                frmMain mainFrm = new frmMain();
-                this.Hide();
-                mainFrm.ShowDialog();
-                this.Close();
+                (bool valid, bool isAdmin) = ValidateLoginUser();
+                if (valid)
+                {
+                    frmMain mainFrm = new frmMain(isAdmin);
+                    this.Hide();
+                    mainFrm.ShowDialog();
+                    this.Close();
+                }
+            }
+        }
+
+        private (bool, bool) ValidateLoginUser()
+        {
+            (bool valid, bool isAdmin, bool isActive) = InventoryLogin.IsValidLogin(loginUserName.Text, loginPassword.Text);
+
+            if (valid)
+            {
+                if (!isActive)
+                    MessageBox.Show("Inactive user");
+                else
+                    return (true, isAdmin);
             }
             else
                 MessageBox.Show("Incorrect userName or password");
-
+            return (false, false);
         }
     }
 }

@@ -1,12 +1,5 @@
 ﻿using InventoryDataAccess;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MainInventoryForms
@@ -15,7 +8,6 @@ namespace MainInventoryForms
     {
         private Form frmAdminList;
         private AdminDTO adminDto;
-        private int adminId;
 
         public frmAdminAdd(Form frmAdminList)
         {
@@ -26,7 +18,6 @@ namespace MainInventoryForms
         public frmAdminAdd(Form frmAdminList, int adminId)
         {
             this.frmAdminList = frmAdminList;
-            this.adminId = adminId;
             InitializeComponent();
             ViewEditdata(adminId);
         }
