@@ -24,10 +24,10 @@ namespace MainInventoryForms
             }
             else
             {
-                (bool valid, bool isAdmin) = ValidateLoginUser();
+                (bool valid, AdminDTO adminDto) = ValidateLoginUser();
                 if (valid)
                 {
-                    frmMain mainFrm = new frmMain(isAdmin);
+                    frmMain mainFrm = new frmMain(adminDto);
                     this.Hide();
                     mainFrm.ShowDialog();
                     this.Close();
@@ -35,20 +35,20 @@ namespace MainInventoryForms
             }
         }
 
-        private (bool, bool) ValidateLoginUser()
+        private (bool, AdminDTO) ValidateLoginUser()
         {
-            (bool valid, bool isAdmin, bool isActive) = InventoryLogin.IsValidLogin(loginUserName.Text, loginPassword.Text);
+            var adminDto = InventoryLogin.IsValidLogin(loginUserName.Text, loginPassword.Text);
 
-            if (valid)
+            if (adminDto != null)
             {
-                if (!isActive)
+                if (!adminDto.IsActive)
                     MessageBox.Show("Inactive user");
                 else
-                    return (true, isAdmin);
+                    return (true, adminDto);
             }
             else
                 MessageBox.Show("Incorrect userName or password");
-            return (false, false);
+            return (false, null);
         }
     }
 }
