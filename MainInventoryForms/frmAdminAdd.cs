@@ -11,36 +11,52 @@ using System.Windows.Forms;
 
 namespace MainInventoryForms
 {
-    public partial class frmUserAdd : Form
+    public partial class frmAdminAdd : Form
     {
         private Form frmAdminList;
-        private UserDTO userDto;
+        private AdminDTO userDto;
+        private int adminId;
 
-        public frmUserAdd(Form frmAdminList)
+        public frmAdminAdd(Form frmAdminList)
         {
             this.frmAdminList = frmAdminList;
             InitializeComponent();
         }
 
-        public frmUserAdd(Form frmAdminList, UserDTO userDto)
+        public frmAdminAdd(Form frmAdminList, int adminId)
         {
             this.frmAdminList = frmAdminList;
-            this.userDto = userDto;
+            this.adminId = adminId;
             InitializeComponent();
-            ViewEditdata(userDto);
+            ViewEditdata(adminId);
         }
 
-        private void ViewEditdata(UserDTO userDto)
+        private void ViewEditdata(int adminId)
         {
-            textBoxFName.Text = userDto.FirstName;
-            textBoxLName.Text = userDto.LastName;
-            textBoxEmail.Text = userDto.Email;
-            textBoxMobile.Text = userDto.Mobile;
-            textBoxUName.Text = userDto.UserName;
-            textBoxPsw.Text = userDto.Password;
+            var adminDto = Admin.GetAdminInfoById(adminId);
+            if (adminDto != null)
+            {
+                textBoxFName.Text = adminDto.FirstName;
+                textBoxLName.Text = adminDto.LastName;
+                textBoxEmail.Text = adminDto.Email;
+                textBoxMobile.Text = adminDto.Mobile;
+                textBoxUName.Text = adminDto.UserName;
+                textBoxPsw.Text = adminDto.Password;
+            }
+            return;
         }
 
-        private void btnUseradd_Click(object sender, EventArgs e)
+        private void ViewEditdata(AdminDTO adminDto)
+        {
+            textBoxFName.Text = adminDto.FirstName;
+            textBoxLName.Text = adminDto.LastName;
+            textBoxEmail.Text = adminDto.Email;
+            textBoxMobile.Text = adminDto.Mobile;
+            textBoxUName.Text = adminDto.UserName;
+            textBoxPsw.Text = adminDto.Password;
+        }
+
+        private void btnAdminadd_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(textBoxFName.Text) || string.IsNullOrEmpty(textBoxLName.Text) ||
                 //string.IsNullOrEmpty(textBoxEmail.Text) || string.IsNullOrEmpty(textBoxMobile.Text) ||
@@ -50,31 +66,31 @@ namespace MainInventoryForms
                 return;
             }
 
-            int success = AddUpdateUser();
+            int success = AddUpdateAdmin();
             
             if (success > 0)
             {
                 MessageBox.Show("Successfully added");
-                ClearUserAddForm();
+                ClearDataFields();
             }
         }
 
-        private int AddUpdateUser()
+        private int AddUpdateAdmin()
         {
             if (userDto != null && userDto.Id > 0)
             {
                 GetInputValues(ref userDto);
-                return Admin.UpdateUser(userDto);
+                return Admin.UpdateAdmin(userDto);
             }
             else
             {
-                var user = new UserDTO();
+                var user = new AdminDTO();
                 GetInputValues(ref user);
-                return Admin.AddUser(user);
+                return Admin.AddAdmin(user);
             }
         }
 
-        private void GetInputValues(ref UserDTO userDto)
+        private void GetInputValues(ref AdminDTO userDto)
         {
             userDto.FirstName = textBoxFName.Text;
             userDto.LastName = textBoxLName.Text;
@@ -86,10 +102,10 @@ namespace MainInventoryForms
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            ClearUserAddForm();
+            ClearDataFields();
         }
 
-        private void ClearUserAddForm()
+        private void ClearDataFields()
         {
             textBoxFName.Text = "";
             textBoxLName.Text = "";
@@ -99,7 +115,7 @@ namespace MainInventoryForms
             textBoxPsw.Text = "";
         }
 
-        private void frmUserAdd_FormClosing(object sender, EventArgs e)
+        private void frmAdminAdd_FormClosing(object sender, EventArgs e)
         {
             var parent = (frmAdminList)frmAdminList;
             parent.frmAdminList_Load(sender, e);

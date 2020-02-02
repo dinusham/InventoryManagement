@@ -1,6 +1,6 @@
 ﻿namespace InventoryDataAccess
 {
-    public class UserDTO
+    public class AdminDTO
     {
         public int Id { get; set; }
         public string FirstName { get; set; }

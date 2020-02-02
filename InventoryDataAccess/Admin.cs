@@ -7,7 +7,7 @@ namespace InventoryDataAccess
     {
         public static DataTable GetAllUsers()
         {
-            string query = "SELECT  id, first_name, last_name, tel_mobile AS Mobile, " +
+            string query = "SELECT  id, concat(first_name, ' ' , last_name) as Name, tel_mobile AS Mobile, " +
                 "email AS Email, user_name AS UserName, password as Password, create_at AS CreatedDate FROM admin ORDER BY id";
 
             DataTable users = DatabaseConnection.ConnectWithServer(query);
@@ -15,7 +15,7 @@ namespace InventoryDataAccess
             return users;
         }
 
-        public static int AddUser(UserDTO userDto)
+        public static int AddAdmin(AdminDTO userDto)
         {
             DateTime dateTime = DateTime.Now.Date;
 
@@ -32,7 +32,7 @@ namespace InventoryDataAccess
             return -1;
         }
 
-        public static int UpdateUser(UserDTO userDto)
+        public static int UpdateAdmin(AdminDTO userDto)
         {
             string query = "UPDATE admin SET first_name = '" + userDto.FirstName + "',last_name = '" + userDto.LastName +
                 "', tel_mobile = '" + userDto.Mobile + "', email = '" + userDto.Email + "', user_name = '" + userDto.Email +
@@ -46,9 +46,32 @@ namespace InventoryDataAccess
             return -1;
         }
 
-        public static int DeleteUser(int userId)
+        public static AdminDTO GetAdminInfoById(int adminId)
         {
-            string query = "Delete FROM admin WHERE id = " + userId;
+            string query = "SELECT id, first_name, last_name, tel_mobile, email, user_name, password, user_role, " +
+                "is_active FROM admin WHERE id = " + adminId;
+
+            DataTable usersTable = DatabaseConnection.ConnectWithServer(query);
+            if (usersTable != null)
+            {
+                DataRow dataRow = usersTable.Rows[0];
+                return new AdminDTO
+                {
+                    Id = int.Parse(dataRow["id"].ToString()),
+                    FirstName = dataRow["first_name"].ToString(),
+                    LastName = dataRow["last_name"].ToString(),
+                    Email = dataRow["email"].ToString(),
+                    Mobile = dataRow["tel_mobile"].ToString(),
+                    UserName = dataRow["user_name"].ToString(),
+                    Password = dataRow["password"].ToString()
+                };
+            }
+            return null;
+        }
+
+        public static int DeleteAdmin(int adminId)
+        {
+            string query = "Delete FROM admin WHERE id = " + adminId;
 
             DataTable usersTable = DatabaseConnection.ConnectWithServer(query);
             if (usersTable != null)

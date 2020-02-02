@@ -1,6 +1,6 @@
 ﻿namespace MainInventoryForms
 {
-    partial class frmUserAdd
+    partial class frmAdminAdd
     {
         /// <summary>
         /// Required designer variable.
@@ -40,7 +40,7 @@
             this.textBoxMobile = new System.Windows.Forms.TextBox();
             this.textBoxUName = new System.Windows.Forms.TextBox();
             this.textBoxPsw = new System.Windows.Forms.TextBox();
-            this.btnUseradd = new System.Windows.Forms.Button();
+            this.btnAdminadd = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -149,16 +149,16 @@
             this.textBoxPsw.Size = new System.Drawing.Size(353, 26);
             this.textBoxPsw.TabIndex = 11;
             // 
-            // btnUseradd
+            // btnAdminadd
             // 
-            this.btnUseradd.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnUseradd.Location = new System.Drawing.Point(480, 344);
-            this.btnUseradd.Name = "btnUseradd";
-            this.btnUseradd.Size = new System.Drawing.Size(90, 35);
-            this.btnUseradd.TabIndex = 12;
-            this.btnUseradd.Text = "Add";
-            this.btnUseradd.UseVisualStyleBackColor = false;
-            this.btnUseradd.Click += new System.EventHandler(this.btnUseradd_Click);
+            this.btnAdminadd.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnAdminadd.Location = new System.Drawing.Point(480, 344);
+            this.btnAdminadd.Name = "btnAdminadd";
+            this.btnAdminadd.Size = new System.Drawing.Size(90, 35);
+            this.btnAdminadd.TabIndex = 12;
+            this.btnAdminadd.Text = "Add";
+            this.btnAdminadd.UseVisualStyleBackColor = false;
+            this.btnAdminadd.Click += new System.EventHandler(this.btnAdminadd_Click);
             // 
             // btnClear
             // 
@@ -171,14 +171,14 @@
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
-            // frmUserAdd
+            // frmadminAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(228)))), ((int)(((byte)(248)))));
             this.ClientSize = new System.Drawing.Size(636, 404);
             this.Controls.Add(this.btnClear);
-            this.Controls.Add(this.btnUseradd);
+            this.Controls.Add(this.btnAdminadd);
             this.Controls.Add(this.textBoxPsw);
             this.Controls.Add(this.textBoxUName);
             this.Controls.Add(this.textBoxMobile);
@@ -197,7 +197,7 @@
             this.Name = "frmUserAdd";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmUserAdd";
-            this.Closed += new System.EventHandler(this.frmUserAdd_FormClosing);
+            this.Closed += new System.EventHandler(this.frmAdminAdd_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -217,7 +217,7 @@
         private System.Windows.Forms.TextBox textBoxMobile;
         private System.Windows.Forms.TextBox textBoxUName;
         private System.Windows.Forms.TextBox textBoxPsw;
-        private System.Windows.Forms.Button btnUseradd;
+        private System.Windows.Forms.Button btnAdminadd;
         private System.Windows.Forms.Button btnClear;
     }
 }

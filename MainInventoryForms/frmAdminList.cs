@@ -21,8 +21,6 @@ namespace MainInventoryForms
             {
                 this.dataGridViewAdmin.DataSource = dt;
                 this.dataGridViewAdmin.AllowUserToAddRows = false;
-                //this.dataGridViewAdmin.ReadOnly = true;
-
                 FormatGrid(ref this.dataGridViewAdmin);
             }
         }
@@ -34,13 +32,13 @@ namespace MainInventoryForms
                 string colunmName = dataGridView.Columns[i].Name;
                 switch (colunmName)
                 {
-                    case "first_name":
-                        dataGridView.Columns[i].Name = "Name";
+                    case "Name":
+                        //dataGridView.Columns[i].Name = "Name";
                         dataGridView.Columns[i].Width = 242;
                         break;
-                    case "last_name":
-                        dataGridView.Columns[i].Visible = false;
-                        break;
+                    //case "last_name":
+                    //    dataGridView.Columns[i].Visible = false;
+                    //    break;
                     case "Email":
                         dataGridView.Columns[i].Width = 180;
                         break;
@@ -67,7 +65,7 @@ namespace MainInventoryForms
 
             foreach (DataGridViewRow row in dataGridView.Rows)
             {
-                row.Cells["Name"].Value = row.Cells["Name"].Value.ToString() + " " + row.Cells["last_name"].Value.ToString();
+                //row.Cells["Name"].Value = row.Cells["Name"].Value.ToString() + " " + row.Cells["last_name"].Value.ToString();
 
                 if (row.Index %2 == 0)
                     row.DefaultCellStyle.BackColor = Color.LightGray;
@@ -76,101 +74,32 @@ namespace MainInventoryForms
 
         private void btnAdminAdd_Click(object sender, EventArgs e)
         {
-            bool isOpen = false;
-            foreach (Form form in Application.OpenForms)
-            {
-                if (form.Text == "frmUserAdd")
-                {
-                    isOpen = true;
-                    form.BringToFront();
-                    break;
-                }
-            }
-
-            if (!isOpen)
-            {
-                var frmUserAdd = new frmUserAdd(this);
-                frmUserAdd.Show();
-            }
+            var frmUserAdd = new frmAdminAdd(this);
+            frmUserAdd.ShowDialog();
         }
 
         private void dataRowDouble_Click(object sender, DataGridViewCellEventArgs e)
         {
-            bool isOpen = false;
-            foreach (Form form in Application.OpenForms)
-            {
-                if (form.Text == "frmUserAdd")
-                {
-                    isOpen = true;
-                    form.BringToFront();
-                    break;
-                }
-            }
-
-            if (!isOpen)
-            {
-                var dtaRow = dataGridViewAdmin.Rows[e.RowIndex];
-                var userDto = GetGridRowData(dtaRow);
-
-                if (userDto != null)
-                {
-                    var frmUserAdd = new frmUserAdd(this, userDto);
-                    frmUserAdd.Show();
-                }
-                return;
-            }
-        }
-
-        private UserDTO GetGridRowData(DataGridViewRow dataRow)
-        {
-            if (dataRow == null)
-                return null;
-
+            var dataRow = dataGridViewAdmin.Rows[e.RowIndex];
             int.TryParse(dataRow.Cells["id"].Value.ToString(), out int id);
             if (id < 0)
-                return null;
+                return;
 
-            string name = dataRow.Cells["Name"].Value.ToString();
-
-            return new UserDTO
-            {
-                Id = id,
-                FirstName = name.Replace(dataRow.Cells["last_name"].Value.ToString(), ""),
-                LastName = dataRow.Cells["last_name"].Value.ToString(),
-                Email = dataRow.Cells["Email"].Value.ToString(),
-                Mobile = dataRow.Cells["Mobile"].Value.ToString(),
-                UserName = dataRow.Cells["UserName"].Value.ToString(),
-                Password = dataRow.Cells["Password"].Value.ToString()
-            };
+            var frmUserAdd = new frmAdminAdd(this, id);
+            frmUserAdd.ShowDialog();
         }
 
         private void btnAdminEdit_Click(object sender, EventArgs e)
         {
             if (dataGridViewAdmin.SelectedRows.Count > 0)
             {
-                DataGridViewRow row = dataGridViewAdmin.SelectedRows[0];
-                bool isOpen = false;
-                foreach (Form form in Application.OpenForms)
-                {
-                    if (form.Text == "frmUserAdd")
-                    {
-                        isOpen = true;
-                        form.BringToFront();
-                        break;
-                    }
-                }
-
-                if (!isOpen)
-                {
-                    var userDto = GetGridRowData(row);
-
-                    if (userDto != null)
-                    {
-                        var frmUserAdd = new frmUserAdd(this, userDto);
-                        frmUserAdd.Show();
-                    }
+                DataGridViewRow dataRow = dataGridViewAdmin.SelectedRows[0];
+                int.TryParse(dataRow.Cells["id"].Value.ToString(), out int id);
+                if (id < 0)
                     return;
-                }
+
+                var frmUserAdd = new frmAdminAdd(this, id);
+                frmUserAdd.ShowDialog();
             }
             else
             {
@@ -191,7 +120,7 @@ namespace MainInventoryForms
                 }
                 else
                 {
-                    int success = Admin.DeleteUser(id);
+                    int success = Admin.DeleteAdmin(id);
                     if (success > 0)
                     {
                         MessageBox.Show("successfully deleted");
@@ -204,6 +133,28 @@ namespace MainInventoryForms
                 MessageBox.Show("Please select a user to delete");
                 return;
             }
+        }
+
+        private void btnAdminSearch_Click(object sender, EventArgs e)
+        {
+            string searchTxt = textBoxSearchAdmin.Text;
+            if (string.IsNullOrEmpty(searchTxt))
+            {
+                frmAdminList_Load(sender, e);
+            }
+            else if (searchTxt.Length < 3)
+            {
+                MessageBox.Show("Please enter minimum 3 characters");
+                textBoxSearchAdmin.Text = "";
+                return;
+            }
+
+            if (dataGridViewAdmin != null)
+            {
+                (dataGridViewAdmin.DataSource as DataTable).DefaultView.RowFilter =
+                    string.Format("Name LIKE '%{0}%'", searchTxt);
+            }
+            textBoxSearchAdmin.Text = "";
         }
     }
 }
