@@ -14,7 +14,7 @@ namespace MainInventoryForms
     public partial class frmAdminAdd : Form
     {
         private Form frmAdminList;
-        private AdminDTO userDto;
+        private AdminDTO adminDto;
         private int adminId;
 
         public frmAdminAdd(Form frmAdminList)
@@ -36,6 +36,7 @@ namespace MainInventoryForms
             var adminDto = Admin.GetAdminInfoById(adminId);
             if (adminDto != null)
             {
+                this.adminDto = adminDto;
                 textBoxFName.Text = adminDto.FirstName;
                 textBoxLName.Text = adminDto.LastName;
                 textBoxEmail.Text = adminDto.Email;
@@ -44,16 +45,6 @@ namespace MainInventoryForms
                 textBoxPsw.Text = adminDto.Password;
             }
             return;
-        }
-
-        private void ViewEditdata(AdminDTO adminDto)
-        {
-            textBoxFName.Text = adminDto.FirstName;
-            textBoxLName.Text = adminDto.LastName;
-            textBoxEmail.Text = adminDto.Email;
-            textBoxMobile.Text = adminDto.Mobile;
-            textBoxUName.Text = adminDto.UserName;
-            textBoxPsw.Text = adminDto.Password;
         }
 
         private void btnAdminadd_Click(object sender, EventArgs e)
@@ -77,10 +68,10 @@ namespace MainInventoryForms
 
         private int AddUpdateAdmin()
         {
-            if (userDto != null && userDto.Id > 0)
+            if (adminDto != null && adminDto.Id > 0)
             {
-                GetInputValues(ref userDto);
-                return Admin.UpdateAdmin(userDto);
+                GetInputValues(ref adminDto);
+                return Admin.UpdateAdmin(adminDto);
             }
             else
             {

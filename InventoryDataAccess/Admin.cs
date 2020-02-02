@@ -35,7 +35,7 @@ namespace InventoryDataAccess
         public static int UpdateAdmin(AdminDTO userDto)
         {
             string query = "UPDATE admin SET first_name = '" + userDto.FirstName + "',last_name = '" + userDto.LastName +
-                "', tel_mobile = '" + userDto.Mobile + "', email = '" + userDto.Email + "', user_name = '" + userDto.Email +
+                "', tel_mobile = '" + userDto.Mobile + "', email = '" + userDto.Email + "', user_name = '" + userDto.UserName +
                 "', password = '" + userDto.Password + "' WHERE id = " + userDto.Id;
 
             DataTable usersTable = DatabaseConnection.ConnectWithServer(query);
