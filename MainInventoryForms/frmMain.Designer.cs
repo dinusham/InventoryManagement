@@ -35,6 +35,8 @@
             this.panelUsers = new System.Windows.Forms.Panel();
             this.panelSettings = new System.Windows.Forms.Panel();
             this.panelCategory = new System.Windows.Forms.Panel();
+            this.brandsTool = new System.Windows.Forms.ToolStripMenuItem();
+            this.panelBrand = new System.Windows.Forms.Panel();
             this.menuNav.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +51,8 @@
             this.menuNav.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.usersToolStripMenuItem,
             this.settingsTool,
-            this.categoryTool});
+            this.categoryTool,
+            this.brandsTool});
             this.menuNav.Location = new System.Drawing.Point(0, 0);
             this.menuNav.Margin = new System.Windows.Forms.Padding(1);
             this.menuNav.MaximumSize = new System.Drawing.Size(156, 860);
@@ -116,12 +119,31 @@
             this.panelCategory.Size = new System.Drawing.Size(1197, 860);
             this.panelCategory.TabIndex = 0;
             // 
+            // brandsTool
+            // 
+            this.brandsTool.BackColor = System.Drawing.Color.SkyBlue;
+            this.brandsTool.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.brandsTool.Margin = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.brandsTool.Name = "brandsTool";
+            this.brandsTool.Padding = new System.Windows.Forms.Padding(5, 7, 5, 7);
+            this.brandsTool.Size = new System.Drawing.Size(151, 41);
+            this.brandsTool.Text = "Brands";
+            this.brandsTool.Click += new System.EventHandler(this.brandsTool_Click);
+            // 
+            // panelBrand
+            // 
+            this.panelBrand.Location = new System.Drawing.Point(160, 0);
+            this.panelBrand.Name = "panelBrand";
+            this.panelBrand.Size = new System.Drawing.Size(1197, 860);
+            this.panelBrand.TabIndex = 0;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(230)))), ((int)(((byte)(248)))));
             this.ClientSize = new System.Drawing.Size(1359, 860);
+            this.Controls.Add(this.panelBrand);
             this.Controls.Add(this.panelCategory);
             this.Controls.Add(this.panelSettings);
             this.Controls.Add(this.panelUsers);
@@ -147,5 +169,7 @@
         private System.Windows.Forms.ToolStripMenuItem categoryTool;
         private System.Windows.Forms.Panel panelSettings;
         private System.Windows.Forms.Panel panelCategory;
+        private System.Windows.Forms.ToolStripMenuItem brandsTool;
+        private System.Windows.Forms.Panel panelBrand;
     }
 }

@@ -1,5 +1,6 @@
 ﻿using AdminForms;
 using CategoryForms;
+using Brand;
 using InventoryDataAccess;
 using System;
 using System.Windows.Forms;
@@ -30,6 +31,7 @@ namespace MainInventoryForms
             panelUsers.Visible = true;
             panelCategory.Visible = false;
             panelSettings.Visible = false;
+            panelBrand.Visible = false;
 
             var frmAdminList = new frmAdminList();
             frmAdminList.TopLevel = false;
@@ -45,6 +47,7 @@ namespace MainInventoryForms
             panelSettings.Visible = true;
             panelUsers.Visible = false;
             panelCategory.Visible = false;
+            panelBrand.Visible = false;
 
             var frmSettings = new frmSettings(adminDto.Id, adminDto.UserName);
             frmSettings.TopLevel = false;
@@ -68,6 +71,7 @@ namespace MainInventoryForms
             panelCategory.Visible = true;
             panelUsers.Visible = false;
             panelSettings.Visible = false;
+            panelBrand.Visible = false;
             var frmCategory = new frmCategory(adminDto.Id);
             frmCategory.TopLevel = false;
             frmCategory.AutoScroll = true;
@@ -75,6 +79,22 @@ namespace MainInventoryForms
             panelCategory.Controls.Add(frmCategory);
 
             frmCategory.Show();
+        }
+
+        private void brandsTool_Click(object sender, EventArgs e)
+        {
+            panelBrand.Visible = true;
+            panelCategory.Visible = false;
+            panelUsers.Visible = false;
+            panelSettings.Visible = false;
+
+            var frmBrand = new frmBrands(adminDto.Id);
+            frmBrand.TopLevel = false;
+            frmBrand.AutoScroll = true;
+            frmBrand.FormBorderStyle = FormBorderStyle.None;
+            panelBrand.Controls.Add(frmBrand);
+
+            frmBrand.Show();
         }
     }
 }

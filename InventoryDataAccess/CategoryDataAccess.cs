@@ -67,7 +67,7 @@ namespace InventoryDataAccess
                     {
                         Id = int.Parse(dataRow["id"].ToString()),
                         CategoryName = dataRow["name"].ToString(),
-                        IsActive = dataRow["is_active"].ToString() == "1" ? true : false,
+                        IsActive = (bool)dataRow["is_active"]
                     };
                 }
                 return null;
@@ -98,8 +98,8 @@ namespace InventoryDataAccess
                 else
                 {
                     string query = "Delete FROM category WHERE id = " + categoryId;
-                    DataTable usersTable = DatabaseConnection.ConnectWithServer(query);
-                    if (usersTable != null)
+                    DataTable categoryTable = DatabaseConnection.ConnectWithServer(query);
+                    if (categoryTable != null)
                     {
                         return 1;
                     }

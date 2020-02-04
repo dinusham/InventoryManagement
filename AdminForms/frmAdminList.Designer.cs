@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnAdminAdd = new System.Windows.Forms.Button();
             this.btnAdminEdit = new System.Windows.Forms.Button();
             this.btnAdminDelete = new System.Windows.Forms.Button();
@@ -42,7 +42,7 @@
             // 
             this.btnAdminAdd.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnAdminAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.btnAdminAdd.Location = new System.Drawing.Point(1026, 53);
+            this.btnAdminAdd.Location = new System.Drawing.Point(1025, 53);
             this.btnAdminAdd.Name = "btnAdminAdd";
             this.btnAdminAdd.Padding = new System.Windows.Forms.Padding(1);
             this.btnAdminAdd.Size = new System.Drawing.Size(107, 36);
@@ -55,7 +55,7 @@
             // 
             this.btnAdminEdit.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnAdminEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.btnAdminEdit.Location = new System.Drawing.Point(1026, 100);
+            this.btnAdminEdit.Location = new System.Drawing.Point(1025, 100);
             this.btnAdminEdit.Name = "btnAdminEdit";
             this.btnAdminEdit.Padding = new System.Windows.Forms.Padding(1);
             this.btnAdminEdit.Size = new System.Drawing.Size(107, 36);
@@ -68,7 +68,7 @@
             // 
             this.btnAdminDelete.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnAdminDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.btnAdminDelete.Location = new System.Drawing.Point(1026, 148);
+            this.btnAdminDelete.Location = new System.Drawing.Point(1025, 148);
             this.btnAdminDelete.Name = "btnAdminDelete";
             this.btnAdminDelete.Padding = new System.Windows.Forms.Padding(1);
             this.btnAdminDelete.Size = new System.Drawing.Size(107, 36);
@@ -85,18 +85,18 @@
             this.dataGridViewAdmin.AllowUserToResizeRows = false;
             this.dataGridViewAdmin.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.dataGridViewAdmin.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(1);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewAdmin.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(1);
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewAdmin.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewAdmin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewAdmin.Location = new System.Drawing.Point(3, 53);
-            this.dataGridViewAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridViewAdmin.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewAdmin.MultiSelect = false;
             this.dataGridViewAdmin.Name = "dataGridViewAdmin";
             this.dataGridViewAdmin.ReadOnly = true;

@@ -99,6 +99,10 @@
       <Project>{a7ed4b87-439e-43d0-8e03-a8c737059f66}</Project>
       <Name>Admin</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Brand\Brand.csproj">
+      <Project>{242114c9-1c40-4155-bd8f-839338e2c620}</Project>
+      <Name>Brand</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CategoryForms\Category.csproj">
       <Project>{ce313cfe-f96c-4aad-935f-b4e95725ac45}</Project>
       <Name>Category</Name>

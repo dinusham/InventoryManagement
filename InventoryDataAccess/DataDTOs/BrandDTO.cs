@@ -3,7 +3,7 @@
     public class BrandDTO
     {
         public int Id { get; set; }
-        public string CategoryName { get; set; }
+        public string BrandName { get; set; }
         public int CreatedBy { get; set; }
         public int UpdatedBy { get; set; }
         public bool IsActive { get; set; }
