@@ -28,6 +28,7 @@ namespace MainInventoryForms
                 if (valid)
                 {
                     frmMain mainFrm = new frmMain(adminDto);
+                    //var mainFrm = new Form1Test();
                     this.Hide();
                     mainFrm.ShowDialog();
                     this.Close();

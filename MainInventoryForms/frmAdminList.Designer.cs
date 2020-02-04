@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnAdminAdd = new System.Windows.Forms.Button();
             this.btnAdminEdit = new System.Windows.Forms.Button();
             this.btnAdminDelete = new System.Windows.Forms.Button();
@@ -84,17 +84,19 @@
             this.dataGridViewAdmin.AllowUserToResizeColumns = false;
             this.dataGridViewAdmin.AllowUserToResizeRows = false;
             this.dataGridViewAdmin.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(1);
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewAdmin.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridViewAdmin.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(1);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewAdmin.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewAdmin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewAdmin.Location = new System.Drawing.Point(3, 53);
+            this.dataGridViewAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridViewAdmin.MultiSelect = false;
             this.dataGridViewAdmin.Name = "dataGridViewAdmin";
             this.dataGridViewAdmin.ReadOnly = true;
@@ -103,7 +105,7 @@
             this.dataGridViewAdmin.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridViewAdmin.RowTemplate.Height = 24;
             this.dataGridViewAdmin.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewAdmin.Size = new System.Drawing.Size(967, 785);
+            this.dataGridViewAdmin.Size = new System.Drawing.Size(967, 759);
             this.dataGridViewAdmin.TabIndex = 4;
             this.dataGridViewAdmin.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataRowDouble_Click);
             // 
@@ -131,13 +133,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1181, 840);
+            this.ClientSize = new System.Drawing.Size(1179, 813);
             this.Controls.Add(this.textBoxSearchAdmin);
             this.Controls.Add(this.dataGridViewAdmin);
             this.Controls.Add(this.btnAdminSearch);
             this.Controls.Add(this.btnAdminDelete);
             this.Controls.Add(this.btnAdminEdit);
             this.Controls.Add(this.btnAdminAdd);
+            this.MaximizeBox = false;
             this.Name = "frmAdminList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmAdminList";

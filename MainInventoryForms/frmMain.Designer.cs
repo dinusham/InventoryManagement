@@ -31,10 +31,11 @@
             this.menuNav = new System.Windows.Forms.MenuStrip();
             this.usersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsTool = new System.Windows.Forms.ToolStripMenuItem();
+            this.categoryTool = new System.Windows.Forms.ToolStripMenuItem();
             this.panelUsers = new System.Windows.Forms.Panel();
             this.panelSettings = new System.Windows.Forms.Panel();
+            this.panelCategory = new System.Windows.Forms.Panel();
             this.menuNav.SuspendLayout();
-            this.panelUsers.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuNav
@@ -47,7 +48,8 @@
             this.menuNav.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuNav.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.usersToolStripMenuItem,
-            this.settingsTool});
+            this.settingsTool,
+            this.categoryTool});
             this.menuNav.Location = new System.Drawing.Point(0, 0);
             this.menuNav.Margin = new System.Windows.Forms.Padding(1);
             this.menuNav.MaximumSize = new System.Drawing.Size(156, 860);
@@ -80,24 +82,39 @@
             this.settingsTool.Text = "Settings";
             this.settingsTool.Click += new System.EventHandler(this.settingsTool_Click);
             // 
+            // categoryTool
+            // 
+            this.categoryTool.BackColor = System.Drawing.Color.SkyBlue;
+            this.categoryTool.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.categoryTool.Margin = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.categoryTool.Name = "categoryTool";
+            this.categoryTool.Padding = new System.Windows.Forms.Padding(5, 7, 5, 7);
+            this.categoryTool.Size = new System.Drawing.Size(151, 41);
+            this.categoryTool.Text = "Category";
+            this.categoryTool.Click += new System.EventHandler(this.categoryTool_Click);
+            // 
             // panelUsers
             // 
             this.panelUsers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(228)))), ((int)(((byte)(248)))));
-            this.panelUsers.Controls.Add(this.panelSettings);
             this.panelUsers.Location = new System.Drawing.Point(160, 0);
             this.panelUsers.Name = "panelUsers";
             this.panelUsers.Padding = new System.Windows.Forms.Padding(10);
             this.panelUsers.Size = new System.Drawing.Size(1197, 860);
-            this.panelUsers.TabIndex = 1;
+            this.panelUsers.TabIndex = 0;
             // 
             // panelSettings
             // 
-            this.panelSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(228)))), ((int)(((byte)(248)))));
-            this.panelSettings.Location = new System.Drawing.Point(0, 0);
+            this.panelSettings.Location = new System.Drawing.Point(160, 0);
             this.panelSettings.Name = "panelSettings";
-            this.panelSettings.Padding = new System.Windows.Forms.Padding(10);
             this.panelSettings.Size = new System.Drawing.Size(1197, 860);
-            this.panelSettings.TabIndex = 2;
+            this.panelSettings.TabIndex = 0;
+            // 
+            // panelCategory
+            // 
+            this.panelCategory.Location = new System.Drawing.Point(160, 0);
+            this.panelCategory.Name = "panelCategory";
+            this.panelCategory.Size = new System.Drawing.Size(1197, 860);
+            this.panelCategory.TabIndex = 0;
             // 
             // frmMain
             // 
@@ -105,6 +122,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(230)))), ((int)(((byte)(248)))));
             this.ClientSize = new System.Drawing.Size(1359, 860);
+            this.Controls.Add(this.panelCategory);
+            this.Controls.Add(this.panelSettings);
             this.Controls.Add(this.panelUsers);
             this.Controls.Add(this.menuNav);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -115,7 +134,6 @@
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.menuNav.ResumeLayout(false);
             this.menuNav.PerformLayout();
-            this.panelUsers.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -126,7 +144,8 @@
         private System.Windows.Forms.Panel panelUsers;
 
         #endregion
-
+        private System.Windows.Forms.ToolStripMenuItem categoryTool;
         private System.Windows.Forms.Panel panelSettings;
+        private System.Windows.Forms.Panel panelCategory;
     }
 }

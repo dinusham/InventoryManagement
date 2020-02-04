@@ -52,7 +52,10 @@ namespace MainInventoryForms
             
             if (success > 0)
             {
-                MessageBox.Show("Successfully added");
+                if (adminDto != null && adminDto.Id > 0)
+                    MessageBox.Show("Successfully updated");
+                else
+                    MessageBox.Show("Successfully added");
                 ClearDataFields();
             }
         }

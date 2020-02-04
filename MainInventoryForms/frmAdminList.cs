@@ -20,7 +20,6 @@ namespace MainInventoryForms
             if (dt != null)
             {
                 this.dataGridViewAdmin.DataSource = dt;
-                this.dataGridViewAdmin.AllowUserToAddRows = false;
                 FormatGrid(ref this.dataGridViewAdmin);
             }
         }
@@ -65,8 +64,6 @@ namespace MainInventoryForms
 
             foreach (DataGridViewRow row in dataGridView.Rows)
             {
-                //row.Cells["Name"].Value = row.Cells["Name"].Value.ToString() + " " + row.Cells["last_name"].Value.ToString();
-
                 if (row.Index %2 == 0)
                     row.DefaultCellStyle.BackColor = Color.LightGray;
             }
@@ -103,7 +100,7 @@ namespace MainInventoryForms
             }
             else
             {
-                MessageBox.Show("Please select a user to edit");
+                MessageBox.Show("Please select a user to update");
             }
         }
 
