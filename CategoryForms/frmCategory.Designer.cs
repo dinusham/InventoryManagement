@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace MainInventoryForms
+namespace CategoryForms
 {
     partial class frmCategory
     {

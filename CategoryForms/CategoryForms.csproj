@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4ADA3462-0AAC-473A-B4C2-47922518EFB8}</ProjectGuid>
+    <ProjectGuid>{CE313CFE-F96C-4AAD-935F-B4E95725AC45}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>MainInventoryForms</RootNamespace>
-    <AssemblyName>MainInventoryForms</AssemblyName>
+    <RootNamespace>CategoryForms</RootNamespace>
+    <AssemblyName>CategoryForms</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,31 +46,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmLogin.cs">
+    <Compile Include="frmCategory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmLogin.Designer.cs">
-      <DependentUpon>frmLogin.cs</DependentUpon>
+    <Compile Include="frmCategory.Designer.cs">
+      <DependentUpon>frmCategory.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMain.cs">
+    <Compile Include="frmCategoryAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMain.Designer.cs">
-      <DependentUpon>frmMain.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmSettings.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmSettings.Designer.cs">
-      <DependentUpon>frmSettings.cs</DependentUpon>
+    <Compile Include="frmCategoryAdd.Designer.cs">
+      <DependentUpon>frmCategoryAdd.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmMain.resx">
-      <DependentUpon>frmMain.cs</DependentUpon>
+    <EmbeddedResource Include="frmCategory.resx">
+      <DependentUpon>frmCategory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSettings.resx">
-      <DependentUpon>frmSettings.cs</DependentUpon>
+    <EmbeddedResource Include="frmCategoryAdd.resx">
+      <DependentUpon>frmCategoryAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -95,14 +89,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AdminForms\AdminForms.csproj">
-      <Project>{a7ed4b87-439e-43d0-8e03-a8c737059f66}</Project>
-      <Name>AdminForms</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CategoryForms\CategoryForms.csproj">
-      <Project>{ce313cfe-f96c-4aad-935f-b4e95725ac45}</Project>
-      <Name>CategoryForms</Name>
-    </ProjectReference>
     <ProjectReference Include="..\InventoryDataAccess\InventoryDataAccess.csproj">
       <Project>{babca3eb-8f69-408c-8712-7b0d05c03413}</Project>
       <Name>InventoryDataAccess</Name>

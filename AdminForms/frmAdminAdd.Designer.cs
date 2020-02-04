@@ -1,4 +1,4 @@
-﻿namespace MainInventoryForms
+﻿namespace AdminForms
 {
     partial class frmAdminAdd
     {

@@ -1,4 +1,6 @@
-﻿using InventoryDataAccess;
+﻿using AdminForms;
+using CategoryForms;
+using InventoryDataAccess;
 using System;
 using System.Windows.Forms;
 
@@ -68,7 +70,6 @@ namespace MainInventoryForms
             panelCategory.Visible = true;
             panelUsers.Visible = false;
             panelSettings.Visible = false;
-
             var frmCategory = new frmCategory(adminDto.Id);
             frmCategory.TopLevel = false;
             frmCategory.AutoScroll = true;

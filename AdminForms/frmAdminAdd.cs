@@ -2,7 +2,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace MainInventoryForms
+namespace AdminForms
 {
     public partial class frmAdminAdd : Form
     {
