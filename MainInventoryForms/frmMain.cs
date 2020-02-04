@@ -31,8 +31,6 @@ namespace MainInventoryForms
             panelCategory.Visible = false;
             panelSettings.Visible = false;
 
-            //panel1.Visible = false;
-            //panelCategory.Visible = false;
             var frmAdminList = new frmAdminList();
             frmAdminList.TopLevel = false;
             frmAdminList.AutoScroll = true;
@@ -77,26 +75,6 @@ namespace MainInventoryForms
             panelCategory.Controls.Add(frmCategory);
 
             frmCategory.Show();
-
-            //var frmSettings = new Form1Test();
-            //frmSettings.TopLevel = false;
-            //frmSettings.AutoScroll = true;
-            //frmSettings.FormBorderStyle = FormBorderStyle.None;
-            //panelSettings.Controls.Add(frmSettings);
-
-            //frmSettings.Show();
         }
-
-        //private void categoryToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-        //    panelSettings.Visible = true;
-        //    var form = new Form1Test();
-        //    form.TopLevel = false;
-        //    form.AutoScroll = true;
-        //    form.FormBorderStyle = FormBorderStyle.None;
-        //    panelSettings.Controls.Add(form);
-
-        //    form.Show();
-        //}
     }
 }

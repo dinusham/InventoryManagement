@@ -15,7 +15,7 @@ namespace AdminForms
 
         public void frmAdminList_Load(object sender, EventArgs e)
         {
-            DataTable dt = Admin.GetAllUsers();
+            DataTable dt = AdminDataAccess.GetAllUsers();
 
             if (dt != null)
             {
@@ -117,7 +117,7 @@ namespace AdminForms
                 }
                 else
                 {
-                    int success = Admin.DeleteAdmin(id);
+                    int success = AdminDataAccess.DeleteAdmin(id);
                     if (success > 0)
                     {
                         MessageBox.Show("successfully deleted");

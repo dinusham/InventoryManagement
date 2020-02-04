@@ -3,7 +3,7 @@ using System.Data;
 
 namespace InventoryDataAccess
 {
-    public class Admin
+    public class AdminDataAccess
     {
         public static DataTable GetAllUsers()
         {

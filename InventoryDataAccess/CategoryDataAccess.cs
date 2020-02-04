@@ -3,7 +3,7 @@ using System.Data;
 
 namespace InventoryDataAccess
 {
-    public class Category
+    public class CategoryDataAccess
     {
         public static DataTable GetCategories()
         {

@@ -24,7 +24,7 @@ namespace AdminForms
 
         private void ViewEditdata(int adminId)
         {
-            var adminDto = Admin.GetAdminInfoById(adminId);
+            var adminDto = AdminDataAccess.GetAdminInfoById(adminId);
             if (adminDto != null)
             {
                 this.adminDto = adminDto;
@@ -65,13 +65,13 @@ namespace AdminForms
             if (adminDto != null && adminDto.Id > 0)
             {
                 GetInputValues(ref adminDto);
-                return Admin.UpdateAdmin(adminDto);
+                return AdminDataAccess.UpdateAdmin(adminDto);
             }
             else
             {
                 var user = new AdminDTO();
                 GetInputValues(ref user);
-                return Admin.AddAdmin(user);
+                return AdminDataAccess.AddAdmin(user);
             }
         }
 

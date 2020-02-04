@@ -7,13 +7,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataAccess", "DataAccess", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BusinessEngine", "BusinessEngine", "{1818285C-E12E-4FF5-A993-8F87A4E57FCB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MainInventoryForms", "MainInventoryForms\MainInventoryForms.csproj", "{4ADA3462-0AAC-473A-B4C2-47922518EFB8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MainInventory", "MainInventoryForms\MainInventory.csproj", "{4ADA3462-0AAC-473A-B4C2-47922518EFB8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventoryDataAccess", "InventoryDataAccess\InventoryDataAccess.csproj", "{BABCA3EB-8F69-408C-8712-7B0D05C03413}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdminForms", "AdminForms\AdminForms.csproj", "{A7ED4B87-439E-43D0-8E03-A8C737059F66}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Admin", "AdminForms\Admin.csproj", "{A7ED4B87-439E-43D0-8E03-A8C737059F66}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CategoryForms", "CategoryForms\CategoryForms.csproj", "{CE313CFE-F96C-4AAD-935F-B4E95725AC45}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Category", "CategoryForms\Category.csproj", "{CE313CFE-F96C-4AAD-935F-B4E95725AC45}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

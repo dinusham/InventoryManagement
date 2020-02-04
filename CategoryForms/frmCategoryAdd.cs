@@ -29,7 +29,7 @@ namespace CategoryForms
 
         private void ViewEditData()
         {
-            category = Category.GetCategoryById(categoryId);
+            category = CategoryDataAccess.GetCategoryById(categoryId);
             if (category != null)
             {
                 txtCategory.Text = category.CategoryName;
@@ -66,7 +66,7 @@ namespace CategoryForms
                 category.CategoryName = txtCategory.Text;
                 category.IsActive = chkActive.Checked;
                 category.UpdatedBy = userId;
-                return Category.UpdateCategory(category);
+                return CategoryDataAccess.UpdateCategory(category);
             }
             else
             {
@@ -76,7 +76,7 @@ namespace CategoryForms
                     IsActive = chkActive.Checked,
                     CreatedBy = userId
                 };
-                return Category.AddCategory(category);
+                return CategoryDataAccess.AddCategory(category);
             }
         }
 

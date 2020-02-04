@@ -18,7 +18,7 @@ namespace CategoryForms
 
         public void frmCategory_Load(object sender, EventArgs e)
         {
-            DataTable dt = Category.GetCategories();
+            DataTable dt = CategoryDataAccess.GetCategories();
             if (dt != null)
             {
                 this.cateroryGridView.DataSource = dt;
@@ -103,7 +103,7 @@ namespace CategoryForms
                 }
                 else
                 {
-                    int success = Category.DeleteCategory(id);
+                    int success = CategoryDataAccess.DeleteCategory(id);
                     if (success > 0)
                     {
                         MessageBox.Show("successfully deleted");
