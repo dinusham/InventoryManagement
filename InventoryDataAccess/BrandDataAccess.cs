@@ -7,7 +7,8 @@ namespace InventoryDataAccess
     {
         public static DataTable GetBrands()
         {
-            string query = "SELECT  id, name AS Name, is_active AS IsActive FROM brand ORDER BY id";
+            string query = "SELECT  b.id, b.name AS Name, IF(b.is_active = 1, 'Active', 'Inactive') AS Status, " +
+                "CONCAT(a.first_name, ' ', a.last_name) AS Created  FROM brand b, admin a WHERE b.created_by = a.id";
 
             DataTable brandsTable = DatabaseConnection.ConnectWithServer(query);
 

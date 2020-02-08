@@ -37,11 +37,13 @@ namespace CategoryForms
                         dataGridView.Columns[i].Visible = false;
                         break;
                     case "Name":
-                        dataGridView.Columns[i].Width = 150;
+                        dataGridView.Columns[i].Width = 140;
                         break;
-                    case "IsActive":
-                        dataGridView.Columns[i].Name = "Is active";
-                        dataGridView.Columns[i].Width = 110;
+                    case "Status":
+                        dataGridView.Columns[i].Width = 90;
+                        break;
+                    case "Created":
+                        dataGridView.Columns[i].Width = 150;
                         break;
                     default:
                         break;

@@ -7,7 +7,8 @@ namespace InventoryDataAccess
     {
         public static DataTable GetCategories()
         {
-            string query = "SELECT  id, name AS Name, is_active AS IsActive FROM category ORDER BY id";
+            string query = "SELECT  c.id, c.name AS Name, IF(c.is_active = 1, 'Active', 'Inactive') AS Status, " +
+                "CONCAT(a.first_name, ' ', a.last_name) AS Created  FROM category c, admin a WHERE c.created_by = a.id";
 
             DataTable categories = DatabaseConnection.ConnectWithServer(query);
 
@@ -67,7 +68,7 @@ namespace InventoryDataAccess
                     {
                         Id = int.Parse(dataRow["id"].ToString()),
                         CategoryName = dataRow["name"].ToString(),
-                        IsActive = (bool)dataRow["is_active"]
+                        IsActive = (dataRow["is_active"].ToString() == "1") ? true : false
                     };
                 }
                 return null;
