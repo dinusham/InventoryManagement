@@ -55,7 +55,7 @@ namespace Brand
                 chkActive.Checked = false;
             }
             else
-                MessageBox.Show("Category didn't add or update");
+                MessageBox.Show("Brand didn't add or update");
         }
 
         private int AddUpdateBrand()

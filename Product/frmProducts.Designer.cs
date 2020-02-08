@@ -1,6 +1,9 @@
-﻿namespace Brand
+﻿using System;
+using System.Windows.Forms;
+
+namespace Product
 {
-    partial class frmBrands
+    partial class frmProducts
     {
         /// <summary>
         /// Required designer variable.
@@ -28,42 +31,38 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.brandGridView = new System.Windows.Forms.DataGridView();
+            this.productGridView = new System.Windows.Forms.DataGridView();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.brandGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // brandGridView
+            // productGridView
             // 
-            this.brandGridView.AllowUserToAddRows = false;
-            this.brandGridView.AllowUserToDeleteRows = false;
-            this.brandGridView.AllowUserToResizeColumns = false;
-            this.brandGridView.AllowUserToResizeRows = false;
-            this.brandGridView.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.brandGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.brandGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.brandGridView.Location = new System.Drawing.Point(3, 2);
-            this.brandGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.brandGridView.MultiSelect = false;
-            this.brandGridView.Name = "brandGridView";
-            this.brandGridView.ReadOnly = true;
-            this.brandGridView.RowHeadersVisible = false;
-            this.brandGridView.RowHeadersWidth = 51;
-            this.brandGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.brandGridView.RowTemplate.Height = 24;
-            this.brandGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.brandGridView.Size = new System.Drawing.Size(725, 656);
-            this.brandGridView.TabIndex = 0;
-            this.brandGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataRowDouble_Click);
+            this.productGridView.AllowUserToAddRows = false;
+            this.productGridView.AllowUserToDeleteRows = false;
+            this.productGridView.AllowUserToResizeColumns = false;
+            this.productGridView.AllowUserToResizeRows = false;
+            this.productGridView.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.productGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.productGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.productGridView.Location = new System.Drawing.Point(3, 2);
+            this.productGridView.MultiSelect = false;
+            this.productGridView.Name = "productGridView";
+            this.productGridView.ReadOnly = true;
+            this.productGridView.RowHeadersVisible = false;
+            this.productGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.productGridView.Size = new System.Drawing.Size(725, 656);
+            this.productGridView.TabIndex = 0;
+            this.productGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataRowDouble_Click);
             // 
             // btnAdd
             // 
             this.btnAdd.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.btnAdd.Location = new System.Drawing.Point(769, 43);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Padding = new System.Windows.Forms.Padding(1);
             this.btnAdd.Size = new System.Drawing.Size(80, 29);
@@ -77,7 +76,7 @@
             this.btnEdit.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.btnEdit.Location = new System.Drawing.Point(769, 81);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(2);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Padding = new System.Windows.Forms.Padding(1);
             this.btnEdit.Size = new System.Drawing.Size(80, 29);
@@ -91,7 +90,7 @@
             this.btnDelete.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.btnDelete.Location = new System.Drawing.Point(769, 120);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Padding = new System.Windows.Forms.Padding(1);
             this.btnDelete.Size = new System.Drawing.Size(80, 29);
@@ -100,7 +99,7 @@
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // frmBrands
+            // frmProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -109,21 +108,20 @@
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.brandGridView);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Controls.Add(this.productGridView);
             this.MaximizeBox = false;
-            this.Name = "frmBrands";
+            this.Name = "frmProducts";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "frmBrands";
-            this.Load += new System.EventHandler(this.frmBrands_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.brandGridView)).EndInit();
+            this.Text = "Product";
+            this.Load += new System.EventHandler(this.frmProduct_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.productGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView brandGridView;
+        private System.Windows.Forms.DataGridView productGridView;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDelete;

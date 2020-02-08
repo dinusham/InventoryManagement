@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4ADA3462-0AAC-473A-B4C2-47922518EFB8}</ProjectGuid>
+    <ProjectGuid>{F88670A7-6E91-444D-AB57-AD6F875E5465}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>MainInventoryForms</RootNamespace>
-    <AssemblyName>MainInventoryForms</AssemblyName>
+    <RootNamespace>Product</RootNamespace>
+    <AssemblyName>Product</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,31 +46,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmLogin.cs">
+    <Compile Include="frmProducts.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmLogin.Designer.cs">
-      <DependentUpon>frmLogin.cs</DependentUpon>
+    <Compile Include="frmProducts.Designer.cs">
+      <DependentUpon>frmProducts.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMain.cs">
+    <Compile Include="ProductAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMain.Designer.cs">
-      <DependentUpon>frmMain.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmSettings.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmSettings.Designer.cs">
-      <DependentUpon>frmSettings.cs</DependentUpon>
+    <Compile Include="ProductAdd.Designer.cs">
+      <DependentUpon>ProductAdd.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmMain.resx">
-      <DependentUpon>frmMain.cs</DependentUpon>
+    <EmbeddedResource Include="frmProducts.resx">
+      <DependentUpon>frmProducts.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSettings.resx">
-      <DependentUpon>frmSettings.cs</DependentUpon>
+    <EmbeddedResource Include="ProductAdd.resx">
+      <DependentUpon>ProductAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -95,25 +89,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AdminForms\Admin.csproj">
-      <Project>{a7ed4b87-439e-43d0-8e03-a8c737059f66}</Project>
-      <Name>Admin</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Brand\Brand.csproj">
-      <Project>{242114c9-1c40-4155-bd8f-839338e2c620}</Project>
-      <Name>Brand</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CategoryForms\Category.csproj">
-      <Project>{ce313cfe-f96c-4aad-935f-b4e95725ac45}</Project>
-      <Name>Category</Name>
-    </ProjectReference>
     <ProjectReference Include="..\InventoryDataAccess\InventoryDataAccess.csproj">
-      <Project>{babca3eb-8f69-408c-8712-7b0d05c03413}</Project>
+      <Project>{BABCA3EB-8F69-408C-8712-7B0D05C03413}</Project>
       <Name>InventoryDataAccess</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Product\Product.csproj">
-      <Project>{f88670a7-6e91-444d-ab57-ad6f875e5465}</Project>
-      <Name>Product</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

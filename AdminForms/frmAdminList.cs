@@ -77,6 +77,8 @@ namespace AdminForms
 
         private void dataRowDouble_Click(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex < 0) return;
+
             var dataRow = dataGridViewAdmin.Rows[e.RowIndex];
             int.TryParse(dataRow.Cells["id"].Value.ToString(), out int id);
             if (id < 0)

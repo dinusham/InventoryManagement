@@ -69,9 +69,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminDataAccess.cs" />
+    <Compile Include="ProductDataAccess.cs" />
     <Compile Include="BrandDataAccess.cs" />
     <Compile Include="CategoryDataAccess.cs" />
     <Compile Include="DatabaseConnection.cs" />
+    <Compile Include="DataDTOs\ProductDTO.cs" />
     <Compile Include="DataDTOs\BrandDTO.cs" />
     <Compile Include="DataDTOs\CategoryDTO.cs" />
     <Compile Include="DataDTOs\AdminDTO.cs" />

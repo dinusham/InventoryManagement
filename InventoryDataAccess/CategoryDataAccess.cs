@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 
 namespace InventoryDataAccess
@@ -108,6 +109,24 @@ namespace InventoryDataAccess
                 
             }
             return -1;
+        }
+
+        public static IDictionary<int, string> GetCategoriesForProduct()
+        {
+            string query = "SELECT id, name FROM category";
+
+            DataTable categories = DatabaseConnection.ConnectWithServer(query);
+
+            if (categories != null && categories.Rows.Count > 0)
+            {
+                var keyValues = new Dictionary<int, string>();
+                foreach (DataRow row in categories.Rows)
+                {
+                    keyValues.Add(int.Parse(row["id"].ToString()), row["name"].ToString());
+                }
+                return keyValues;
+            }
+            return null;
         }
     }
 }

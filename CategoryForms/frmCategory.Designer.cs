@@ -42,7 +42,7 @@
             this.cateroryGridView.AllowUserToDeleteRows = false;
             this.cateroryGridView.AllowUserToResizeColumns = false;
             this.cateroryGridView.AllowUserToResizeRows = false;
-            this.cateroryGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(228)))), ((int)(((byte)(248)))));
+            this.cateroryGridView.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.cateroryGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -109,9 +109,9 @@
             // 
             // frmCategory
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(228)))), ((int)(((byte)(248)))));
             this.ClientSize = new System.Drawing.Size(905, 657);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);

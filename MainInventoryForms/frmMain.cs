@@ -4,6 +4,7 @@ using Brand;
 using InventoryDataAccess;
 using System;
 using System.Windows.Forms;
+using Product;
 
 namespace MainInventoryForms
 {
@@ -32,6 +33,7 @@ namespace MainInventoryForms
             panelCategory.Visible = false;
             panelSettings.Visible = false;
             panelBrand.Visible = false;
+            panelProduct.Visible = false;
 
             var frmAdminList = new frmAdminList();
             frmAdminList.TopLevel = false;
@@ -48,6 +50,7 @@ namespace MainInventoryForms
             panelUsers.Visible = false;
             panelCategory.Visible = false;
             panelBrand.Visible = false;
+            panelProduct.Visible = false;
 
             var frmSettings = new frmSettings(adminDto.Id, adminDto.UserName);
             frmSettings.TopLevel = false;
@@ -72,6 +75,8 @@ namespace MainInventoryForms
             panelUsers.Visible = false;
             panelSettings.Visible = false;
             panelBrand.Visible = false;
+            panelProduct.Visible = false;
+
             var frmCategory = new frmCategory(adminDto.Id);
             frmCategory.TopLevel = false;
             frmCategory.AutoScroll = true;
@@ -87,6 +92,7 @@ namespace MainInventoryForms
             panelCategory.Visible = false;
             panelUsers.Visible = false;
             panelSettings.Visible = false;
+            panelProduct.Visible = false;
 
             var frmBrand = new frmBrands(adminDto.Id);
             frmBrand.TopLevel = false;
@@ -95,6 +101,22 @@ namespace MainInventoryForms
             panelBrand.Controls.Add(frmBrand);
 
             frmBrand.Show();
+        }
+
+        private void productToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            panelProduct.Visible = true;
+            panelBrand.Visible = false;
+            panelCategory.Visible = false;
+            panelUsers.Visible = false;
+            panelSettings.Visible = false;
+            var frmProduct = new frmProducts(adminDto.Id);
+            frmProduct.TopLevel = false;
+            frmProduct.AutoScroll = true;
+            frmProduct.FormBorderStyle = FormBorderStyle.None;
+            panelProduct.Controls.Add(frmProduct);
+
+            frmProduct.Show();
         }
     }
 }

@@ -65,6 +65,8 @@ namespace CategoryForms
 
         private void dataRowDouble_Click(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex < 0) return;
+
             var dataRow = cateroryGridView.Rows[e.RowIndex];
             int.TryParse(dataRow.Cells["id"].Value.ToString(), out int id);
             if (id < 0)

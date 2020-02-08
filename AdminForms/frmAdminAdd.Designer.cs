@@ -151,9 +151,9 @@
             // 
             this.textBoxPsw.Location = new System.Drawing.Point(217, 280);
             this.textBoxPsw.Name = "textBoxPsw";
+            this.textBoxPsw.PasswordChar = '●';
             this.textBoxPsw.Size = new System.Drawing.Size(353, 23);
             this.textBoxPsw.TabIndex = 11;
-            this.textBoxPsw.PasswordChar = '●';
             // 
             // btnAdminadd
             // 
@@ -191,9 +191,9 @@
             // 
             this.textBoxPswRe.Location = new System.Drawing.Point(217, 325);
             this.textBoxPswRe.Name = "textBoxPswRe";
+            this.textBoxPswRe.PasswordChar = '●';
             this.textBoxPswRe.Size = new System.Drawing.Size(353, 23);
             this.textBoxPswRe.TabIndex = 15;
-            this.textBoxPswRe.PasswordChar = '●';
             // 
             // errorProvider
             // 
@@ -227,7 +227,7 @@
             this.MaximizeBox = false;
             this.Name = "frmAdminAdd";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmUserAdd";
+            this.Text = "Admin";
             this.Closed += new System.EventHandler(this.frmAdminAdd_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);

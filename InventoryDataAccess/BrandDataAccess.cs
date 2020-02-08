@@ -17,7 +17,7 @@ namespace InventoryDataAccess
 
         public static int AddBrand(BrandDTO brandDto)
         {
-            string query = "INSERT INTO brand (NAME, is_active, created_by) VALUES " +
+            string query = "INSERT INTO brand (name, is_active, created_by) VALUES " +
                 "( " +  "'" + brandDto.BrandName + "'," + brandDto.IsActive + "," + brandDto.CreatedBy + ")";
 
             try
@@ -36,7 +36,7 @@ namespace InventoryDataAccess
 
         public static int UpdateBrand(BrandDTO brandDto)
         {
-            string query = "UPDATE brand SET NAME = '" + brandDto.BrandName + "', is_active = " + brandDto.IsActive +
+            string query = "UPDATE brand SET name = '" + brandDto.BrandName + "', is_active = " + brandDto.IsActive +
                 ", updated_by = " + brandDto.UpdatedBy + ", updated_at = '" + DateTime.Now + "' WHERE id = " + brandDto.Id;
 
             try
