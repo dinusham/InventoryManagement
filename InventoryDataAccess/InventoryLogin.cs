@@ -6,7 +6,7 @@ namespace InventoryDataAccess
     {
         public static AdminDTO IsValidLogin(string useName, string password)
         {
-            string query = "SELECT id, user_role, is_active FROM admin WHERE user_name = '" + useName + "' AND password = '" + password  + "'";
+            string query = "SELECT id, user_role, is_active FROM admin WHERE user_name = '" + useName + "' AND password = SHA1('" + password + "')";
 
             DataTable usersTable = DatabaseConnection.ConnectWithServer(query);
             if (usersTable != null && usersTable.Rows.Count > 0)

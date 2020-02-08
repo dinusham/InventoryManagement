@@ -107,6 +107,7 @@
             this.txtCuPsw.Name = "txtCuPsw";
             this.txtCuPsw.Size = new System.Drawing.Size(313, 26);
             this.txtCuPsw.TabIndex = 8;
+            this.txtCuPsw.PasswordChar = '●';
             // 
             // txtNwPsw
             // 
@@ -121,6 +122,7 @@
             this.txtNwPsw2.Name = "txtNwPsw2";
             this.txtNwPsw2.Size = new System.Drawing.Size(313, 26);
             this.txtNwPsw2.TabIndex = 10;
+            this.txtNwPsw2.PasswordChar = '●';
             // 
             // btnAdd
             // 

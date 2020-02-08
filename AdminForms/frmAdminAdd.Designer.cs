@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.labelFName = new System.Windows.Forms.Label();
             this.labelLName = new System.Windows.Forms.Label();
             this.textBoxFName = new System.Windows.Forms.TextBox();
@@ -42,117 +43,122 @@
             this.textBoxPsw = new System.Windows.Forms.TextBox();
             this.btnAdminadd = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBoxPswRe = new System.Windows.Forms.TextBox();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // labelFName
             // 
             this.labelFName.AutoSize = true;
-            this.labelFName.Location = new System.Drawing.Point(41, 61);
+            this.labelFName.Location = new System.Drawing.Point(41, 50);
             this.labelFName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelFName.Name = "labelFName";
-            this.labelFName.Size = new System.Drawing.Size(92, 20);
+            this.labelFName.Size = new System.Drawing.Size(76, 17);
             this.labelFName.TabIndex = 0;
             this.labelFName.Text = "First Name";
             // 
             // labelLName
             // 
             this.labelLName.AutoSize = true;
-            this.labelLName.Location = new System.Drawing.Point(41, 106);
+            this.labelLName.Location = new System.Drawing.Point(41, 95);
             this.labelLName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelLName.Name = "labelLName";
-            this.labelLName.Size = new System.Drawing.Size(91, 20);
+            this.labelLName.Size = new System.Drawing.Size(76, 17);
             this.labelLName.TabIndex = 1;
             this.labelLName.Text = "Last Name";
             // 
             // textBoxFName
             // 
-            this.textBoxFName.Location = new System.Drawing.Point(217, 55);
+            this.textBoxFName.Location = new System.Drawing.Point(217, 44);
             this.textBoxFName.MaxLength = 25;
             this.textBoxFName.Name = "textBoxFName";
-            this.textBoxFName.Size = new System.Drawing.Size(353, 26);
+            this.textBoxFName.Size = new System.Drawing.Size(353, 23);
             this.textBoxFName.TabIndex = 2;
             // 
             // labelEmail
             // 
             this.labelEmail.AutoSize = true;
-            this.labelEmail.Location = new System.Drawing.Point(41, 155);
+            this.labelEmail.Location = new System.Drawing.Point(41, 144);
             this.labelEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelEmail.Name = "labelEmail";
-            this.labelEmail.Size = new System.Drawing.Size(51, 20);
+            this.labelEmail.Size = new System.Drawing.Size(42, 17);
             this.labelEmail.TabIndex = 3;
             this.labelEmail.Text = "Email";
             // 
             // labelMobile
             // 
             this.labelMobile.AutoSize = true;
-            this.labelMobile.Location = new System.Drawing.Point(41, 203);
+            this.labelMobile.Location = new System.Drawing.Point(41, 192);
             this.labelMobile.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelMobile.Name = "labelMobile";
-            this.labelMobile.Size = new System.Drawing.Size(58, 20);
+            this.labelMobile.Size = new System.Drawing.Size(49, 17);
             this.labelMobile.TabIndex = 4;
             this.labelMobile.Text = "Mobile";
             // 
             // labelUName
             // 
             this.labelUName.AutoSize = true;
-            this.labelUName.Location = new System.Drawing.Point(41, 249);
+            this.labelUName.Location = new System.Drawing.Point(41, 238);
             this.labelUName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelUName.Name = "labelUName";
-            this.labelUName.Size = new System.Drawing.Size(94, 20);
+            this.labelUName.Size = new System.Drawing.Size(79, 17);
             this.labelUName.TabIndex = 5;
             this.labelUName.Text = "User Name";
             // 
             // labelPsw
             // 
             this.labelPsw.AutoSize = true;
-            this.labelPsw.Location = new System.Drawing.Point(41, 297);
+            this.labelPsw.Location = new System.Drawing.Point(41, 286);
             this.labelPsw.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelPsw.Name = "labelPsw";
-            this.labelPsw.Size = new System.Drawing.Size(83, 20);
+            this.labelPsw.Size = new System.Drawing.Size(69, 17);
             this.labelPsw.TabIndex = 6;
             this.labelPsw.Text = "Password";
             // 
             // textBoxLName
             // 
-            this.textBoxLName.Location = new System.Drawing.Point(217, 100);
+            this.textBoxLName.Location = new System.Drawing.Point(217, 89);
             this.textBoxLName.MaxLength = 30;
             this.textBoxLName.Name = "textBoxLName";
-            this.textBoxLName.Size = new System.Drawing.Size(353, 26);
+            this.textBoxLName.Size = new System.Drawing.Size(353, 23);
             this.textBoxLName.TabIndex = 7;
             // 
             // textBoxEmail
             // 
-            this.textBoxEmail.Location = new System.Drawing.Point(217, 149);
+            this.textBoxEmail.Location = new System.Drawing.Point(217, 138);
             this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(353, 26);
+            this.textBoxEmail.Size = new System.Drawing.Size(353, 23);
             this.textBoxEmail.TabIndex = 8;
             // 
             // textBoxMobile
             // 
-            this.textBoxMobile.Location = new System.Drawing.Point(217, 197);
+            this.textBoxMobile.Location = new System.Drawing.Point(217, 186);
             this.textBoxMobile.MaxLength = 10;
             this.textBoxMobile.Name = "textBoxMobile";
-            this.textBoxMobile.Size = new System.Drawing.Size(353, 26);
+            this.textBoxMobile.Size = new System.Drawing.Size(353, 23);
             this.textBoxMobile.TabIndex = 9;
             // 
             // textBoxUName
             // 
-            this.textBoxUName.Location = new System.Drawing.Point(217, 243);
+            this.textBoxUName.Location = new System.Drawing.Point(217, 232);
             this.textBoxUName.Name = "textBoxUName";
-            this.textBoxUName.Size = new System.Drawing.Size(353, 26);
+            this.textBoxUName.Size = new System.Drawing.Size(353, 23);
             this.textBoxUName.TabIndex = 10;
             // 
             // textBoxPsw
             // 
-            this.textBoxPsw.Location = new System.Drawing.Point(217, 291);
+            this.textBoxPsw.Location = new System.Drawing.Point(217, 280);
             this.textBoxPsw.Name = "textBoxPsw";
-            this.textBoxPsw.Size = new System.Drawing.Size(353, 26);
+            this.textBoxPsw.Size = new System.Drawing.Size(353, 23);
             this.textBoxPsw.TabIndex = 11;
+            this.textBoxPsw.PasswordChar = '●';
             // 
             // btnAdminadd
             // 
             this.btnAdminadd.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnAdminadd.Location = new System.Drawing.Point(480, 344);
+            this.btnAdminadd.Location = new System.Drawing.Point(480, 372);
             this.btnAdminadd.Name = "btnAdminadd";
             this.btnAdminadd.Size = new System.Drawing.Size(90, 35);
             this.btnAdminadd.TabIndex = 12;
@@ -163,7 +169,7 @@
             // btnClear
             // 
             this.btnClear.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnClear.Location = new System.Drawing.Point(375, 344);
+            this.btnClear.Location = new System.Drawing.Point(375, 372);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(90, 35);
             this.btnClear.TabIndex = 13;
@@ -171,12 +177,37 @@
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
-            // frmadminAdd
+            // label1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(41, 331);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(129, 17);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Re-enter Password";
+            // 
+            // textBoxPswRe
+            // 
+            this.textBoxPswRe.Location = new System.Drawing.Point(217, 325);
+            this.textBoxPswRe.Name = "textBoxPswRe";
+            this.textBoxPswRe.Size = new System.Drawing.Size(353, 23);
+            this.textBoxPswRe.TabIndex = 15;
+            this.textBoxPswRe.PasswordChar = '●';
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            this.errorProvider.DataMember = "";
+            // 
+            // frmAdminAdd
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(228)))), ((int)(((byte)(248)))));
-            this.ClientSize = new System.Drawing.Size(636, 404);
+            this.ClientSize = new System.Drawing.Size(636, 428);
+            this.Controls.Add(this.textBoxPswRe);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnAdminadd);
             this.Controls.Add(this.textBoxPsw);
@@ -194,10 +225,11 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
-            this.Name = "frmUserAdd";
+            this.Name = "frmAdminAdd";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmUserAdd";
             this.Closed += new System.EventHandler(this.frmAdminAdd_FormClosing);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -219,5 +251,8 @@
         private System.Windows.Forms.TextBox textBoxPsw;
         private System.Windows.Forms.Button btnAdminadd;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBoxPswRe;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

@@ -42,10 +42,14 @@ namespace AdminForms
         {
             if (string.IsNullOrEmpty(textBoxFName.Text) || string.IsNullOrEmpty(textBoxLName.Text) ||
                 //string.IsNullOrEmpty(textBoxEmail.Text) || string.IsNullOrEmpty(textBoxMobile.Text) ||
-                string.IsNullOrEmpty(textBoxUName.Text) || string.IsNullOrEmpty(textBoxPsw.Text))
+                string.IsNullOrEmpty(textBoxUName.Text) || string.IsNullOrEmpty(textBoxPsw.Text) || string.IsNullOrEmpty(textBoxPswRe.Text))
             {
                 MessageBox.Show("Values cannot be null");
                 return;
+            }
+            else if (string.IsNullOrEmpty(textBoxPsw.Text) != string.IsNullOrEmpty(textBoxPswRe.Text))
+            {
+                errorProvider.SetError(textBoxPswRe, "Passwords not match");
             }
 
             int success = AddUpdateAdmin();
