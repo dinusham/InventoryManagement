@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             this.label1 = new System.Windows.Forms.Label();
             this.loginUserName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -50,7 +49,7 @@
             // loginUserName
             // 
             this.loginUserName.Location = new System.Drawing.Point(177, 70);
-            this.loginUserName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.loginUserName.Margin = new System.Windows.Forms.Padding(4);
             this.loginUserName.Name = "loginUserName";
             this.loginUserName.Size = new System.Drawing.Size(244, 22);
             this.loginUserName.TabIndex = 1;
@@ -68,7 +67,7 @@
             // loginPassword
             // 
             this.loginPassword.Location = new System.Drawing.Point(177, 123);
-            this.loginPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.loginPassword.Margin = new System.Windows.Forms.Padding(4);
             this.loginPassword.Name = "loginPassword";
             this.loginPassword.Size = new System.Drawing.Size(244, 22);
             this.loginPassword.TabIndex = 3;
@@ -77,7 +76,7 @@
             // loginBtn
             // 
             this.loginBtn.Location = new System.Drawing.Point(203, 192);
-            this.loginBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.loginBtn.Margin = new System.Windows.Forms.Padding(4);
             this.loginBtn.Name = "loginBtn";
             this.loginBtn.Size = new System.Drawing.Size(100, 28);
             this.loginBtn.TabIndex = 4;
@@ -88,7 +87,7 @@
             // loginCancelBtn
             // 
             this.loginCancelBtn.Location = new System.Drawing.Point(323, 192);
-            this.loginCancelBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.loginCancelBtn.Margin = new System.Windows.Forms.Padding(4);
             this.loginCancelBtn.Name = "loginCancelBtn";
             this.loginCancelBtn.Size = new System.Drawing.Size(100, 28);
             this.loginCancelBtn.TabIndex = 5;
@@ -107,7 +106,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.loginUserName);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -1,5 +1,6 @@
 ﻿using InventoryDataAccess;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
@@ -9,6 +10,8 @@ namespace Product
     public partial class frmProducts : Form
     {
         private int userId;
+        private IDictionary<int, string> keyValues;
+        private List<int> categoryIds = new List<int>();
 
         public frmProducts(int userId)
         {
@@ -24,6 +27,23 @@ namespace Product
                 this.productGridView.DataSource = dt;
                 FormatGrid(ref this.productGridView);
             }
+            if (cmbCategory.Items.Count < 1)
+                ViewCategories();
+        }
+
+        private void ViewCategories()
+        {
+            keyValues = CategoryDataAccess.GetCategoriesForProduct();
+            if (keyValues != null)
+            {
+                cmbCategory.Items.Add("All");
+                foreach (var item in keyValues)
+                {
+                    cmbCategory.Items.Add(item.Value);
+                    categoryIds.Add(item.Key);
+                }
+            }
+            cmbCategory.SelectedIndex = 0;
         }
 
         private void FormatGrid(ref DataGridView productGridView)
@@ -44,6 +64,9 @@ namespace Product
                         break;
                     case "Title":
                         productGridView.Columns[i].Width = 150;
+                        break;
+                    case "category_id":
+                        productGridView.Columns[i].Visible = false;
                         break;
                     default:
                         break;
@@ -97,6 +120,43 @@ namespace Product
         private void btnDelete_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnAdminSearch_Click(object sender, EventArgs e)
+        {
+            string searchTxt = txtSearch.Text;
+            if (string.IsNullOrEmpty(searchTxt))
+            {
+                frmProduct_Load(sender, e);
+            }
+            else if (searchTxt.Length < 3)
+            {
+                MessageBox.Show("Please enter minimum 3 characters");
+                txtSearch.Text = "";
+                return;
+            }
+
+            if (productGridView != null)
+            {
+                (productGridView.DataSource as DataTable).DefaultView.RowFilter =
+                    string.Format("Name LIKE '%{0}%' OR Title LIKE '%{0}%' OR Code LIKE '%{0}%'", searchTxt);
+            }
+            txtSearch.Text = "";
+        }
+
+        private void cmbCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbCategory.SelectedIndex == 0)
+            {
+                (productGridView.DataSource as DataTable).DefaultView.RowFilter =
+                string.Format("category_id > {0}", 0);
+            }
+            else
+            {
+                int categoryId = categoryIds[cmbCategory.SelectedIndex]-1;
+                (productGridView.DataSource as DataTable).DefaultView.RowFilter =
+                string.Format("category_id = {0}", categoryId);
+            }
         }
     }
 }

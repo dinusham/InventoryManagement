@@ -19,6 +19,7 @@ namespace AdminForms
         {
             this.frmAdminList = frmAdminList;
             InitializeComponent();
+            btnAdminadd.Name = "Update";
             ViewEditdata(adminId);
         }
 

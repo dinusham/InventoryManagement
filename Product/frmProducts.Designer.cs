@@ -35,6 +35,9 @@ namespace Product
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.btnAdminSearch = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.cmbCategory = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.productGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,13 +50,15 @@ namespace Product
             this.productGridView.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.productGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.productGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.productGridView.Location = new System.Drawing.Point(3, 2);
+            this.productGridView.Location = new System.Drawing.Point(3, 53);
+            this.productGridView.Margin = new System.Windows.Forms.Padding(4);
             this.productGridView.MultiSelect = false;
             this.productGridView.Name = "productGridView";
             this.productGridView.ReadOnly = true;
             this.productGridView.RowHeadersVisible = false;
+            this.productGridView.RowHeadersWidth = 51;
             this.productGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.productGridView.Size = new System.Drawing.Size(725, 656);
+            this.productGridView.Size = new System.Drawing.Size(967, 759);
             this.productGridView.TabIndex = 0;
             this.productGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataRowDouble_Click);
             // 
@@ -61,11 +66,11 @@ namespace Product
             // 
             this.btnAdd.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.btnAdd.Location = new System.Drawing.Point(769, 43);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAdd.Location = new System.Drawing.Point(1025, 53);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Padding = new System.Windows.Forms.Padding(1);
-            this.btnAdd.Size = new System.Drawing.Size(80, 29);
+            this.btnAdd.Size = new System.Drawing.Size(107, 36);
             this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "Add New";
             this.btnAdd.UseVisualStyleBackColor = false;
@@ -75,11 +80,11 @@ namespace Product
             // 
             this.btnEdit.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.btnEdit.Location = new System.Drawing.Point(769, 81);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEdit.Location = new System.Drawing.Point(1025, 100);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Padding = new System.Windows.Forms.Padding(1);
-            this.btnEdit.Size = new System.Drawing.Size(80, 29);
+            this.btnEdit.Size = new System.Drawing.Size(107, 36);
             this.btnEdit.TabIndex = 2;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = false;
@@ -89,26 +94,61 @@ namespace Product
             // 
             this.btnDelete.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.btnDelete.Location = new System.Drawing.Point(769, 120);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDelete.Location = new System.Drawing.Point(1025, 148);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Padding = new System.Windows.Forms.Padding(1);
-            this.btnDelete.Size = new System.Drawing.Size(80, 29);
+            this.btnDelete.Size = new System.Drawing.Size(107, 36);
             this.btnDelete.TabIndex = 3;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
+            // btnAdminSearch
+            // 
+            this.btnAdminSearch.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnAdminSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.btnAdminSearch.Location = new System.Drawing.Point(863, 11);
+            this.btnAdminSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAdminSearch.Name = "btnAdminSearch";
+            this.btnAdminSearch.Padding = new System.Windows.Forms.Padding(1);
+            this.btnAdminSearch.Size = new System.Drawing.Size(107, 36);
+            this.btnAdminSearch.TabIndex = 4;
+            this.btnAdminSearch.Text = "Search";
+            this.btnAdminSearch.UseVisualStyleBackColor = false;
+            this.btnAdminSearch.Click += new System.EventHandler(this.btnAdminSearch_Click);
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(628, 19);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(229, 22);
+            this.txtSearch.TabIndex = 5;
+            // 
+            // cmbCategory
+            // 
+            this.cmbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCategory.FormattingEnabled = true;
+            this.cmbCategory.Location = new System.Drawing.Point(348, 17);
+            this.cmbCategory.Name = "cmbCategory";
+            this.cmbCategory.Size = new System.Drawing.Size(254, 24);
+            this.cmbCategory.TabIndex = 6;
+            this.cmbCategory.SelectedIndexChanged += new System.EventHandler(this.cmbCategory_SelectedIndexChanged);
+            // 
             // frmProducts
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(228)))), ((int)(((byte)(248)))));
-            this.ClientSize = new System.Drawing.Size(884, 661);
+            this.ClientSize = new System.Drawing.Size(1179, 814);
+            this.Controls.Add(this.cmbCategory);
+            this.Controls.Add(this.txtSearch);
+            this.Controls.Add(this.btnAdminSearch);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.productGridView);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "frmProducts";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -116,6 +156,7 @@ namespace Product
             this.Load += new System.EventHandler(this.frmProduct_Load);
             ((System.ComponentModel.ISupportInitialize)(this.productGridView)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -125,5 +166,8 @@ namespace Product
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDelete;
+        private Button btnAdminSearch;
+        private TextBox txtSearch;
+        private ComboBox cmbCategory;
     }
 }

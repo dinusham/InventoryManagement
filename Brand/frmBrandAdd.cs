@@ -24,6 +24,7 @@ namespace Brand
             this.userId = userId;
             this.brandId = brandId;
             InitializeComponent();
+            btnAdd.Name = "Update";
             ViewEditData();
         }
 

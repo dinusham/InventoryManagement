@@ -113,7 +113,7 @@ namespace InventoryDataAccess
 
         public static IDictionary<int, string> GetCategoriesForProduct()
         {
-            string query = "SELECT id, name FROM category";
+            string query = "SELECT id, name FROM category ORDER By id";
 
             DataTable categories = DatabaseConnection.ConnectWithServer(query);
 

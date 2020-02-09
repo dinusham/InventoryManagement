@@ -7,8 +7,8 @@ namespace InventoryDataAccess
     {
         public static DataTable GetProducts()
         {
-            string query = "SELECT p.id, p.name As Name, p.title AS Title, IF(p.is_active = 1, 'Active', 'Inactive') AS Status, " +
-                "c.name AS Category FROM product p, category c WHERE p.category_id = c.id";
+            string query = "SELECT p.id, p.code AS Code, p.name As Name, p.title AS Title, IF(p.is_active = 1, 'Active', 'Inactive') AS Status, " +
+                "c.name AS Category, p.category_id FROM product p, category c WHERE p.category_id = c.id";
 
             DataTable productTable = DatabaseConnection.ConnectWithServer(query);
 
