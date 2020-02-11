@@ -34,11 +34,13 @@
             this.categoryTool = new System.Windows.Forms.ToolStripMenuItem();
             this.brandsTool = new System.Windows.Forms.ToolStripMenuItem();
             this.productToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.customersTool = new System.Windows.Forms.ToolStripMenuItem();
             this.panelUsers = new System.Windows.Forms.Panel();
             this.panelSettings = new System.Windows.Forms.Panel();
             this.panelCategory = new System.Windows.Forms.Panel();
             this.panelBrand = new System.Windows.Forms.Panel();
             this.panelProduct = new System.Windows.Forms.Panel();
+            this.panelCustomer = new System.Windows.Forms.Panel();
             this.menuNav.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,14 +57,15 @@
             this.settingsTool,
             this.categoryTool,
             this.brandsTool,
-            this.productToolStripMenuItem});
+            this.productToolStripMenuItem,
+            this.customersTool});
             this.menuNav.Location = new System.Drawing.Point(0, 0);
             this.menuNav.Margin = new System.Windows.Forms.Padding(1);
-            this.menuNav.MaximumSize = new System.Drawing.Size(117, 699);
-            this.menuNav.MinimumSize = new System.Drawing.Size(117, 699);
+            this.menuNav.MaximumSize = new System.Drawing.Size(156, 860);
+            this.menuNav.MinimumSize = new System.Drawing.Size(156, 860);
             this.menuNav.Name = "menuNav";
-            this.menuNav.Padding = new System.Windows.Forms.Padding(2);
-            this.menuNav.Size = new System.Drawing.Size(117, 699);
+            this.menuNav.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.menuNav.Size = new System.Drawing.Size(156, 860);
             this.menuNav.TabIndex = 0;
             this.menuNav.Text = "menuStrip";
             // 
@@ -73,7 +76,7 @@
             this.usersToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 0, 0, 3);
             this.usersToolStripMenuItem.Name = "usersToolStripMenuItem";
             this.usersToolStripMenuItem.Padding = new System.Windows.Forms.Padding(5, 7, 5, 7);
-            this.usersToolStripMenuItem.Size = new System.Drawing.Size(112, 37);
+            this.usersToolStripMenuItem.Size = new System.Drawing.Size(149, 41);
             this.usersToolStripMenuItem.Text = "Users";
             this.usersToolStripMenuItem.Click += new System.EventHandler(this.usersToolStripMenuItem_Click);
             // 
@@ -84,7 +87,7 @@
             this.settingsTool.Margin = new System.Windows.Forms.Padding(0, 0, 0, 3);
             this.settingsTool.Name = "settingsTool";
             this.settingsTool.Padding = new System.Windows.Forms.Padding(5, 7, 5, 7);
-            this.settingsTool.Size = new System.Drawing.Size(112, 37);
+            this.settingsTool.Size = new System.Drawing.Size(149, 41);
             this.settingsTool.Text = "Settings";
             this.settingsTool.Click += new System.EventHandler(this.settingsTool_Click);
             // 
@@ -95,7 +98,7 @@
             this.categoryTool.Margin = new System.Windows.Forms.Padding(0, 0, 0, 3);
             this.categoryTool.Name = "categoryTool";
             this.categoryTool.Padding = new System.Windows.Forms.Padding(5, 7, 5, 7);
-            this.categoryTool.Size = new System.Drawing.Size(112, 37);
+            this.categoryTool.Size = new System.Drawing.Size(149, 41);
             this.categoryTool.Text = "Category";
             this.categoryTool.Click += new System.EventHandler(this.categoryTool_Click);
             // 
@@ -106,7 +109,7 @@
             this.brandsTool.Margin = new System.Windows.Forms.Padding(0, 0, 0, 3);
             this.brandsTool.Name = "brandsTool";
             this.brandsTool.Padding = new System.Windows.Forms.Padding(5, 7, 5, 7);
-            this.brandsTool.Size = new System.Drawing.Size(112, 37);
+            this.brandsTool.Size = new System.Drawing.Size(149, 41);
             this.brandsTool.Text = "Brands";
             this.brandsTool.Click += new System.EventHandler(this.brandsTool_Click);
             // 
@@ -117,57 +120,77 @@
             this.productToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 0, 0, 3);
             this.productToolStripMenuItem.Name = "productToolStripMenuItem";
             this.productToolStripMenuItem.Padding = new System.Windows.Forms.Padding(5, 7, 5, 7);
-            this.productToolStripMenuItem.Size = new System.Drawing.Size(112, 37);
-            this.productToolStripMenuItem.Text = "Product";
+            this.productToolStripMenuItem.Size = new System.Drawing.Size(149, 41);
+            this.productToolStripMenuItem.Text = "Products";
             this.productToolStripMenuItem.Click += new System.EventHandler(this.productToolStripMenuItem_Click);
+            // 
+            // customersTool
+            // 
+            this.customersTool.BackColor = System.Drawing.Color.SkyBlue;
+            this.customersTool.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.customersTool.Margin = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.customersTool.Name = "customersTool";
+            this.customersTool.Padding = new System.Windows.Forms.Padding(5, 7, 5, 7);
+            this.customersTool.Size = new System.Drawing.Size(149, 41);
+            this.customersTool.Text = "Customers";
+            this.customersTool.Click += new System.EventHandler(this.customersTool_Click);
             // 
             // panelUsers
             // 
             this.panelUsers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(228)))), ((int)(((byte)(248)))));
-            this.panelUsers.Location = new System.Drawing.Point(120, 0);
-            this.panelUsers.Margin = new System.Windows.Forms.Padding(2);
+            this.panelUsers.Location = new System.Drawing.Point(160, 0);
+            this.panelUsers.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelUsers.Name = "panelUsers";
-            this.panelUsers.Padding = new System.Windows.Forms.Padding(8);
-            this.panelUsers.Size = new System.Drawing.Size(898, 699);
+            this.panelUsers.Padding = new System.Windows.Forms.Padding(11, 10, 11, 10);
+            this.panelUsers.Size = new System.Drawing.Size(1197, 860);
             this.panelUsers.TabIndex = 0;
             // 
             // panelSettings
             // 
-            this.panelSettings.Location = new System.Drawing.Point(120, 0);
-            this.panelSettings.Margin = new System.Windows.Forms.Padding(2);
+            this.panelSettings.Location = new System.Drawing.Point(160, 0);
+            this.panelSettings.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelSettings.Name = "panelSettings";
-            this.panelSettings.Size = new System.Drawing.Size(898, 699);
+            this.panelSettings.Size = new System.Drawing.Size(1197, 860);
             this.panelSettings.TabIndex = 0;
             // 
             // panelCategory
             // 
-            this.panelCategory.Location = new System.Drawing.Point(120, 0);
-            this.panelCategory.Margin = new System.Windows.Forms.Padding(2);
+            this.panelCategory.Location = new System.Drawing.Point(160, 0);
+            this.panelCategory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelCategory.Name = "panelCategory";
-            this.panelCategory.Size = new System.Drawing.Size(898, 699);
+            this.panelCategory.Size = new System.Drawing.Size(1197, 860);
             this.panelCategory.TabIndex = 0;
             // 
             // panelBrand
             // 
-            this.panelBrand.Location = new System.Drawing.Point(120, 0);
-            this.panelBrand.Margin = new System.Windows.Forms.Padding(2);
+            this.panelBrand.Location = new System.Drawing.Point(160, 0);
+            this.panelBrand.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelBrand.Name = "panelBrand";
-            this.panelBrand.Size = new System.Drawing.Size(898, 699);
+            this.panelBrand.Size = new System.Drawing.Size(1197, 860);
             this.panelBrand.TabIndex = 0;
             // 
             // panelProduct
             // 
-            this.panelProduct.Location = new System.Drawing.Point(120, 0);
+            this.panelProduct.Location = new System.Drawing.Point(160, 0);
+            this.panelProduct.Margin = new System.Windows.Forms.Padding(4);
             this.panelProduct.Name = "panelProduct";
-            this.panelProduct.Size = new System.Drawing.Size(898, 699);
+            this.panelProduct.Size = new System.Drawing.Size(1197, 860);
             this.panelProduct.TabIndex = 0;
+            // 
+            // panelCustomer
+            // 
+            this.panelCustomer.Location = new System.Drawing.Point(160, 0);
+            this.panelCustomer.Name = "panelCustomer";
+            this.panelCustomer.Size = new System.Drawing.Size(1197, 860);
+            this.panelCustomer.TabIndex = 0;
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(230)))), ((int)(((byte)(248)))));
-            this.ClientSize = new System.Drawing.Size(1019, 699);
+            this.ClientSize = new System.Drawing.Size(1359, 860);
+            this.Controls.Add(this.panelCustomer);
             this.Controls.Add(this.panelProduct);
             this.Controls.Add(this.panelBrand);
             this.Controls.Add(this.panelCategory);
@@ -175,7 +198,7 @@
             this.Controls.Add(this.panelUsers);
             this.Controls.Add(this.menuNav);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -200,5 +223,7 @@
         private System.Windows.Forms.Panel panelBrand;
         private System.Windows.Forms.ToolStripMenuItem productToolStripMenuItem;
         private System.Windows.Forms.Panel panelProduct;
+        private System.Windows.Forms.ToolStripMenuItem customersTool;
+        private System.Windows.Forms.Panel panelCustomer;
     }
 }

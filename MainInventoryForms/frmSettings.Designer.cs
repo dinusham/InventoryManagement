@@ -115,6 +115,7 @@
             this.txtNwPsw.Name = "txtNwPsw";
             this.txtNwPsw.Size = new System.Drawing.Size(313, 26);
             this.txtNwPsw.TabIndex = 9;
+            this.txtNwPsw.PasswordChar = '●';
             // 
             // txtNwPsw2
             // 

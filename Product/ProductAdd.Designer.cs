@@ -44,10 +44,10 @@
             // 
             this.btnAdd.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnAdd.Location = new System.Drawing.Point(336, 256);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAdd.Location = new System.Drawing.Point(448, 315);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(68, 28);
+            this.btnAdd.Size = new System.Drawing.Size(91, 34);
             this.btnAdd.TabIndex = 17;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
@@ -55,90 +55,100 @@
             // 
             // txtTitle
             // 
-            this.txtTitle.Location = new System.Drawing.Point(163, 161);
+            this.txtTitle.Location = new System.Drawing.Point(217, 198);
+            this.txtTitle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(241, 20);
+            this.txtTitle.Size = new System.Drawing.Size(320, 22);
             this.txtTitle.TabIndex = 16;
             // 
             // lbltitle
             // 
             this.lbltitle.AutoSize = true;
             this.lbltitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lbltitle.Location = new System.Drawing.Point(37, 164);
+            this.lbltitle.Location = new System.Drawing.Point(49, 202);
+            this.lbltitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbltitle.Name = "lbltitle";
-            this.lbltitle.Size = new System.Drawing.Size(35, 17);
+            this.lbltitle.Size = new System.Drawing.Size(41, 20);
             this.lbltitle.TabIndex = 15;
             this.lbltitle.Text = "Title";
             // 
             // txtCode
             // 
-            this.txtCode.Location = new System.Drawing.Point(163, 117);
+            this.txtCode.Location = new System.Drawing.Point(217, 144);
+            this.txtCode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCode.Name = "txtCode";
-            this.txtCode.Size = new System.Drawing.Size(241, 20);
+            this.txtCode.Size = new System.Drawing.Size(320, 22);
             this.txtCode.TabIndex = 14;
             // 
             // lblPCode
             // 
             this.lblPCode.AutoSize = true;
             this.lblPCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblPCode.Location = new System.Drawing.Point(37, 120);
+            this.lblPCode.Location = new System.Drawing.Point(49, 148);
+            this.lblPCode.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPCode.Name = "lblPCode";
-            this.lblPCode.Size = new System.Drawing.Size(41, 17);
+            this.lblPCode.Size = new System.Drawing.Size(48, 20);
             this.lblPCode.TabIndex = 13;
             this.lblPCode.Text = "Code";
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(163, 82);
+            this.txtName.Location = new System.Drawing.Point(217, 101);
+            this.txtName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(241, 20);
+            this.txtName.Size = new System.Drawing.Size(320, 22);
             this.txtName.TabIndex = 12;
             // 
             // lblPname
             // 
             this.lblPname.AutoSize = true;
             this.lblPname.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblPname.Location = new System.Drawing.Point(37, 82);
+            this.lblPname.Location = new System.Drawing.Point(49, 101);
+            this.lblPname.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPname.Name = "lblPname";
-            this.lblPname.Size = new System.Drawing.Size(45, 17);
+            this.lblPname.Size = new System.Drawing.Size(53, 20);
             this.lblPname.TabIndex = 11;
             this.lblPname.Text = "Name";
             // 
             // cmbCategory
             // 
-            this.cmbCategory.FormattingEnabled = true;
-            this.cmbCategory.Location = new System.Drawing.Point(163, 36);
-            this.cmbCategory.Name = "cmbCategory";
-            this.cmbCategory.Size = new System.Drawing.Size(241, 21);
-            this.cmbCategory.TabIndex = 10;
             this.cmbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCategory.FormattingEnabled = true;
+            this.cmbCategory.Location = new System.Drawing.Point(217, 44);
+            this.cmbCategory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbCategory.Name = "cmbCategory";
+            this.cmbCategory.Size = new System.Drawing.Size(320, 24);
+            this.cmbCategory.TabIndex = 10;
             // 
             // lblCategory
             // 
             this.lblCategory.AutoSize = true;
             this.lblCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblCategory.Location = new System.Drawing.Point(37, 40);
+            this.lblCategory.Location = new System.Drawing.Point(49, 49);
+            this.lblCategory.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCategory.Name = "lblCategory";
-            this.lblCategory.Size = new System.Drawing.Size(65, 17);
+            this.lblCategory.Size = new System.Drawing.Size(76, 20);
             this.lblCategory.TabIndex = 9;
             this.lblCategory.Text = "Category";
             // 
             // chkActive
             // 
             this.chkActive.AutoSize = true;
-            this.chkActive.Location = new System.Drawing.Point(163, 208);
+            this.chkActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.chkActive.Location = new System.Drawing.Point(217, 256);
+            this.chkActive.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.chkActive.Name = "chkActive";
-            this.chkActive.Size = new System.Drawing.Size(67, 17);
+            this.chkActive.Size = new System.Drawing.Size(95, 24);
             this.chkActive.TabIndex = 18;
             this.chkActive.Text = "Is Active";
             this.chkActive.UseVisualStyleBackColor = true;
             // 
             // frmProductAdd
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(228)))), ((int)(((byte)(248)))));
-            this.ClientSize = new System.Drawing.Size(452, 307);
+            this.ClientSize = new System.Drawing.Size(603, 378);
             this.Controls.Add(this.chkActive);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtTitle);
@@ -149,12 +159,13 @@
             this.Controls.Add(this.lblPname);
             this.Controls.Add(this.cmbCategory);
             this.Controls.Add(this.lblCategory);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "frmProductAdd";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ProductAdd";
-            this.Load += new System.EventHandler(this.frmProductAdd_Load);
             this.Closed += new System.EventHandler(this.frmProductAdd_FormClosing);
+            this.Load += new System.EventHandler(this.frmProductAdd_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
