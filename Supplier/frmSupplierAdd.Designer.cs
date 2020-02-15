@@ -41,6 +41,7 @@
             // chkActive
             // 
             this.chkActive.AutoSize = true;
+            this.chkActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.chkActive.Location = new System.Drawing.Point(149, 220);
             this.chkActive.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.chkActive.Name = "chkActive";
@@ -52,14 +53,15 @@
             // btnAdd
             // 
             this.btnAdd.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnAdd.Location = new System.Drawing.Point(428, 276);
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnAdd.Location = new System.Drawing.Point(414, 260);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnAdd.Size = new System.Drawing.Size(90, 35);
+            this.btnAdd.Size = new System.Drawing.Size(104, 35);
             this.btnAdd.TabIndex = 38;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // txtMobile
             // 
@@ -67,7 +69,7 @@
             this.txtMobile.Margin = new System.Windows.Forms.Padding(4);
             this.txtMobile.MaxLength = 10;
             this.txtMobile.Name = "txtMobile";
-            this.txtMobile.Size = new System.Drawing.Size(369, 26);
+            this.txtMobile.Size = new System.Drawing.Size(369, 22);
             this.txtMobile.TabIndex = 37;
             // 
             // txtEmail
@@ -75,15 +77,15 @@
             this.txtEmail.Location = new System.Drawing.Point(149, 101);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(369, 26);
+            this.txtEmail.Size = new System.Drawing.Size(369, 22);
             this.txtEmail.TabIndex = 36;
             // 
             // labelMobile
             // 
             this.labelMobile.AutoSize = true;
+            this.labelMobile.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.labelMobile.Location = new System.Drawing.Point(43, 167);
             this.labelMobile.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.labelMobile.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.labelMobile.Name = "labelMobile";
             this.labelMobile.Size = new System.Drawing.Size(58, 20);
             this.labelMobile.TabIndex = 35;
@@ -92,10 +94,10 @@
             // labelEmail
             // 
             this.labelEmail.AutoSize = true;
+            this.labelEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.labelEmail.Location = new System.Drawing.Point(43, 107);
             this.labelEmail.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.labelEmail.Name = "labelEmail";
-            this.labelEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.labelEmail.Size = new System.Drawing.Size(51, 20);
             this.labelEmail.TabIndex = 34;
             this.labelEmail.Text = "Email";
@@ -106,16 +108,16 @@
             this.txtName.Margin = new System.Windows.Forms.Padding(4);
             this.txtName.MaxLength = 25;
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(369, 26);
+            this.txtName.Size = new System.Drawing.Size(369, 22);
             this.txtName.TabIndex = 33;
             // 
             // labelName
             // 
             this.labelName.AutoSize = true;
+            this.labelName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.labelName.Location = new System.Drawing.Point(43, 48);
             this.labelName.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.labelName.Name = "labelName";
-            this.labelName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.labelName.Size = new System.Drawing.Size(53, 20);
             this.labelName.TabIndex = 32;
             this.labelName.Text = "Name";
@@ -125,7 +127,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(228)))), ((int)(((byte)(248)))));
-            this.ClientSize = new System.Drawing.Size(562, 333);
+            this.ClientSize = new System.Drawing.Size(562, 324);
             this.Controls.Add(this.chkActive);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtMobile);
@@ -139,6 +141,7 @@
             this.Name = "frmSupplierAdd";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmSupplierAdd";
+            this.Closed += new System.EventHandler(this.frmSupplierAdd_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

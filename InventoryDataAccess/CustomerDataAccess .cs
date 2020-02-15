@@ -82,9 +82,9 @@ namespace InventoryDataAccess
             }
         }
 
-        public static int DeleteCustomer(int brandId)
+        public static int DeleteCustomer(int customerId)
         {
-            string query = "Delete FROM customer WHERE id = " + brandId;
+            string query = "Delete FROM customer WHERE id = " + customerId;
             DataTable customerTable = DatabaseConnection.ConnectWithServer(query);
             if (customerTable != null)
             {

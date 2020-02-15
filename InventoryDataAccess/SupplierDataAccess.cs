@@ -15,10 +15,10 @@ namespace InventoryDataAccess
             return supplierTable;
         }
 
-        public static int AddSupplier(CustomerDTO customerDto)
+        public static int AddSupplier(SupplierDTO supplierDto)
         {
-            string query = "INSERT INTO customer (name, tel_mobile, email, is_active, created_by) VALUES " +
-                "( " +  "'" + customerDto.Name + "','" + customerDto.Mobile + "','" + customerDto.Email + "'," + customerDto.IsActive + "," + customerDto.CreatedBy + ")";
+            string query = "INSERT INTO supplier (name, tel_mobile, email, is_active, created_by) VALUES " +
+                "( " +  "'" + supplierDto.Name + "','" + supplierDto.Mobile + "','" + supplierDto.Email + "'," + supplierDto.IsActive + "," + supplierDto.CreatedBy + ")";
 
             try
             {
@@ -34,11 +34,11 @@ namespace InventoryDataAccess
             }
         }
 
-        public static int UpdateSupplier(CustomerDTO customerDto)
+        public static int UpdateSupplier(SupplierDTO supplierDto)
         {
-            string query = "UPDATE customer SET name = '" + customerDto.Name + "', tel_mobile = '" + customerDto.Mobile + 
-                "', email = '" + customerDto.Email + "', is_active = " + customerDto.IsActive +
-                ", updated_by = " + customerDto.UpdatedBy + ", updated_at = '" + DateTime.Now + "' WHERE id = " + customerDto.Id;
+            string query = "UPDATE supplier SET name = '" + supplierDto.Name + "', tel_mobile = '" + supplierDto.Mobile + 
+                "', email = '" + supplierDto.Email + "', is_active = " + supplierDto.IsActive +
+                ", updated_by = " + supplierDto.UpdatedBy + ", updated_at = '" + DateTime.Now + "' WHERE id = " + supplierDto.Id;
 
             try
             {
@@ -71,7 +71,7 @@ namespace InventoryDataAccess
                         Name = dataRow["name"].ToString(),
                         Mobile = dataRow["tel_mobile"].ToString(),
                         Email = dataRow["email"].ToString(),
-                        IsActive = (bool)dataRow["is_active"]
+                        IsActive = (dataRow["is_active"].ToString() == "1") ? true : false
                     };
                 }
                 return null;
@@ -82,9 +82,9 @@ namespace InventoryDataAccess
             }
         }
 
-        public static int DeleteSupplier(int brandId)
+        public static int DeleteSupplier(int supplierId)
         {
-            string query = "Delete FROM customer WHERE id = " + brandId;
+            string query = "Delete FROM supplier WHERE id = " + supplierId;
             DataTable supplierTable = DatabaseConnection.ConnectWithServer(query);
             if (supplierTable != null)
             {

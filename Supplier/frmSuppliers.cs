@@ -62,9 +62,35 @@ namespace Supplier
             frmSupplierAdd.ShowDialog();
         }
 
+        private void dataRowDouble_Click(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+
+            var dataRow = supplierDataGridView.Rows[e.RowIndex];
+            int.TryParse(dataRow.Cells["id"].Value.ToString(), out int id);
+            if (id < 0)
+                return;
+
+            var frmCustomerAdd = new frmSupplierAdd(this, userId, id);
+            frmCustomerAdd.ShowDialog();
+        }
+
         private void btnEdit_Click(object sender, System.EventArgs e)
         {
+            if (supplierDataGridView.SelectedRows.Count > 0)
+            {
+                DataGridViewRow dataRow = supplierDataGridView.SelectedRows[0];
+                int.TryParse(dataRow.Cells["id"].Value.ToString(), out int id);
+                if (id < 0)
+                    return;
 
+                var frmCustomerAdd = new frmSupplierAdd(this, userId, id);
+                frmCustomerAdd.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Please select a supplier to update");
+            }
         }
 
         private void btnDelete_Click(object sender, System.EventArgs e)

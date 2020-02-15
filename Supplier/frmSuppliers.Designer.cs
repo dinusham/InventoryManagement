@@ -55,6 +55,7 @@
             this.supplierDataGridView.RowTemplate.Height = 24;
             this.supplierDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.supplierDataGridView.Size = new System.Drawing.Size(967, 807);
+            this.supplierDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataRowDouble_Click);
             this.supplierDataGridView.TabIndex = 1;
             // 
             // btnDelete
