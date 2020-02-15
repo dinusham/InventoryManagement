@@ -35,12 +35,14 @@
             this.brandsTool = new System.Windows.Forms.ToolStripMenuItem();
             this.productToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customersTool = new System.Windows.Forms.ToolStripMenuItem();
+            this.suppliersTool = new System.Windows.Forms.ToolStripMenuItem();
             this.panelUsers = new System.Windows.Forms.Panel();
             this.panelSettings = new System.Windows.Forms.Panel();
             this.panelCategory = new System.Windows.Forms.Panel();
             this.panelBrand = new System.Windows.Forms.Panel();
             this.panelProduct = new System.Windows.Forms.Panel();
             this.panelCustomer = new System.Windows.Forms.Panel();
+            this.panelSupplier = new System.Windows.Forms.Panel();
             this.menuNav.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,7 +60,8 @@
             this.categoryTool,
             this.brandsTool,
             this.productToolStripMenuItem,
-            this.customersTool});
+            this.customersTool,
+            this.suppliersTool});
             this.menuNav.Location = new System.Drawing.Point(0, 0);
             this.menuNav.Margin = new System.Windows.Forms.Padding(1);
             this.menuNav.MaximumSize = new System.Drawing.Size(156, 860);
@@ -135,6 +138,17 @@
             this.customersTool.Text = "Customers";
             this.customersTool.Click += new System.EventHandler(this.customersTool_Click);
             // 
+            // suppliersTool
+            // 
+            this.suppliersTool.BackColor = System.Drawing.Color.SkyBlue;
+            this.suppliersTool.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.suppliersTool.Margin = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.suppliersTool.Name = "suppliersTool";
+            this.suppliersTool.Padding = new System.Windows.Forms.Padding(5, 7, 5, 7);
+            this.suppliersTool.Size = new System.Drawing.Size(149, 41);
+            this.suppliersTool.Text = "Suppliers";
+            this.suppliersTool.Click += new System.EventHandler(this.suppliersTool_Click);
+            // 
             // panelUsers
             // 
             this.panelUsers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(228)))), ((int)(((byte)(248)))));
@@ -184,12 +198,20 @@
             this.panelCustomer.Size = new System.Drawing.Size(1197, 860);
             this.panelCustomer.TabIndex = 0;
             // 
+            // panelSupplier
+            // 
+            this.panelSupplier.Location = new System.Drawing.Point(160, 0);
+            this.panelSupplier.Name = "panelSupplier";
+            this.panelSupplier.Size = new System.Drawing.Size(1197, 860);
+            this.panelSupplier.TabIndex = 0;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(230)))), ((int)(((byte)(248)))));
             this.ClientSize = new System.Drawing.Size(1359, 860);
+            this.Controls.Add(this.panelSupplier);
             this.Controls.Add(this.panelCustomer);
             this.Controls.Add(this.panelProduct);
             this.Controls.Add(this.panelBrand);
@@ -225,5 +247,7 @@
         private System.Windows.Forms.Panel panelProduct;
         private System.Windows.Forms.ToolStripMenuItem customersTool;
         private System.Windows.Forms.Panel panelCustomer;
+        private System.Windows.Forms.ToolStripMenuItem suppliersTool;
+        private System.Windows.Forms.Panel panelSupplier;
     }
 }

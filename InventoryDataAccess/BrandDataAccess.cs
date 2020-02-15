@@ -68,12 +68,12 @@ namespace InventoryDataAccess
                     {
                         Id = int.Parse(dataRow["id"].ToString()),
                         BrandName = dataRow["name"].ToString(),
-                        IsActive = (bool)dataRow["is_active"]
+                        IsActive = (dataRow["is_active"].ToString() == "1") ? true : false
                     };
                 }
                 return null;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return null;
             }

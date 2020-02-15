@@ -44,18 +44,9 @@
             this.cateroryGridView.AllowUserToResizeRows = false;
             this.cateroryGridView.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.cateroryGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(1);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.cateroryGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.cateroryGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.cateroryGridView.Location = new System.Drawing.Point(1, 3);
-            this.cateroryGridView.Margin = new System.Windows.Forms.Padding(2);
+            this.cateroryGridView.Location = new System.Drawing.Point(3, 2);
+            this.cateroryGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cateroryGridView.MultiSelect = false;
             this.cateroryGridView.Name = "cateroryGridView";
             this.cateroryGridView.ReadOnly = true;
@@ -64,18 +55,18 @@
             this.cateroryGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.cateroryGridView.RowTemplate.Height = 24;
             this.cateroryGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.cateroryGridView.Size = new System.Drawing.Size(733, 653);
-            this.cateroryGridView.TabIndex = 3;
+            this.cateroryGridView.Size = new System.Drawing.Size(725, 656);
+            this.cateroryGridView.TabIndex = 0;
             this.cateroryGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataRowDouble_Click);
             // 
             // btnAdd
             // 
             this.btnAdd.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.btnAdd.Location = new System.Drawing.Point(764, 37);
+            this.btnAdd.Location = new System.Drawing.Point(769, 43);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Padding = new System.Windows.Forms.Padding(1);
-            this.btnAdd.Size = new System.Drawing.Size(107, 36);
+            this.btnAdd.Size = new System.Drawing.Size(80, 29);
             this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "Add New";
             this.btnAdd.UseVisualStyleBackColor = false;
@@ -85,10 +76,10 @@
             // 
             this.btnEdit.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.btnEdit.Location = new System.Drawing.Point(764, 85);
+            this.btnEdit.Location = new System.Drawing.Point(769, 81);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Padding = new System.Windows.Forms.Padding(1);
-            this.btnEdit.Size = new System.Drawing.Size(107, 36);
+            this.btnEdit.Size = new System.Drawing.Size(80, 29);
             this.btnEdit.TabIndex = 2;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = false;
@@ -98,10 +89,10 @@
             // 
             this.btnDelete.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.btnDelete.Location = new System.Drawing.Point(764, 136);
+            this.btnDelete.Location = new System.Drawing.Point(769, 120);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Padding = new System.Windows.Forms.Padding(1);
-            this.btnDelete.Size = new System.Drawing.Size(107, 36);
+            this.btnDelete.Size = new System.Drawing.Size(80, 29);
             this.btnDelete.TabIndex = 3;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
@@ -112,12 +103,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(228)))), ((int)(((byte)(248)))));
-            this.ClientSize = new System.Drawing.Size(905, 657);
+            this.ClientSize = new System.Drawing.Size(884, 661);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.cateroryGridView);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.Name = "frmCategory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

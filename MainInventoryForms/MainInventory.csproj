@@ -122,6 +122,10 @@
       <Project>{f88670a7-6e91-444d-ab57-ad6f875e5465}</Project>
       <Name>Product</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Supplier\Supplier.csproj">
+      <Project>{371be112-ebd3-4151-9975-e9b8165235c7}</Project>
+      <Name>Supplier</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

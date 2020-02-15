@@ -8,7 +8,7 @@ namespace InventoryDataAccess
         public static DataTable GetAllUsers()
         {
             string query = "SELECT  id, concat(first_name, ' ' , last_name) as Name, tel_mobile AS Mobile, " +
-                "email AS Email, user_name AS UserName, password as Password, create_at AS CreatedDate FROM admin ORDER BY id";
+                "email AS Email, user_name AS UserName, password as Password, created_at AS CreatedDate FROM admin ORDER BY id";
 
             DataTable users = DatabaseConnection.ConnectWithServer(query);
 
@@ -20,7 +20,7 @@ namespace InventoryDataAccess
             DateTime dateTime = DateTime.Now.Date;
 
             string query = "INSERT INTO admin (first_name, last_name, tel_mobile, " +
-                "email, user_name, password, create_at) VALUES (" + "'" + userDto.FirstName + "','" + userDto.LastName + 
+                "email, user_name, password, created_at) VALUES (" + "'" + userDto.FirstName + "','" + userDto.LastName + 
                 "','" + userDto.Mobile + "','" + userDto.Email + "','" + userDto.UserName + "',SHA1('" + userDto.Password + 
                 "'),'" + dateTime + "')";
 

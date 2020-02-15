@@ -73,7 +73,7 @@ namespace InventoryDataAccess
                         ProductCode = dataRow["code"].ToString(),
                         ProductTitle = dataRow["title"].ToString(),
                         CategoryId = int.Parse(dataRow["category_id"].ToString()),
-                        IsActive = (bool)dataRow["is_active"]
+                        IsActive = (dataRow["is_active"].ToString() == "1") ? true : false
                     };
                 }
                 return null;

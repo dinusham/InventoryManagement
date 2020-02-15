@@ -30,7 +30,7 @@ namespace Product
             InitializeComponent();
 
             keyValues = CategoryDataAccess.GetCategoriesForProduct();
-            if (keyValues != null)
+            if (keyValues != null && cmbCategory.Items.Count < 1)
             {
                 foreach (var item in keyValues)
                 {
@@ -58,7 +58,7 @@ namespace Product
         private void frmProductAdd_Load(object sender, EventArgs e)
         {
             keyValues = CategoryDataAccess.GetCategoriesForProduct();
-            if (keyValues != null)
+            if (keyValues != null && cmbCategory.Items.Count < 1)
             {
                 foreach (var item in keyValues)
                 {

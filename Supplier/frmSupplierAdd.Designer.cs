@@ -1,6 +1,6 @@
-﻿namespace Customer
+﻿namespace Supplier
 {
-    partial class frmCustomerAdd
+    partial class frmSupplierAdd
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.chkActive = new System.Windows.Forms.CheckBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.txtMobile = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -35,96 +36,96 @@
             this.labelEmail = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.labelName = new System.Windows.Forms.Label();
-            this.chkActive = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
+            // 
+            // chkActive
+            // 
+            this.chkActive.AutoSize = true;
+            this.chkActive.Location = new System.Drawing.Point(149, 220);
+            this.chkActive.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.chkActive.Name = "chkActive";
+            this.chkActive.Size = new System.Drawing.Size(95, 24);
+            this.chkActive.TabIndex = 40;
+            this.chkActive.Text = "Is Active";
+            this.chkActive.UseVisualStyleBackColor = true;
             // 
             // btnAdd
             // 
             this.btnAdd.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnAdd.Location = new System.Drawing.Point(352, 242);
+            this.btnAdd.Location = new System.Drawing.Point(428, 276);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnAdd.Size = new System.Drawing.Size(90, 35);
-            this.btnAdd.TabIndex = 17;
+            this.btnAdd.TabIndex = 38;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdminadd_Click);
             // 
             // txtMobile
             // 
-            this.txtMobile.Location = new System.Drawing.Point(146, 136);
-            this.txtMobile.MaxLength = 10;
+            this.txtMobile.Location = new System.Drawing.Point(149, 161);
             this.txtMobile.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMobile.MaxLength = 10;
             this.txtMobile.Name = "txtMobile";
-            this.txtMobile.Size = new System.Drawing.Size(320, 22);
-            this.txtMobile.TabIndex = 25;
+            this.txtMobile.Size = new System.Drawing.Size(369, 26);
+            this.txtMobile.TabIndex = 37;
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(146, 88);
-            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Location = new System.Drawing.Point(149, 101);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
-            this.txtEmail.Size = new System.Drawing.Size(320, 22);
-            this.txtEmail.TabIndex = 24;
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(369, 26);
+            this.txtEmail.TabIndex = 36;
             // 
             // labelMobile
             // 
             this.labelMobile.AutoSize = true;
-            this.labelMobile.Location = new System.Drawing.Point(36, 142);
-            this.labelMobile.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelMobile.Name = "labelMobile";
-            this.labelMobile.Size = new System.Drawing.Size(41, 20);
+            this.labelMobile.Location = new System.Drawing.Point(43, 167);
+            this.labelMobile.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.labelMobile.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelMobile.TabIndex = 20;
+            this.labelMobile.Name = "labelMobile";
+            this.labelMobile.Size = new System.Drawing.Size(58, 20);
+            this.labelMobile.TabIndex = 35;
             this.labelMobile.Text = "Mobile";
             // 
             // labelEmail
             // 
             this.labelEmail.AutoSize = true;
-            this.labelEmail.Location = new System.Drawing.Point(36, 94);
-            this.labelEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelEmail.Location = new System.Drawing.Point(43, 107);
+            this.labelEmail.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.labelEmail.Name = "labelEmail";
-            this.labelEmail.Size = new System.Drawing.Size(41, 20);
             this.labelEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelEmail.TabIndex = 19;
+            this.labelEmail.Size = new System.Drawing.Size(51, 20);
+            this.labelEmail.TabIndex = 34;
             this.labelEmail.Text = "Email";
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(146, 41);
+            this.txtName.Location = new System.Drawing.Point(149, 43);
+            this.txtName.Margin = new System.Windows.Forms.Padding(4);
             this.txtName.MaxLength = 25;
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(320, 26);
-            this.txtName.TabIndex = 18;
+            this.txtName.Size = new System.Drawing.Size(369, 26);
+            this.txtName.TabIndex = 33;
             // 
             // labelName
             // 
             this.labelName.AutoSize = true;
-            this.labelName.Location = new System.Drawing.Point(36, 47);
-            this.labelName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelName.Location = new System.Drawing.Point(43, 48);
+            this.labelName.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(41, 20);
             this.labelName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelName.TabIndex = 16;
+            this.labelName.Size = new System.Drawing.Size(53, 20);
+            this.labelName.TabIndex = 32;
             this.labelName.Text = "Name";
             // 
-            // chkActive
-            // 
-            this.chkActive.AutoSize = true;
-            this.chkActive.Location = new System.Drawing.Point(146, 189);
-            this.chkActive.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.chkActive.Name = "chkActive";
-            this.chkActive.Size = new System.Drawing.Size(95, 24);
-            this.chkActive.TabIndex = 31;
-            this.chkActive.Text = "Is Active";
-            this.chkActive.UseVisualStyleBackColor = true;
-            // 
-            // frmCustomerAdd
+            // frmSupplierAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(228)))), ((int)(((byte)(248)))));
-            this.ClientSize = new System.Drawing.Size(521, 312);
+            this.ClientSize = new System.Drawing.Size(562, 333);
             this.Controls.Add(this.chkActive);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtMobile);
@@ -135,16 +136,17 @@
             this.Controls.Add(this.labelName);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
-            this.Name = "frmCustomerAdd";
+            this.Name = "frmSupplierAdd";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmCustomerAdd";
-            this.Closed += new System.EventHandler(this.frmCustomerAdd_FormClosing);
+            this.Text = "frmSupplierAdd";
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.CheckBox chkActive;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.TextBox txtMobile;
         private System.Windows.Forms.TextBox txtEmail;
@@ -152,6 +154,5 @@
         private System.Windows.Forms.Label labelEmail;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label labelName;
-        private System.Windows.Forms.CheckBox chkActive;
     }
 }

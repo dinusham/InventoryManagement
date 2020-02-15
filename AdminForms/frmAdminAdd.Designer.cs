@@ -55,6 +55,7 @@
             this.labelFName.Location = new System.Drawing.Point(41, 50);
             this.labelFName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelFName.Name = "labelFName";
+            this.labelFName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.labelFName.Size = new System.Drawing.Size(76, 17);
             this.labelFName.TabIndex = 0;
             this.labelFName.Text = "First Name";
@@ -65,6 +66,7 @@
             this.labelLName.Location = new System.Drawing.Point(41, 95);
             this.labelLName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelLName.Name = "labelLName";
+            this.labelLName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.labelLName.Size = new System.Drawing.Size(76, 17);
             this.labelLName.TabIndex = 1;
             this.labelLName.Text = "Last Name";
@@ -83,6 +85,7 @@
             this.labelEmail.Location = new System.Drawing.Point(41, 144);
             this.labelEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelEmail.Name = "labelEmail";
+            this.labelEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.labelEmail.Size = new System.Drawing.Size(42, 17);
             this.labelEmail.TabIndex = 3;
             this.labelEmail.Text = "Email";
@@ -93,6 +96,7 @@
             this.labelMobile.Location = new System.Drawing.Point(41, 192);
             this.labelMobile.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelMobile.Name = "labelMobile";
+            this.labelMobile.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.labelMobile.Size = new System.Drawing.Size(49, 17);
             this.labelMobile.TabIndex = 4;
             this.labelMobile.Text = "Mobile";
@@ -103,6 +107,7 @@
             this.labelUName.Location = new System.Drawing.Point(41, 238);
             this.labelUName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelUName.Name = "labelUName";
+            this.labelUName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.labelUName.Size = new System.Drawing.Size(79, 17);
             this.labelUName.TabIndex = 5;
             this.labelUName.Text = "User Name";
@@ -114,6 +119,7 @@
             this.labelPsw.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelPsw.Name = "labelPsw";
             this.labelPsw.Size = new System.Drawing.Size(69, 17);
+            this.labelPsw.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.labelPsw.TabIndex = 6;
             this.labelPsw.Text = "Password";
             // 
@@ -184,6 +190,7 @@
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(129, 17);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label1.TabIndex = 14;
             this.label1.Text = "Re-enter Password";
             // 
@@ -222,7 +229,6 @@
             this.Controls.Add(this.textBoxFName);
             this.Controls.Add(this.labelLName);
             this.Controls.Add(this.labelFName);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "frmAdminAdd";
