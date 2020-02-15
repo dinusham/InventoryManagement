@@ -41,7 +41,7 @@ namespace Brand
                     case "Status":
                         dataGridView.Columns[i].Width = 90;
                         break;
-                    case "Created":
+                    case "CreatedBy":
                         dataGridView.Columns[i].Width = 150;
                         break;
                     default:

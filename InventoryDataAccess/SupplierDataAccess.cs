@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 
 namespace InventoryDataAccess
@@ -91,6 +92,24 @@ namespace InventoryDataAccess
                 return 1;
             }
             return -1;
+        }
+
+        public static IDictionary<int, string> GetSuppliersForOrder()
+        {
+            string query = "SELECT id, name FROM supplier ORDER By id";
+
+            DataTable suppliers = DatabaseConnection.ConnectWithServer(query);
+
+            if (suppliers != null && suppliers.Rows.Count > 0)
+            {
+                var keyValues = new Dictionary<int, string>();
+                foreach (DataRow row in suppliers.Rows)
+                {
+                    keyValues.Add(int.Parse(row["id"].ToString()), row["name"].ToString());
+                }
+                return keyValues;
+            }
+            return null;
         }
     }
 }

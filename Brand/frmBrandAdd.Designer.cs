@@ -104,6 +104,7 @@ namespace Brand
             this.Controls.Add(this.chkActive);
             this.Controls.Add(this.txtBrand);
             this.Controls.Add(this.lblCategory);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "frmBrandAdd";

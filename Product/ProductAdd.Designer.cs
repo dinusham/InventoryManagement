@@ -44,7 +44,7 @@
             // 
             this.btnAdd.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnAdd.Location = new System.Drawing.Point(412, 292);
+            this.btnAdd.Location = new System.Drawing.Point(413, 283);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(90, 35);
@@ -120,7 +120,6 @@
             this.cmbCategory.Size = new System.Drawing.Size(320, 24);
             this.cmbCategory.TabIndex = 10;
             // 
-
             // lblCategory
             // 
             this.lblCategory.AutoSize = true;
@@ -160,6 +159,7 @@
             this.Controls.Add(this.lblPname);
             this.Controls.Add(this.cmbCategory);
             this.Controls.Add(this.lblCategory);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "frmProductAdd";

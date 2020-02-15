@@ -9,7 +9,7 @@ namespace InventoryDataAccess
         public static DataTable GetCategories()
         {
             string query = "SELECT  c.id, c.name AS Name, IF(c.is_active = 1, 'Active', 'Inactive') AS Status, " +
-                "CONCAT(a.first_name, ' ', a.last_name) AS Created  FROM category c, admin a WHERE c.created_by = a.id";
+                "CONCAT(a.first_name, ' ', a.last_name) AS CreatedBy  FROM category c, admin a WHERE c.created_by = a.id";
 
             DataTable categories = DatabaseConnection.ConnectWithServer(query);
 

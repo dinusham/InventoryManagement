@@ -136,6 +136,7 @@
             this.Controls.Add(this.labelEmail);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.labelName);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "frmSupplierAdd";

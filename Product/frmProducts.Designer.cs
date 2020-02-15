@@ -35,7 +35,7 @@ namespace Product
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.btnAdminSearch = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.cmbCategory = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.productGridView)).BeginInit();
@@ -104,19 +104,19 @@ namespace Product
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // btnAdminSearch
+            // btnSearch
             // 
-            this.btnAdminSearch.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnAdminSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.btnAdminSearch.Location = new System.Drawing.Point(863, 11);
-            this.btnAdminSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnAdminSearch.Name = "btnAdminSearch";
-            this.btnAdminSearch.Padding = new System.Windows.Forms.Padding(1);
-            this.btnAdminSearch.Size = new System.Drawing.Size(107, 36);
-            this.btnAdminSearch.TabIndex = 4;
-            this.btnAdminSearch.Text = "Search";
-            this.btnAdminSearch.UseVisualStyleBackColor = false;
-            this.btnAdminSearch.Click += new System.EventHandler(this.btnAdminSearch_Click);
+            this.btnSearch.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.btnSearch.Location = new System.Drawing.Point(863, 11);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Padding = new System.Windows.Forms.Padding(1);
+            this.btnSearch.Size = new System.Drawing.Size(107, 36);
+            this.btnSearch.TabIndex = 4;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnAdminSearch_Click);
             // 
             // txtSearch
             // 
@@ -143,7 +143,7 @@ namespace Product
             this.ClientSize = new System.Drawing.Size(1179, 814);
             this.Controls.Add(this.cmbCategory);
             this.Controls.Add(this.txtSearch);
-            this.Controls.Add(this.btnAdminSearch);
+            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAdd);
@@ -166,7 +166,7 @@ namespace Product
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDelete;
-        private Button btnAdminSearch;
+        private Button btnSearch;
         private TextBox txtSearch;
         private ComboBox cmbCategory;
     }

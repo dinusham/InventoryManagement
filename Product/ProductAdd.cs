@@ -39,10 +39,10 @@ namespace Product
                 }
             }
 
-            ViewEditData();
+            ViewProductInfo();
         }
 
-        private void ViewEditData()
+        private void ViewProductInfo()
         {
             product = ProductDataAccess.GetProductById(productId);
             if (product != null)

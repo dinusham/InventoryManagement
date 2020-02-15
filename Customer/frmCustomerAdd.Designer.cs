@@ -53,8 +53,8 @@
             // txtMobile
             // 
             this.txtMobile.Location = new System.Drawing.Point(146, 136);
-            this.txtMobile.MaxLength = 10;
             this.txtMobile.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMobile.MaxLength = 10;
             this.txtMobile.Name = "txtMobile";
             this.txtMobile.Size = new System.Drawing.Size(320, 22);
             this.txtMobile.TabIndex = 25;
@@ -62,30 +62,30 @@
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(146, 88);
-            this.txtEmail.Name = "txtEmail";
             this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
+            this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(320, 22);
             this.txtEmail.TabIndex = 24;
             // 
             // labelMobile
             // 
             this.labelMobile.AutoSize = true;
+            this.labelMobile.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.labelMobile.Location = new System.Drawing.Point(36, 142);
             this.labelMobile.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelMobile.Name = "labelMobile";
-            this.labelMobile.Size = new System.Drawing.Size(41, 20);
-            this.labelMobile.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.labelMobile.Size = new System.Drawing.Size(58, 20);
             this.labelMobile.TabIndex = 20;
             this.labelMobile.Text = "Mobile";
             // 
             // labelEmail
             // 
             this.labelEmail.AutoSize = true;
+            this.labelEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.labelEmail.Location = new System.Drawing.Point(36, 94);
             this.labelEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelEmail.Name = "labelEmail";
-            this.labelEmail.Size = new System.Drawing.Size(41, 20);
-            this.labelEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.labelEmail.Size = new System.Drawing.Size(51, 20);
             this.labelEmail.TabIndex = 19;
             this.labelEmail.Text = "Email";
             // 
@@ -94,17 +94,17 @@
             this.txtName.Location = new System.Drawing.Point(146, 41);
             this.txtName.MaxLength = 25;
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(320, 26);
+            this.txtName.Size = new System.Drawing.Size(320, 22);
             this.txtName.TabIndex = 18;
             // 
             // labelName
             // 
             this.labelName.AutoSize = true;
+            this.labelName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.labelName.Location = new System.Drawing.Point(36, 47);
             this.labelName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(41, 20);
-            this.labelName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.labelName.Size = new System.Drawing.Size(53, 20);
             this.labelName.TabIndex = 16;
             this.labelName.Text = "Name";
             // 
@@ -114,7 +114,7 @@
             this.chkActive.Location = new System.Drawing.Point(146, 189);
             this.chkActive.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkActive.Name = "chkActive";
-            this.chkActive.Size = new System.Drawing.Size(95, 24);
+            this.chkActive.Size = new System.Drawing.Size(82, 21);
             this.chkActive.TabIndex = 31;
             this.chkActive.Text = "Is Active";
             this.chkActive.UseVisualStyleBackColor = true;
@@ -133,6 +133,7 @@
             this.Controls.Add(this.labelEmail);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.labelName);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "frmCustomerAdd";

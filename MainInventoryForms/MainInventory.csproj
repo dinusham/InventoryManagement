@@ -83,6 +83,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -121,6 +122,10 @@
     <ProjectReference Include="..\Product\Product.csproj">
       <Project>{f88670a7-6e91-444d-ab57-ad6f875e5465}</Project>
       <Name>Product</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PurchaseOrder\PurchaseOrder.csproj">
+      <Project>{2c07002f-c0c2-42b1-8b67-00219f6dc2a4}</Project>
+      <Name>PurchaseOrder</Name>
     </ProjectReference>
     <ProjectReference Include="..\Supplier\Supplier.csproj">
       <Project>{371be112-ebd3-4151-9975-e9b8165235c7}</Project>

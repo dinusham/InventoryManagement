@@ -8,45 +8,47 @@ using Product;
 using Customer;
 using Supplier;
 using System.Drawing;
+using System.Collections.Generic;
+using PurchaseOrder;
 
 namespace MainInventoryForms
 {
     public partial class frmMain : Form
     {
         private AdminDTO adminDto;
+        private List<ToolStripMenuItem> menuItems;
+        private List<Panel> panels;
 
         public frmMain(AdminDTO adminDto)
         {
             this.adminDto = adminDto;
             InitializeComponent();
+
+            menuItems = new List<ToolStripMenuItem>()
+            {
+                dashboardTool, usersTool, brandsTool, categoryTool, settingsTool, productTool, customersTool,
+                suppliersTool, dashboardTool, purchaseOrderTool
+            };
+            panels = new List<Panel>()
+            {
+                panelUsers, panelBrand, panelCategory, panelSettings, panelProduct, panelCustomer,
+                panelSupplier, panelPurchaseOrder
+            };
+
             ManageComponents();
         }
 
         private void ManageComponents()
         {
             if (!adminDto.IsAdmin)
-                usersToolStripMenuItem.Visible = false;
+                usersTool.Visible = false;
             //else
             //    settingsTool.Visible = false;
         }
 
-        private void usersToolStripMenuItem_Click(object sender, EventArgs e)
+        private void usersTool_Click(object sender, EventArgs e)
         {
-            usersToolStripMenuItem.BackColor = Color.RoyalBlue;
-            brandsTool.BackColor = Color.SkyBlue;
-            categoryTool.BackColor = Color.SkyBlue;
-            settingsTool.BackColor = Color.SkyBlue;
-            productToolStripMenuItem.BackColor = Color.SkyBlue;
-            customersTool.BackColor = Color.SkyBlue;
-            suppliersTool.BackColor = Color.SkyBlue;
-
-            panelUsers.Visible = true;
-            panelCategory.Visible = false;
-            panelSettings.Visible = false;
-            panelBrand.Visible = false;
-            panelProduct.Visible = false;
-            panelCustomer.Visible = false;
-            panelSupplier.Visible = false;
+            ManagefrmView(usersTool, panelUsers);
 
             var frmAdminList = new frmAdminList();
             frmAdminList.TopLevel = false;
@@ -59,21 +61,7 @@ namespace MainInventoryForms
 
         private void settingsTool_Click(object sender, EventArgs e)
         {
-            usersToolStripMenuItem.BackColor = Color.SkyBlue;
-            brandsTool.BackColor = Color.SkyBlue;
-            categoryTool.BackColor = Color.SkyBlue;
-            settingsTool.BackColor = Color.RoyalBlue;
-            productToolStripMenuItem.BackColor = Color.SkyBlue;
-            customersTool.BackColor = Color.SkyBlue;
-            suppliersTool.BackColor = Color.SkyBlue;
-
-            panelSettings.Visible = true;
-            panelUsers.Visible = false;
-            panelCategory.Visible = false;
-            panelBrand.Visible = false;
-            panelProduct.Visible = false;
-            panelCustomer.Visible = false;
-            panelSupplier.Visible = false;
+            ManagefrmView(settingsTool, panelSettings);
 
             var frmSettings = new frmSettings(adminDto.Id, adminDto.UserName);
             frmSettings.TopLevel = false;
@@ -94,21 +82,7 @@ namespace MainInventoryForms
 
         private void categoryTool_Click(object sender, EventArgs e)
         {
-            usersToolStripMenuItem.BackColor = Color.SkyBlue;
-            brandsTool.BackColor = Color.SkyBlue;
-            categoryTool.BackColor = Color.RoyalBlue;
-            settingsTool.BackColor = Color.SkyBlue;
-            productToolStripMenuItem.BackColor = Color.SkyBlue;
-            customersTool.BackColor = Color.SkyBlue;
-            suppliersTool.BackColor = Color.SkyBlue;
-
-            panelCategory.Visible = true;
-            panelUsers.Visible = false;
-            panelSettings.Visible = false;
-            panelBrand.Visible = false;
-            panelProduct.Visible = false;
-            panelCustomer.Visible = false;
-            panelSupplier.Visible = false;
+            ManagefrmView(categoryTool, panelCategory);
 
             var frmCategory = new frmCategory(adminDto.Id);
             frmCategory.TopLevel = false;
@@ -121,21 +95,7 @@ namespace MainInventoryForms
 
         private void brandsTool_Click(object sender, EventArgs e)
         {
-            usersToolStripMenuItem.BackColor = Color.SkyBlue;
-            brandsTool.BackColor = Color.RoyalBlue;
-            categoryTool.BackColor = Color.SkyBlue;
-            settingsTool.BackColor = Color.SkyBlue;
-            productToolStripMenuItem.BackColor = Color.SkyBlue;
-            customersTool.BackColor = Color.SkyBlue;
-            suppliersTool.BackColor = Color.SkyBlue;
-
-            panelBrand.Visible = true;
-            panelCategory.Visible = false;
-            panelUsers.Visible = false;
-            panelSettings.Visible = false;
-            panelProduct.Visible = false;
-            panelCustomer.Visible = false;
-            panelSupplier.Visible = false;
+            ManagefrmView(brandsTool, panelBrand);
 
             var frmBrand = new frmBrands(adminDto.Id);
             frmBrand.TopLevel = false;
@@ -146,23 +106,9 @@ namespace MainInventoryForms
             frmBrand.Show();
         }
 
-        private void productToolStripMenuItem_Click(object sender, EventArgs e)
+        private void productTool_Click(object sender, EventArgs e)
         {
-            usersToolStripMenuItem.BackColor = Color.SkyBlue;
-            brandsTool.BackColor = Color.SkyBlue;
-            categoryTool.BackColor = Color.SkyBlue;
-            settingsTool.BackColor = Color.SkyBlue;
-            productToolStripMenuItem.BackColor = Color.RoyalBlue;
-            customersTool.BackColor = Color.SkyBlue;
-            suppliersTool.BackColor = Color.SkyBlue;
-
-            panelProduct.Visible = true;
-            panelBrand.Visible = false;
-            panelCategory.Visible = false;
-            panelUsers.Visible = false;
-            panelSettings.Visible = false;
-            panelCustomer.Visible = false;
-            panelSupplier.Visible = false;
+            ManagefrmView(productTool, panelProduct);
 
             var frmProduct = new frmProducts(adminDto.Id);
             frmProduct.TopLevel = false;
@@ -175,21 +121,7 @@ namespace MainInventoryForms
 
         private void customersTool_Click(object sender, EventArgs e)
         {
-            usersToolStripMenuItem.BackColor = Color.SkyBlue;
-            brandsTool.BackColor = Color.SkyBlue;
-            categoryTool.BackColor = Color.SkyBlue;
-            settingsTool.BackColor = Color.SkyBlue;
-            productToolStripMenuItem.BackColor = Color.SkyBlue;
-            customersTool.BackColor = Color.RoyalBlue;
-            suppliersTool.BackColor = Color.SkyBlue;
-
-            panelCustomer.Visible = true;
-            panelProduct.Visible = false;
-            panelBrand.Visible = false;
-            panelCategory.Visible = false;
-            panelUsers.Visible = false;
-            panelSettings.Visible = false;
-            panelSupplier.Visible = false;
+            ManagefrmView(customersTool, panelCustomer);
 
             var frmCustomers = new frmCustomers(adminDto.Id);
             frmCustomers.TopLevel = false;
@@ -202,21 +134,7 @@ namespace MainInventoryForms
 
         private void suppliersTool_Click(object sender, EventArgs e)
         {
-            usersToolStripMenuItem.BackColor = Color.SkyBlue;
-            brandsTool.BackColor = Color.SkyBlue;
-            categoryTool.BackColor = Color.SkyBlue;
-            settingsTool.BackColor = Color.SkyBlue;
-            productToolStripMenuItem.BackColor = Color.SkyBlue;
-            customersTool.BackColor = Color.SkyBlue;
-            suppliersTool.BackColor = Color.RoyalBlue;
-
-            panelSupplier.Visible = true;
-            panelCustomer.Visible = false;
-            panelProduct.Visible = false;
-            panelBrand.Visible = false;
-            panelCategory.Visible = false;
-            panelUsers.Visible = false;
-            panelSettings.Visible = false;
+            ManagefrmView(suppliersTool, panelSupplier);
 
             var frmSuppliers = new frmSuppliers(adminDto.Id);
             frmSuppliers.TopLevel = false;
@@ -225,6 +143,43 @@ namespace MainInventoryForms
             panelSupplier.Controls.Add(frmSuppliers);
 
             frmSuppliers.Show();
+        }
+
+        private void dashboardTool_Click(object sender, EventArgs e)
+        {
+            ManagefrmView(dashboardTool, null);
+        }
+
+        private void purchaseOrderTool_Click(object sender, EventArgs e)
+        {
+            ManagefrmView(purchaseOrderTool, panelPurchaseOrder);
+
+            var frmPurchaseOrder = new frmPurchaseOrders(adminDto.Id);
+            frmPurchaseOrder.TopLevel = false;
+            frmPurchaseOrder.AutoScroll = true;
+            frmPurchaseOrder.FormBorderStyle = FormBorderStyle.None;
+            panelPurchaseOrder.Controls.Add(frmPurchaseOrder);
+
+            frmPurchaseOrder.Show();
+        }
+
+        private void ManagefrmView(ToolStripMenuItem selectedMenuItem, Panel selectedPanel)
+        {
+            selectedMenuItem.BackColor = Color.RoyalBlue;
+
+            foreach (var menuItem in menuItems)
+            {
+                if (menuItem != selectedMenuItem)
+                    menuItem.BackColor = Color.FromArgb(10, 1, 67);
+            }
+
+            if (selectedPanel != null)
+                selectedPanel.Visible = true;
+            foreach (var panel in panels)
+            {
+                if (panel != selectedPanel)
+                    panel.Visible = false;
+            }
         }
     }
 }
