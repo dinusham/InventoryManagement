@@ -1,4 +1,5 @@
 ﻿using InventoryDataAccess;
+using PurchaseItem;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -52,14 +53,17 @@ namespace PurchaseOrder
                     case "id":
                         orderGridView.Columns[i].Visible = false;
                         break;
-                    case "Name":
-                        orderGridView.Columns[i].Width = 140;
+                    case "Price":
+                    case "Total":
+                    case "DiscountPrice":
+                        orderGridView.Columns[i].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                         break;
-                    case "Status":
-                        orderGridView.Columns[i].Width = 90;
+                    case "Discount":
+                        orderGridView.Columns[i].Width = 70;
+                        orderGridView.Columns[i].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                         break;
-                    case "Title":
-                        orderGridView.Columns[i].Width = 150;
+                    case "PayType":
+                        orderGridView.Columns[i].Width = 100;
                         break;
                     case "category_id":
                         orderGridView.Columns[i].Visible = false;
@@ -96,7 +100,7 @@ namespace PurchaseOrder
             }
             else
             {
-                MessageBox.Show("Please select a brand to update");
+                MessageBox.Show("Please select an order to update");
             }
         }
 
@@ -152,6 +156,49 @@ namespace PurchaseOrder
                 int statusId = cmbPaidStatus.SelectedIndex;
                 (orderGridView.DataSource as DataTable).DefaultView.RowFilter =
                 string.Format("PayType = '{0}'", ((PayType)statusId).ToString());
+            }
+        }
+
+        private void btnAddItems_Click(object sender, EventArgs e)
+        {
+            if (orderGridView.SelectedRows.Count > 0)
+            {
+                DataGridViewRow dataRow = orderGridView.SelectedRows[0];
+                int.TryParse(dataRow.Cells["id"].Value.ToString(), out int id);
+                if (id < 0)
+                    return;
+
+                var frmPurchaseItemAdd = new frmPurchaseItemAdd(this, userId, id);
+                frmPurchaseItemAdd.ShowDialog();
+            }
+            else
+                MessageBox.Show("Please select an order to add items");
+        }
+
+        private void btnViewItems_Click(object sender, EventArgs e)
+        {
+            if (orderGridView.SelectedRows.Count > 0)
+            {
+                DataGridViewRow dataRow = orderGridView.SelectedRows[0];
+                int.TryParse(dataRow.Cells["id"].Value.ToString(), out int id);
+                if (id < 0)
+                    return;
+
+                DataTable dt = PurchaseOrderItemDataAccess.GetOrderItems(id);
+                if (dt != null && dt.Rows.Count > 0)
+                {
+                    var frmPurchaseItems = new frmPurchaseItems(this, userId, id, dt);
+                    frmPurchaseItems.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Order doesn't have any item to view");
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select an order to view items");
             }
         }
     }

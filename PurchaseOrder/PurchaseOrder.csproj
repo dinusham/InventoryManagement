@@ -94,6 +94,10 @@
       <Project>{BABCA3EB-8F69-408C-8712-7B0D05C03413}</Project>
       <Name>InventoryDataAccess</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PurchaseItem\PurchaseItem.csproj">
+      <Project>{3CFB5A14-164D-4D49-867A-A4E078F2A8FA}</Project>
+      <Name>PurchaseItem</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

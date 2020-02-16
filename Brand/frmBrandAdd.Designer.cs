@@ -31,10 +31,9 @@ namespace Brand
         private void InitializeComponent()
         {
             this.btnAdd = new System.Windows.Forms.Button();
-            this.chkActive = new System.Windows.Forms.CheckBox();
             this.txtBrand = new System.Windows.Forms.TextBox();
             this.lblCategory = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.chkActive = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // btnAdd
@@ -49,18 +48,6 @@ namespace Brand
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // chkActive
-            // 
-            this.chkActive.AutoSize = true;
-            this.chkActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.chkActive.Location = new System.Drawing.Point(149, 122);
-            this.chkActive.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.chkActive.Name = "chkActive";
-            this.chkActive.Size = new System.Drawing.Size(95, 24);
-            this.chkActive.TabIndex = 2;
-            this.chkActive.Text = "Is Active";
-            this.chkActive.UseVisualStyleBackColor = true;
             // 
             // txtBrand
             // 
@@ -81,17 +68,17 @@ namespace Brand
             this.lblCategory.TabIndex = 4;
             this.lblCategory.Text = "Name";
             // 
-            // checkBox1
+            // chkActive
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.checkBox1.Location = new System.Drawing.Point(149, 122);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(95, 24);
-            this.checkBox1.TabIndex = 2;
-            this.checkBox1.Text = "Is Active";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chkActive.AutoSize = true;
+            this.chkActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.chkActive.Location = new System.Drawing.Point(149, 122);
+            this.chkActive.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.chkActive.Name = "chkActive";
+            this.chkActive.Size = new System.Drawing.Size(95, 24);
+            this.chkActive.TabIndex = 2;
+            this.chkActive.Text = "Is Active";
+            this.chkActive.UseVisualStyleBackColor = true;
             // 
             // frmBrandAdd
             // 
@@ -100,7 +87,6 @@ namespace Brand
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(228)))), ((int)(((byte)(248)))));
             this.ClientSize = new System.Drawing.Size(523, 251);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.chkActive);
             this.Controls.Add(this.txtBrand);
             this.Controls.Add(this.lblCategory);
@@ -120,9 +106,8 @@ namespace Brand
         #endregion
 
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.CheckBox chkActive;
         private System.Windows.Forms.TextBox txtBrand;
         private System.Windows.Forms.Label lblCategory;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox chkActive;
     }
 }

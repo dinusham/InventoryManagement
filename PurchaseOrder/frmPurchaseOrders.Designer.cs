@@ -35,6 +35,8 @@
             this.cmbPaidStatus = new System.Windows.Forms.ComboBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.btnAddItems = new System.Windows.Forms.Button();
+            this.btnViewItems = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.orderGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,7 +78,7 @@
             this.btnAdd.Padding = new System.Windows.Forms.Padding(1);
             this.btnAdd.Size = new System.Drawing.Size(107, 36);
             this.btnAdd.TabIndex = 4;
-            this.btnAdd.Text = "Add New";
+            this.btnAdd.Text = "Add Order";
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
@@ -132,12 +134,42 @@
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
+            // btnAddItems
+            // 
+            this.btnAddItems.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnAddItems.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.btnAddItems.Location = new System.Drawing.Point(1025, 214);
+            this.btnAddItems.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAddItems.Name = "btnAddItems";
+            this.btnAddItems.Padding = new System.Windows.Forms.Padding(1);
+            this.btnAddItems.Size = new System.Drawing.Size(107, 36);
+            this.btnAddItems.TabIndex = 12;
+            this.btnAddItems.Text = "Add Item";
+            this.btnAddItems.UseVisualStyleBackColor = false;
+            this.btnAddItems.Click += new System.EventHandler(this.btnAddItems_Click);
+            // 
+            // btnViewItems
+            // 
+            this.btnViewItems.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnViewItems.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.btnViewItems.Location = new System.Drawing.Point(1025, 262);
+            this.btnViewItems.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnViewItems.Name = "btnViewItems";
+            this.btnViewItems.Padding = new System.Windows.Forms.Padding(1);
+            this.btnViewItems.Size = new System.Drawing.Size(107, 36);
+            this.btnViewItems.TabIndex = 13;
+            this.btnViewItems.Text = "View Items";
+            this.btnViewItems.UseVisualStyleBackColor = false;
+            this.btnViewItems.Click += new System.EventHandler(this.btnViewItems_Click);
+            // 
             // frmPurchaseOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(228)))), ((int)(((byte)(248)))));
             this.ClientSize = new System.Drawing.Size(1179, 814);
+            this.Controls.Add(this.btnViewItems);
+            this.Controls.Add(this.btnAddItems);
             this.Controls.Add(this.cmbPaidStatus);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btnSearch);
@@ -165,5 +197,7 @@
         private System.Windows.Forms.ComboBox cmbPaidStatus;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Button btnAddItems;
+        private System.Windows.Forms.Button btnViewItems;
     }
 }

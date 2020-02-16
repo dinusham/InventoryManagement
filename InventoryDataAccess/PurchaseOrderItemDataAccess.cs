@@ -1,23 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 
 namespace InventoryDataAccess
 {
-    public class PurchaseOrderDataAccess
+    public class PurchaseOrderItemDataAccess
     {
-        public static DataTable GetOrders()
+        public static DataTable GetOrderItems(int orderId)
         {
-            string query = "SELECT id, discription AS Description, price AS Price, discount AS Discount, discount_price AS DiscountPrice, " +
-                "total AS Total, pay_type AS PayType, is_paid AS PaidStatus, paid_at AS PaidDate, stock_status AS Status, " +
-                "supplier AS Supplier, created AS CreatedBy, created_at AS CreatedDate FROM v_purchase_order ORDER By id DESC";
+            string query = "SELECT id, purchase_id, product AS Product, p_code AS ProductCode, brand AS Brand, " +
+                "qty AS Quantity, unit_price AS UnitPrice, total AS Total, created AS CreatedBy, " +
+                "created_at AS CreatedDate FROM v_purchase_has_item WHERE purchase_id = " + orderId;
 
-            DataTable orderTable = DatabaseConnection.ConnectWithServer(query);
+            DataTable orderItemTable = DatabaseConnection.ConnectWithServer(query);
 
-            return orderTable;
+            return orderItemTable;
         }
 
-        public static int AddOrder(PurchaseOrderDTO purchaseOrderDto)
+        public static int AddOrderItems(PurchaseOrderDTO purchaseOrderDto)
         {
             string query = "INSERT INTO purchase_order (supplier_id, discription, total_price, discount, date, pay_type, is_paid," +
                 "paid_at, status, created_by) VALUES " +
@@ -27,8 +26,8 @@ namespace InventoryDataAccess
 
             try
             {
-                DataTable orderTable = DatabaseConnection.ConnectWithServer(query);
-                if (orderTable == null)
+                DataTable orderItemTable = DatabaseConnection.ConnectWithServer(query);
+                if (orderItemTable == null)
                     return -1;
 
                 return 1;
@@ -39,7 +38,7 @@ namespace InventoryDataAccess
             }
         }
 
-        public static int UpdateOrder(PurchaseOrderDTO purchaseOrderDto)
+        public static int UpdateOrderItems(PurchaseOrderDTO purchaseOrderDto)
         {
             string query = "UPDATE purchase_order SET supplier_id = " + purchaseOrderDto.Supplier + "" + ", discription = '" + purchaseOrderDto.Description + "', total_price = " + 
                 purchaseOrderDto.Price + ", discount = " + purchaseOrderDto.Discount/100 + ", date = '" + purchaseOrderDto.OrderDate + "', pay_type = " + 
@@ -48,8 +47,8 @@ namespace InventoryDataAccess
 
             try
             {
-                DataTable orderTable = DatabaseConnection.ConnectWithServer(query);
-                if (orderTable == null)
+                DataTable orderItemTable = DatabaseConnection.ConnectWithServer(query);
+                if (orderItemTable == null)
                     return -1;
 
                 return 1;
@@ -60,17 +59,17 @@ namespace InventoryDataAccess
             }
         }
 
-        public static PurchaseOrderDTO GetOrderById(int orderId)
+        public static PurchaseOrderDTO GetOrderItemsById(int orderId)
         {
             string query = "SELECT id, discription, total_price, discount, Date, pay_type, is_paid, paid_at, status, " +
                 "supplier_id FROM purchase_order WHERE id = " + orderId;
 
             try
             {
-                DataTable orderTable = DatabaseConnection.ConnectWithServer(query);
-                if (orderTable != null && orderTable.Rows.Count > 0)
+                DataTable orderItemTable = DatabaseConnection.ConnectWithServer(query);
+                if (orderItemTable != null && orderItemTable.Rows.Count > 0)
                 {
-                    DataRow dataRow = orderTable.Rows[0];
+                    DataRow dataRow = orderItemTable.Rows[0];
 
                     return new PurchaseOrderDTO
                     {
@@ -94,11 +93,11 @@ namespace InventoryDataAccess
             }
         }
 
-        public static int DeleteOrder(int orderId)
+        public static int DeleteOrderItems(int orderId)
         {
             string query = "Delete FROM purchase_order WHERE id = " + orderId;
-            DataTable orderTable = DatabaseConnection.ConnectWithServer(query);
-            if (orderTable != null)
+            DataTable orderItemTable = DatabaseConnection.ConnectWithServer(query);
+            if (orderItemTable != null)
             {
                 return 1;
             }

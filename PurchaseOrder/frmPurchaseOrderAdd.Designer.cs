@@ -33,13 +33,13 @@ namespace PurchaseOrder
             this.chkPaid = new System.Windows.Forms.CheckBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.txtDiscount = new System.Windows.Forms.TextBox();
-            this.lbltitle = new System.Windows.Forms.Label();
+            this.lblDiscount = new System.Windows.Forms.Label();
             this.txtPrice = new System.Windows.Forms.TextBox();
-            this.lblPCode = new System.Windows.Forms.Label();
+            this.lblPrice = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.lblPname = new System.Windows.Forms.Label();
             this.cmbSupplier = new System.Windows.Forms.ComboBox();
-            this.lblCategory = new System.Windows.Forms.Label();
+            this.lblSupplier = new System.Windows.Forms.Label();
             this.lblType = new System.Windows.Forms.Label();
             this.radioBtnCash = new System.Windows.Forms.RadioButton();
             this.radioBtnOther = new System.Windows.Forms.RadioButton();
@@ -94,16 +94,16 @@ namespace PurchaseOrder
             this.txtDiscount.TabIndex = 26;
             this.txtDiscount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // lbltitle
+            // lblDiscount
             // 
-            this.lbltitle.AutoSize = true;
-            this.lbltitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lbltitle.Location = new System.Drawing.Point(43, 192);
-            this.lbltitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbltitle.Name = "lbltitle";
-            this.lbltitle.Size = new System.Drawing.Size(76, 20);
-            this.lbltitle.TabIndex = 25;
-            this.lbltitle.Text = "Discount";
+            this.lblDiscount.AutoSize = true;
+            this.lblDiscount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblDiscount.Location = new System.Drawing.Point(43, 192);
+            this.lblDiscount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDiscount.Name = "lblDiscount";
+            this.lblDiscount.Size = new System.Drawing.Size(76, 20);
+            this.lblDiscount.TabIndex = 25;
+            this.lblDiscount.Text = "Discount";
             // 
             // txtPrice
             // 
@@ -115,16 +115,16 @@ namespace PurchaseOrder
             this.txtPrice.Text = "0.00";
             this.txtPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // lblPCode
+            // lblPrice
             // 
-            this.lblPCode.AutoSize = true;
-            this.lblPCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblPCode.Location = new System.Drawing.Point(43, 140);
-            this.lblPCode.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblPCode.Name = "lblPCode";
-            this.lblPCode.Size = new System.Drawing.Size(48, 20);
-            this.lblPCode.TabIndex = 23;
-            this.lblPCode.Text = "Price";
+            this.lblPrice.AutoSize = true;
+            this.lblPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblPrice.Location = new System.Drawing.Point(43, 140);
+            this.lblPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPrice.Name = "lblPrice";
+            this.lblPrice.Size = new System.Drawing.Size(48, 20);
+            this.lblPrice.TabIndex = 23;
+            this.lblPrice.Text = "Price";
             // 
             // txtDescription
             // 
@@ -155,16 +155,16 @@ namespace PurchaseOrder
             this.cmbSupplier.Size = new System.Drawing.Size(345, 24);
             this.cmbSupplier.TabIndex = 20;
             // 
-            // lblCategory
+            // lblSupplier
             // 
-            this.lblCategory.AutoSize = true;
-            this.lblCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblCategory.Location = new System.Drawing.Point(43, 45);
-            this.lblCategory.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblCategory.Name = "lblCategory";
-            this.lblCategory.Size = new System.Drawing.Size(70, 20);
-            this.lblCategory.TabIndex = 19;
-            this.lblCategory.Text = "Supplier";
+            this.lblSupplier.AutoSize = true;
+            this.lblSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblSupplier.Location = new System.Drawing.Point(43, 45);
+            this.lblSupplier.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSupplier.Name = "lblSupplier";
+            this.lblSupplier.Size = new System.Drawing.Size(70, 20);
+            this.lblSupplier.TabIndex = 19;
+            this.lblSupplier.Text = "Supplier";
             // 
             // lblType
             // 
@@ -279,7 +279,6 @@ namespace PurchaseOrder
             this.dateOrder.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dateOrder.Size = new System.Drawing.Size(120, 26);
             this.dateOrder.TabIndex = 38;
-            this.dateOrder.Value = DateTime.Today;
             this.dateOrder.Value = new System.DateTime(2020, 2, 16, 0, 0, 0, 0);
             // 
             // datePaid
@@ -358,13 +357,13 @@ namespace PurchaseOrder
             this.Controls.Add(this.chkPaid);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtDiscount);
-            this.Controls.Add(this.lbltitle);
+            this.Controls.Add(this.lblDiscount);
             this.Controls.Add(this.txtPrice);
-            this.Controls.Add(this.lblPCode);
+            this.Controls.Add(this.lblPrice);
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.lblPname);
             this.Controls.Add(this.cmbSupplier);
-            this.Controls.Add(this.lblCategory);
+            this.Controls.Add(this.lblSupplier);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "frmPurchaseOrderAdd";
@@ -386,13 +385,13 @@ namespace PurchaseOrder
         private System.Windows.Forms.CheckBox chkPaid;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.TextBox txtDiscount;
-        private System.Windows.Forms.Label lbltitle;
+        private System.Windows.Forms.Label lblDiscount;
         private System.Windows.Forms.TextBox txtPrice;
-        private System.Windows.Forms.Label lblPCode;
+        private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.Label lblPname;
         private System.Windows.Forms.ComboBox cmbSupplier;
-        private System.Windows.Forms.Label lblCategory;
+        private System.Windows.Forms.Label lblSupplier;
         private System.Windows.Forms.Label lblType;
         private System.Windows.Forms.RadioButton radioBtnCash;
         private System.Windows.Forms.RadioButton radioBtnOther;

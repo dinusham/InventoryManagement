@@ -153,7 +153,7 @@ namespace Product
             }
             else
             {
-                int categoryId = categoryIds[cmbCategory.SelectedIndex]-1;
+                int categoryId = categoryIds[cmbCategory.SelectedIndex-1];
                 (productGridView.DataSource as DataTable).DefaultView.RowFilter =
                 string.Format("category_id = {0}", categoryId);
             }
