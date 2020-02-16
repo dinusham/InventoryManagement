@@ -42,13 +42,13 @@
             // 
             this.btnAdd.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnAdd.Location = new System.Drawing.Point(352, 242);
+            this.btnAdd.Location = new System.Drawing.Point(359, 243);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(90, 35);
+            this.btnAdd.Size = new System.Drawing.Size(107, 36);
             this.btnAdd.TabIndex = 17;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdminadd_Click);
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // txtMobile
             // 
@@ -111,10 +111,11 @@
             // chkActive
             // 
             this.chkActive.AutoSize = true;
+            this.chkActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.chkActive.Location = new System.Drawing.Point(146, 189);
             this.chkActive.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkActive.Name = "chkActive";
-            this.chkActive.Size = new System.Drawing.Size(82, 21);
+            this.chkActive.Size = new System.Drawing.Size(95, 24);
             this.chkActive.TabIndex = 31;
             this.chkActive.Text = "Is Active";
             this.chkActive.UseVisualStyleBackColor = true;
@@ -140,6 +141,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCustomerAdd";
             this.Closed += new System.EventHandler(this.frmCustomerAdd_FormClosing);
+            this.Load += new System.EventHandler(this.frmCustomerAdd_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

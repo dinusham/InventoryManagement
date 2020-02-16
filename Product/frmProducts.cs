@@ -56,20 +56,20 @@ namespace Product
                     case "id":
                         productGridView.Columns[i].Visible = false;
                         break;
-                    //case "Name":
-                    //    productGridView.Columns[i].Width = 140;
-                    //    break;
+                    case "Name":
+                        productGridView.Columns[i].Width = 140;
+                        break;
                     //case "Status":
                     //    productGridView.Columns[i].Width = 90;
                     //    break;
-                    //case "Title":
-                    //    productGridView.Columns[i].Width = 150;
-                    //    break;
-                    //case "category_id":
-                    //    productGridView.Columns[i].Visible = false;
-                    //    break;
-                    //default:
-                    //    break;
+                    case "Title":
+                        productGridView.Columns[i].Width = 150;
+                        break;
+                    case "category_id":
+                        productGridView.Columns[i].Visible = false;
+                        break;
+                    default:
+                        break;
                 }
             }
 

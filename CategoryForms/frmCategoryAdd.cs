@@ -85,5 +85,11 @@ namespace CategoryForms
             var parent = (frmCategory)frmCategory;
             parent.frmCategory_Load(sender, e);
         }
+
+        private void frmCategoryAdd_Load(object sender, EventArgs e)
+        {
+            if (userId > 0)
+                btnAdd.Text = "Update";
+        }
     }
 }

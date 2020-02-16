@@ -8,8 +8,11 @@ namespace AdminForms
 {
     public partial class frmAdminList : Form
     {
-        public frmAdminList()
+        private int userId;
+
+        public frmAdminList(int userId)
         {
+            this.userId = userId;
             InitializeComponent();
         }
 
@@ -71,7 +74,7 @@ namespace AdminForms
 
         private void btnAdminAdd_Click(object sender, EventArgs e)
         {
-            var frmUserAdd = new frmAdminAdd(this);
+            var frmUserAdd = new frmAdminAdd(this, userId);
             frmUserAdd.ShowDialog();
         }
 
@@ -84,7 +87,7 @@ namespace AdminForms
             if (id < 0)
                 return;
 
-            var frmUserAdd = new frmAdminAdd(this, id);
+            var frmUserAdd = new frmAdminAdd(this, userId, id);
             frmUserAdd.ShowDialog();
         }
 
@@ -97,7 +100,7 @@ namespace AdminForms
                 if (id < 0)
                     return;
 
-                var frmUserAdd = new frmAdminAdd(this, id);
+                var frmUserAdd = new frmAdminAdd(this, userId, id);
                 frmUserAdd.ShowDialog();
             }
             else

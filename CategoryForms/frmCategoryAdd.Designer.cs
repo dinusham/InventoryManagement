@@ -69,7 +69,7 @@
             // 
             this.btnAdd.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnAdd.Location = new System.Drawing.Point(376, 181);
+            this.btnAdd.Location = new System.Drawing.Point(374, 180);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(91, 34);
@@ -95,6 +95,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Category";
             this.Closed += new System.EventHandler(this.frmCategoryAdd_FormClosing);
+            this.Load += new System.EventHandler(this.frmCategoryAdd_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

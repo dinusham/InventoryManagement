@@ -164,9 +164,9 @@
             // btnAdminadd
             // 
             this.btnAdminadd.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnAdminadd.Location = new System.Drawing.Point(480, 372);
+            this.btnAdminadd.Location = new System.Drawing.Point(471, 372);
             this.btnAdminadd.Name = "btnAdminadd";
-            this.btnAdminadd.Size = new System.Drawing.Size(90, 35);
+            this.btnAdminadd.Size = new System.Drawing.Size(99, 35);
             this.btnAdminadd.TabIndex = 12;
             this.btnAdminadd.Text = "Add";
             this.btnAdminadd.UseVisualStyleBackColor = false;
@@ -175,9 +175,9 @@
             // btnClear
             // 
             this.btnClear.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnClear.Location = new System.Drawing.Point(375, 372);
+            this.btnClear.Location = new System.Drawing.Point(362, 372);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(90, 35);
+            this.btnClear.Size = new System.Drawing.Size(100, 35);
             this.btnClear.TabIndex = 13;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
@@ -236,6 +236,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin";
             this.Closed += new System.EventHandler(this.frmAdminAdd_FormClosing);
+            this.Load += new System.EventHandler(this.frmAdminAdd_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -1,5 +1,6 @@
 ﻿using InventoryDataAccess;
 using System;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace AdminForms
@@ -8,15 +9,18 @@ namespace AdminForms
     {
         private Form frmAdminList;
         private AdminDTO adminDto;
+        private int userId;
 
-        public frmAdminAdd(Form frmAdminList)
+        public frmAdminAdd(Form frmAdminList, int userId)
         {
+            this.userId = userId;
             this.frmAdminList = frmAdminList;
             InitializeComponent();
         }
 
-        public frmAdminAdd(Form frmAdminList, int adminId)
+        public frmAdminAdd(Form frmAdminList, int userId, int adminId)
         {
+            this.userId = userId;
             this.frmAdminList = frmAdminList;
             InitializeComponent();
             btnAdminadd.Name = "Update";
@@ -34,7 +38,6 @@ namespace AdminForms
                 textBoxEmail.Text = adminDto.Email;
                 textBoxMobile.Text = adminDto.Mobile;
                 textBoxUName.Text = adminDto.UserName;
-                textBoxPsw.Text = adminDto.Password;
             }
             return;
         }
@@ -47,6 +50,16 @@ namespace AdminForms
             {
                 MessageBox.Show("Values cannot be null");
                 return;
+            }
+            else if (!string.IsNullOrEmpty(textBoxEmail.Text))
+            {
+                Regex regex = new Regex(@"^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$");
+                bool isValid = regex.IsMatch(textBoxEmail.Text.Trim());
+                if(!isValid)
+                {
+                    MessageBox.Show("Invalid email");
+                    return;
+                }
             }
             else if (string.IsNullOrEmpty(textBoxPsw.Text) != string.IsNullOrEmpty(textBoxPswRe.Text))
             {
@@ -70,13 +83,17 @@ namespace AdminForms
             if (adminDto != null && adminDto.Id > 0)
             {
                 GetInputValues(ref adminDto);
+                adminDto.UpdatedBy = userId;
                 return AdminDataAccess.UpdateAdmin(adminDto);
             }
             else
             {
-                var user = new AdminDTO();
-                GetInputValues(ref user);
-                return AdminDataAccess.AddAdmin(user);
+                var adminDto = new AdminDTO()
+                {
+                    CreatedBy = userId
+                };
+                GetInputValues(ref adminDto);
+                return AdminDataAccess.AddAdmin(adminDto);
             }
         }
 
@@ -103,12 +120,19 @@ namespace AdminForms
             textBoxMobile.Text = "";
             textBoxUName.Text = "";
             textBoxPsw.Text = "";
+            textBoxPswRe.Text = "";
         }
 
         private void frmAdminAdd_FormClosing(object sender, EventArgs e)
         {
             var parent = (frmAdminList)frmAdminList;
             parent.frmAdminList_Load(sender, e);
+        }
+
+        private void frmAdminAdd_Load(object sender, EventArgs e)
+        {
+            if (userId > 0)
+                btnAdminadd.Text = "Update";
         }
     }
 }

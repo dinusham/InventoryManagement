@@ -41,10 +41,10 @@ namespace Brand
             // 
             this.btnAdd.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnAdd.Location = new System.Drawing.Point(368, 174);
+            this.btnAdd.Location = new System.Drawing.Point(358, 174);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(91, 34);
+            this.btnAdd.Size = new System.Drawing.Size(101, 34);
             this.btnAdd.TabIndex = 7;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
@@ -85,7 +85,7 @@ namespace Brand
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.checkBox1.Location = new System.Drawing.Point(143, 122);
+            this.checkBox1.Location = new System.Drawing.Point(149, 122);
             this.checkBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(95, 24);
@@ -111,6 +111,7 @@ namespace Brand
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Brand";
             this.Closed += new System.EventHandler(this.frmBrandAdd_FormClosing);
+            this.Load += new System.EventHandler(this.frmBrandAdd_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

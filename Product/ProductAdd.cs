@@ -66,6 +66,8 @@ namespace Product
                     categoryIds.Add(item.Key);
                 }
             }
+            if (productId > 0)
+                btnAdd.Text = "Update";
         }
 
         private void btnAdd_Click(object sender, System.EventArgs e)

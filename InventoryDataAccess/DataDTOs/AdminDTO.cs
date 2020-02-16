@@ -11,5 +11,7 @@
         public string Password { get; set; }
         public bool IsAdmin { get; set; }
         public bool IsActive { get; set; }
+        public int CreatedBy { get; set; }
+        public int UpdatedBy { get; set; }
     }
 }

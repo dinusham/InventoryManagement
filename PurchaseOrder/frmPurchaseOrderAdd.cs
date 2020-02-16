@@ -123,6 +123,8 @@ namespace PurchaseOrder
                 datePaid.Format = DateTimePickerFormat.Custom;
                 datePaid.CustomFormat = " ";
             }
+            if (userId > 0)
+                btnAdd.Text = "Update";
         }
         
         private void datePaid_ValueChanged(object sender, EventArgs e)
@@ -166,6 +168,9 @@ namespace PurchaseOrder
                 datePaid.Format = DateTimePickerFormat.Custom;
                 datePaid.CustomFormat = " ";
                 dateOrder.Value = DateTime.Now;
+                chkPaid.Checked = false;
+                radioBtnAvailable.Enabled = true;
+                radioBtnCash.Enabled = true;
             }
             else
                 MessageBox.Show("Order didn't add or update");

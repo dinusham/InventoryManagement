@@ -24,8 +24,13 @@ namespace Brand
             this.userId = userId;
             this.brandId = brandId;
             InitializeComponent();
-            btnAdd.Name = "Update";
             ViewEditData();
+        }
+
+        private void frmBrandAdd_Load(object sender, EventArgs e)
+        {
+            if (brandId > 0)
+                btnAdd.Text = "Update";
         }
 
         private void ViewEditData()

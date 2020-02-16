@@ -1,5 +1,6 @@
 ﻿using InventoryDataAccess;
 using System;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace Customer
@@ -47,13 +48,23 @@ namespace Customer
             chkActive.Checked = false;
         }
 
-        private void btnAdminadd_Click(object sender, System.EventArgs e)
+        private void btnAdd_Click(object sender, System.EventArgs e)
         {
             if (string.IsNullOrEmpty(txtName.Text) || string.IsNullOrEmpty(txtMobile.Text) ||
                 string.IsNullOrEmpty(txtEmail.Text))
             {
                 MessageBox.Show("Values cannot be null");
                 return;
+            }
+            else
+            {
+                Regex regex = new Regex(@"^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$");
+                bool isValid = regex.IsMatch(txtEmail.Text.Trim());
+                if (!isValid)
+                {
+                    MessageBox.Show("Invalid email");
+                    return;
+                }
             }
             int status = AddUpdateCustomer();
             if (status > 0)
@@ -101,6 +112,12 @@ namespace Customer
         {
             var parent = (frmCustomers)frmCustomer;
             parent.frmCustomers_Load(sender, e);
+        }
+
+        private void frmCustomerAdd_Load(object sender, EventArgs e)
+        {
+            if (customerId > 0)
+                btnAdd.Text = "Update";
         }
     }
 }

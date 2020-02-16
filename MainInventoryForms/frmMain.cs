@@ -50,7 +50,7 @@ namespace MainInventoryForms
         {
             ManagefrmView(usersTool, panelUsers);
 
-            var frmAdminList = new frmAdminList();
+            var frmAdminList = new frmAdminList(adminDto.Id);
             frmAdminList.TopLevel = false;
             frmAdminList.AutoScroll = true;
             frmAdminList.FormBorderStyle = FormBorderStyle.None;
