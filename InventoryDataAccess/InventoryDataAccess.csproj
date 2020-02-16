@@ -69,7 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminDataAccess.cs" />
-    <Compile Include="DataDTOs\PurchaseItemsDTO.cs" />
+    <Compile Include="DataDTOs\PurchaseItemDTO.cs" />
     <Compile Include="DataDTOs\PurchaseOrderDTO.cs" />
     <Compile Include="DataDTOs\SupplierDTO.cs" />
     <Compile Include="PurchaseOrderItemDataAccess.cs" />

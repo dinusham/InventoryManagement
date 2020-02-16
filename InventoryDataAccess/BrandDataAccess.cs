@@ -95,12 +95,12 @@ namespace InventoryDataAccess
         {
             string query = "SELECT id, name FROM brand WHERE is_active = " + true + " ORDER By id";
 
-            DataTable products = DatabaseConnection.ConnectWithServer(query);
+            DataTable brands = DatabaseConnection.ConnectWithServer(query);
 
-            if (products != null && products.Rows.Count > 0)
+            if (brands != null && brands.Rows.Count > 0)
             {
                 var keyValues = new Dictionary<int, string>();
-                foreach (DataRow row in products.Rows)
+                foreach (DataRow row in brands.Rows)
                 {
                     keyValues.Add(int.Parse(row["id"].ToString()), row["name"].ToString());
                 }

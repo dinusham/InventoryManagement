@@ -93,6 +93,7 @@ namespace PurchaseOrder
             this.txtDiscount.Size = new System.Drawing.Size(345, 22);
             this.txtDiscount.TabIndex = 26;
             this.txtDiscount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtDiscount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDiscount_KeyPress);
             // 
             // lblDiscount
             // 
@@ -114,6 +115,7 @@ namespace PurchaseOrder
             this.txtPrice.TabIndex = 24;
             this.txtPrice.Text = "0.00";
             this.txtPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrice_KeyPress);
             // 
             // lblPrice
             // 

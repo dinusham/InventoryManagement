@@ -61,6 +61,7 @@
             this.txtPrice.TabIndex = 49;
             this.txtPrice.Text = "0.00";
             this.txtPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrice_KeyPress);
             // 
             // lblPrice
             // 
@@ -80,6 +81,8 @@
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(345, 22);
             this.txtQuantity.TabIndex = 47;
+            this.txtQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuntity_KeyPress);
             // 
             // lblQut
             // 
@@ -154,6 +157,7 @@
             this.Name = "frmPurchaseItemAdd";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPurchaseItemAdd";
+            this.Closed += new System.EventHandler(this.frmPurchaseItemAdd_Closing);
             this.Load += new System.EventHandler(this.frmPurchaseItemAdd_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -217,7 +217,7 @@ namespace PurchaseOrder
                     StockStatus = stockStatus,
                     CreatedBy = userId
                 };
-            return PurchaseOrderDataAccess.AddOrder(purchaseOrder);
+                return PurchaseOrderDataAccess.AddOrder(purchaseOrder);
             }
         }
 
@@ -225,6 +225,22 @@ namespace PurchaseOrder
         {
             var parent = (frmPurchaseOrders)frmPurchaseOrder;
             parent.frmPurchaseOrders_Load(sender, e);
+        }
+
+        private void txtDiscount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

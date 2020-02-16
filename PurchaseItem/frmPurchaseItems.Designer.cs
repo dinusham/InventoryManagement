@@ -31,8 +31,8 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.orderGridView = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.orderGridView)).BeginInit();
+            this.purchaseItemGridView = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.purchaseItemGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // btnDelete
@@ -47,6 +47,7 @@
             this.btnDelete.TabIndex = 9;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEdit
             // 
@@ -60,6 +61,7 @@
             this.btnEdit.TabIndex = 8;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnAdd
             // 
@@ -73,26 +75,28 @@
             this.btnAdd.TabIndex = 7;
             this.btnAdd.Text = "Add New";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // orderGridView
+            // purchaseItemGridView
             // 
-            this.orderGridView.AllowUserToAddRows = false;
-            this.orderGridView.AllowUserToDeleteRows = false;
-            this.orderGridView.AllowUserToResizeColumns = false;
-            this.orderGridView.AllowUserToResizeRows = false;
-            this.orderGridView.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.orderGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.orderGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.orderGridView.Location = new System.Drawing.Point(4, 4);
-            this.orderGridView.Margin = new System.Windows.Forms.Padding(4);
-            this.orderGridView.MultiSelect = false;
-            this.orderGridView.Name = "orderGridView";
-            this.orderGridView.ReadOnly = true;
-            this.orderGridView.RowHeadersVisible = false;
-            this.orderGridView.RowHeadersWidth = 51;
-            this.orderGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.orderGridView.Size = new System.Drawing.Size(967, 805);
-            this.orderGridView.TabIndex = 10;
+            this.purchaseItemGridView.AllowUserToAddRows = false;
+            this.purchaseItemGridView.AllowUserToDeleteRows = false;
+            this.purchaseItemGridView.AllowUserToResizeColumns = false;
+            this.purchaseItemGridView.AllowUserToResizeRows = false;
+            this.purchaseItemGridView.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.purchaseItemGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.purchaseItemGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.purchaseItemGridView.Location = new System.Drawing.Point(4, 4);
+            this.purchaseItemGridView.Margin = new System.Windows.Forms.Padding(4);
+            this.purchaseItemGridView.MultiSelect = false;
+            this.purchaseItemGridView.Name = "purchaseItemGridView";
+            this.purchaseItemGridView.ReadOnly = true;
+            this.purchaseItemGridView.RowHeadersVisible = false;
+            this.purchaseItemGridView.RowHeadersWidth = 51;
+            this.purchaseItemGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.purchaseItemGridView.Size = new System.Drawing.Size(967, 805);
+            this.purchaseItemGridView.TabIndex = 10;
+            this.purchaseItemGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataRowDouble_Click);
             // 
             // frmPurchaseItems
             // 
@@ -100,7 +104,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(228)))), ((int)(((byte)(248)))));
             this.ClientSize = new System.Drawing.Size(1179, 814);
-            this.Controls.Add(this.orderGridView);
+            this.Controls.Add(this.purchaseItemGridView);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAdd);
@@ -110,7 +114,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PurchaseItems";
             this.Load += new System.EventHandler(this.frmPurchaseItems_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.orderGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.purchaseItemGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -120,6 +124,6 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.DataGridView orderGridView;
+        private System.Windows.Forms.DataGridView purchaseItemGridView;
     }
 }

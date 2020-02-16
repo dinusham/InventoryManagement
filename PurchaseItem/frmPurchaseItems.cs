@@ -22,10 +22,15 @@ namespace PurchaseItem
             InitializeComponent();
         }
 
-        private void frmPurchaseItems_Load(object sender, System.EventArgs e)
+        public void frmPurchaseItems_Load(object sender, System.EventArgs e)
         {
-            this.orderGridView.DataSource = orderItemTable;
-            FormatGrid(ref this.orderGridView);
+            if (orderItemTable == null || orderItemTable.Rows.Count < 0)
+            {
+                orderItemTable = PurchaseOrderItemDataAccess.GetOrderItems(orderId);
+            }
+            orderItemTable = PurchaseOrderItemDataAccess.GetOrderItems(orderId);
+            this.purchaseItemGridView.DataSource = orderItemTable;
+            FormatGrid(ref this.purchaseItemGridView);
         }
 
         private void FormatGrid(ref DataGridView orderGridView)
@@ -72,6 +77,48 @@ namespace PurchaseItem
                 if (row.Index % 2 == 0)
                     row.DefaultCellStyle.BackColor = Color.LightGray;
             }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            var frmPurchaseItemAdd = new frmPurchaseItemAdd(this, userId, orderId, true);
+            frmPurchaseItemAdd.ShowDialog();
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (purchaseItemGridView.SelectedRows.Count > 0)
+            {
+                DataGridViewRow dataRow = purchaseItemGridView.SelectedRows[0];
+                int.TryParse(dataRow.Cells["id"].Value.ToString(), out int id);
+                if (id < 0)
+                    return;
+
+                var frmPurchaseItemAdd = new frmPurchaseItemAdd(this, userId, orderId, id);
+                frmPurchaseItemAdd.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Please select an order to update");
+            }
+        }
+
+        private void dataRowDouble_Click(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+
+            var dataRow = purchaseItemGridView.Rows[e.RowIndex];
+            int.TryParse(dataRow.Cells["id"].Value.ToString(), out int id);
+            if (id < 0)
+                return;
+
+            var frmPurchaseItemAdd = new frmPurchaseItemAdd(this, userId, orderId, id);
+            frmPurchaseItemAdd.ShowDialog();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
