@@ -78,6 +78,13 @@ namespace MainInventoryForms
             //panelSettings.Visible = false;
             //panelMain.Visible = true;
             //label1.Visible = true;
+
+            GetDashboardData();
+        }
+
+        private void GetDashboardData()
+        {
+            var dd = InventoryLogin.GetDashboardSummaryInfo();
         }
 
         private void categoryTool_Click(object sender, EventArgs e)
