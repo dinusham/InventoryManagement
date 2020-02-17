@@ -64,7 +64,7 @@
             this.btnEdit.Padding = new System.Windows.Forms.Padding(1);
             this.btnEdit.Size = new System.Drawing.Size(107, 36);
             this.btnEdit.TabIndex = 5;
-            this.btnEdit.Text = "Edit";
+            this.btnEdit.Text = "Edit Order";
             this.btnEdit.UseVisualStyleBackColor = false;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 

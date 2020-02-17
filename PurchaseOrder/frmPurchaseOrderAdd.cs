@@ -123,7 +123,7 @@ namespace PurchaseOrder
                 datePaid.Format = DateTimePickerFormat.Custom;
                 datePaid.CustomFormat = " ";
             }
-            if (userId > 0)
+            if (orderId > 0)
                 btnAdd.Text = "Update";
         }
         

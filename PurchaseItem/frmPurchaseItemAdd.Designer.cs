@@ -156,7 +156,7 @@
             this.MaximizeBox = false;
             this.Name = "frmPurchaseItemAdd";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmPurchaseItemAdd";
+            this.Text = "PurchaseItemAdd";
             this.Closed += new System.EventHandler(this.frmPurchaseItemAdd_Closing);
             this.Load += new System.EventHandler(this.frmPurchaseItemAdd_Load);
             this.ResumeLayout(false);

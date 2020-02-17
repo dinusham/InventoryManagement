@@ -370,7 +370,7 @@ namespace PurchaseOrder
             this.MaximizeBox = false;
             this.Name = "frmPurchaseOrderAdd";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmPurchaseOrderAdd";
+            this.Text = "PurchaseOrderAdd";
             this.Closed += new System.EventHandler(this.frmPurchaseOrderAdd_FormClosing);
             this.Load += new System.EventHandler(this.frmPurchaseOrderAdd_Load);
             this.grpPayType.ResumeLayout(false);

@@ -83,7 +83,7 @@ namespace PurchaseItem
 
         private void frmPurchaseItemAdd_Load(object sender, EventArgs e)
         {
-            if (purchaseId > 0)
+            if (itemId > 0)
                 btnAdd.Text = "Update";
         }
 
