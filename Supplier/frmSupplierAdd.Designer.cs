@@ -141,7 +141,7 @@
             this.MaximizeBox = false;
             this.Name = "frmSupplierAdd";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmSupplierAdd";
+            this.Text = "SupplierAdd";
             this.Closed += new System.EventHandler(this.frmSupplierAdd_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
