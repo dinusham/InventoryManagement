@@ -10,6 +10,7 @@ namespace AdminForms
         private Form frmAdminList;
         private AdminDTO adminDto;
         private int userId;
+        private int adminId;
 
         public frmAdminAdd(Form frmAdminList, int userId)
         {
@@ -21,9 +22,9 @@ namespace AdminForms
         public frmAdminAdd(Form frmAdminList, int userId, int adminId)
         {
             this.userId = userId;
+            this.adminId = adminId;
             this.frmAdminList = frmAdminList;
             InitializeComponent();
-            btnAdminadd.Name = "Update";
             ViewEditdata(adminId);
         }
 
@@ -131,7 +132,7 @@ namespace AdminForms
 
         private void frmAdminAdd_Load(object sender, EventArgs e)
         {
-            if (userId > 0)
+            if (adminId > 0)
                 btnAdminadd.Text = "Update";
         }
     }

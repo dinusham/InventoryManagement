@@ -139,7 +139,7 @@
             this.MaximizeBox = false;
             this.Name = "frmCustomerAdd";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmCustomerAdd";
+            this.Text = "CustomerAdd";
             this.Closed += new System.EventHandler(this.frmCustomerAdd_FormClosing);
             this.Load += new System.EventHandler(this.frmCustomerAdd_Load);
             this.ResumeLayout(false);

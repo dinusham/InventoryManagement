@@ -88,7 +88,7 @@ namespace CategoryForms
 
         private void frmCategoryAdd_Load(object sender, EventArgs e)
         {
-            if (userId > 0)
+            if (categoryId > 0)
                 btnAdd.Text = "Update";
         }
     }

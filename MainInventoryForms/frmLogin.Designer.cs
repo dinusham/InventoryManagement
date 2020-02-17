@@ -111,7 +111,7 @@
             this.MaximizeBox = false;
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ABC Company (Pvt) Ltd Login";
+            this.Text = "XYZ Company (Pvt) Ltd Login";
             this.ResumeLayout(false);
             this.PerformLayout();
 

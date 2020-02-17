@@ -69,10 +69,10 @@
             // 
             this.btnAdd.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnAdd.Location = new System.Drawing.Point(374, 180);
+            this.btnAdd.Location = new System.Drawing.Point(364, 180);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(91, 34);
+            this.btnAdd.Size = new System.Drawing.Size(101, 34);
             this.btnAdd.TabIndex = 3;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
