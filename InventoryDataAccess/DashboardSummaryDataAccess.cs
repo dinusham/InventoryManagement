@@ -1,38 +1,39 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using static InventoryDataAccess.DashboardSummaryInfo;
 
 namespace InventoryDataAccess
 {
     public class DashboardSummaryDataAccess
     {
-        public static List<SummaryDTO> GetDashboardSummaryList()
+        public static List<DashboardSummaryDTO> GetDashboardSummaryList()
         {
-            var summatyDtos = new List<SummaryDTO>();
+            var summatyDtos = new List<DashboardSummaryDTO>();
 
-            string query = "SELECT IF(is_active = 1, 'Active', 'Inactive') AS is_active, COUNT(*) AS total FROM ";
+            string query = string.Empty;
             foreach (string item in Enum.GetNames(typeof(DashboardType)))
             {
                 switch (item)
                 {
                     case "Brand":
-                        query = "brand GROUP BY is_active";
+                        query = "SELECT IF(is_active = 1, 'Active', 'Inactive') AS is_active, COUNT(*) AS total FROM brand GROUP BY is_active";
                         summatyDtos.Add(GetSummaryCount(query, item));
                         break;
                     case "Category":
-                        query = "category GROUP BY is_active";
+                        query = "SELECT IF(is_active = 1, 'Active', 'Inactive') AS is_active, COUNT(*) AS total FROM category GROUP BY is_active";
                         summatyDtos.Add(GetSummaryCount(query, item));
                         break;
                     case "Customer":
-                        query = "customer GROUP BY is_active";
+                        query = "SELECT IF(is_active = 1, 'Active', 'Inactive') AS is_active, COUNT(*) AS total FROM customer GROUP BY is_active";
                         summatyDtos.Add(GetSummaryCount(query, item));
                         break;
                     case "Supplier":
-                        query = "supplier GROUP BY is_active";
+                        query = "SELECT IF(is_active = 1, 'Active', 'Inactive') AS is_active, COUNT(*) AS total FROM supplier GROUP BY is_active";
                         summatyDtos.Add(GetSummaryCount(query, item));
                         break;
                     case "Product":
-                        query = "product GROUP BY is_active";
+                        query = "SELECT IF(is_active = 1, 'Active', 'Inactive') AS is_active, COUNT(*) AS total FROM product GROUP BY is_active";
                         summatyDtos.Add(GetSummaryCount(query, item));
                         break;
                 }
@@ -40,7 +41,7 @@ namespace InventoryDataAccess
             return summatyDtos;
         }
 
-        private static SummaryDTO GetSummaryCount(string query, string itemType)
+        private static DashboardSummaryDTO GetSummaryCount(string query, string itemType)
         {
             DataTable summaryTable = DatabaseConnection.ConnectWithServer(query);
 
@@ -74,9 +75,7 @@ namespace InventoryDataAccess
                     }
                 }
 
-
-
-                return new SummaryDTO
+                return new DashboardSummaryDTO
                 {
                     Type = itemType,
                     ActiveCount = active,
@@ -86,21 +85,33 @@ namespace InventoryDataAccess
             return null;
         }
 
-    }
+        public static DataTable GetProductStockSummary()
+        {
+            string query = "SELECT * FROM v_product_stock";
 
-    public class SummaryDTO
-    {
-        public string Type { get; set; }
-        public int ActiveCount { get; set; }
-        public int InActiveCount { get; set; }
-    }
+            DataTable stocks = DatabaseConnection.ConnectWithServer(query);
 
-    public enum DashboardType
-    {
-        Brand,
-        Category,
-        Customer,
-        Supplier,
-        Product
+            return stocks;
+        }
+
+        public static PaymentsummaryDTO GetPaymentSummary()
+        {
+            string query = "SELECT FORMAT(SUM(vphi.unit_price), 2) AS monthly_pay, FORMAT(SUM(vshi.unit_price), 2) AS monthly_income " +
+                "FROM v_purchase_has_item vphi, v_sale_has_item vshi WHERE (vphi.created_at BETWEEN  DATE_FORMAT(NOW() ,'%Y-%m-01') " +
+                "AND NOW() ) AND (vshi.created_at BETWEEN  DATE_FORMAT(NOW() ,'%Y-%m-01') AND NOW() )";
+
+            DataTable paymentSummary = DatabaseConnection.ConnectWithServer(query);
+            if (paymentSummary != null && paymentSummary.Rows.Count > 0)
+            {
+                DataRow dataRow = paymentSummary.Rows[0];
+                return new PaymentsummaryDTO
+                {
+                    Pay = dataRow["monthly_pay"].ToString(),
+                    Income = dataRow["monthly_income"].ToString()
+                };
+            }
+            
+            return null;
+        }
     }
 }

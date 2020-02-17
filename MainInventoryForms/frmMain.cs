@@ -10,6 +10,8 @@ using Supplier;
 using System.Drawing;
 using System.Collections.Generic;
 using PurchaseOrder;
+using System.Linq;
+using System.Data;
 
 namespace MainInventoryForms
 {
@@ -79,12 +81,113 @@ namespace MainInventoryForms
             //panelMain.Visible = true;
             //label1.Visible = true;
 
-            GetDashboardData();
+            ViewTypeSummary();
+            ViewProductStockSummary();
+            ViewPaymentSummary();
         }
 
-        private void GetDashboardData()
+        private void ViewPaymentSummary()
         {
-            var dd = InventoryLogin.GetDashboardSummaryInfo();
+            var paymentSummaryDto = DashboardSummaryDataAccess.GetPaymentSummary();
+            if (paymentSummaryDto != null)
+            {
+                lblPay.Text = paymentSummaryDto.Pay;
+                lblIncome.Text = paymentSummaryDto.Income;
+            }
+        }
+
+        private void ViewProductStockSummary()
+        {
+            DataTable stockTable = DashboardSummaryDataAccess.GetProductStockSummary();
+            if (stockTable != null && stockTable.Rows.Count > 0)
+            {
+                this.stockSummaryGridView.DataSource = stockTable;
+                FormatGrid(ref this.stockSummaryGridView);
+            }
+            else
+            {
+                lblstockSummaryNull.Text = "Nothing to view";
+            }
+        }
+
+        private void FormatGrid(ref DataGridView dataGridView)
+        {
+            for (int i = 0; i < dataGridView.Columns.Count; i++)
+            {
+                string colunmName = dataGridView.Columns[i].Name;
+                switch (colunmName)
+                {
+                    case "product_id":
+                        dataGridView.Columns[i].Width = 82;
+                        dataGridView.Columns[i].HeaderText = "Product Id";
+                        dataGridView.Columns[i].SortMode = DataGridViewColumnSortMode.NotSortable;
+                        break;
+                    case "product":
+                        dataGridView.Columns[i].Width = 182;
+                        dataGridView.Columns[i].HeaderText = "Product";
+                        dataGridView.Columns[i].SortMode = DataGridViewColumnSortMode.NotSortable;
+                        break;
+                    case "purchase_item":
+                        dataGridView.Columns[i].Width = 80;
+                        dataGridView.Columns[i].HeaderText = "Purchase Item";
+                        dataGridView.Columns[i].SortMode = DataGridViewColumnSortMode.NotSortable;
+                        break;
+                    case "sale_item":
+                        dataGridView.Columns[i].HeaderText = "Sale Item";
+                        dataGridView.Columns[i].Width = 80;
+                        dataGridView.Columns[i].SortMode = DataGridViewColumnSortMode.NotSortable;
+                        break;
+                    case "available_item":
+                        dataGridView.Columns[i].HeaderText = "Available Item";
+                        dataGridView.Columns[i].Width = 80;
+                        dataGridView.Columns[i].SortMode = DataGridViewColumnSortMode.NotSortable;
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            foreach (DataGridViewRow row in dataGridView.Rows)
+            {
+                row.Height = 30;
+                if (row.Index % 2 == 0)
+                    row.DefaultCellStyle.BackColor = Color.LightGray;
+            }
+        }
+
+        private void ViewTypeSummary()
+        {
+            var summaryDtos = DashboardSummaryDataAccess.GetDashboardSummaryList();
+            if (summaryDtos != null && summaryDtos.Any())
+            {
+                foreach (var summaryDto in summaryDtos)
+                {
+                    string type = summaryDto.Type;
+                    switch (type)
+                    {
+                        case "Brand":
+                            lblBrandA.Text = summaryDto.ActiveCount.ToString();
+                            lblBrandInA.Text = summaryDto.InActiveCount.ToString();
+                            break;
+                        case "Category":
+                            lblCaA.Text = summaryDto.ActiveCount.ToString();
+                            lblCaInA.Text = summaryDto.InActiveCount.ToString();
+                            break;
+                        case "Customer":
+                            lblCuA.Text = summaryDto.ActiveCount.ToString();
+                            lblCuInA.Text = summaryDto.InActiveCount.ToString();
+                            break;
+                        case "Supplier":
+                            lblSA.Text = summaryDto.ActiveCount.ToString();
+                            lblSInA.Text = summaryDto.InActiveCount.ToString();
+                            break;
+                        case "Product":
+                            lblBrandA.Text = summaryDto.ActiveCount.ToString();
+                            lblBrandInA.Text = summaryDto.InActiveCount.ToString();
+                            break;
+                    }
+                }
+            }
         }
 
         private void categoryTool_Click(object sender, EventArgs e)

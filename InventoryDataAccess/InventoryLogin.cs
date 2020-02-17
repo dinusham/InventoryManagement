@@ -35,10 +35,5 @@ namespace InventoryDataAccess
             }
             return -1;
         }
-
-        public static DashboardSummaryDTO GetDashboardSummaryInfo()
-        {
-            return null;
-        }
     }
 }

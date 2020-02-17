@@ -32,6 +32,7 @@ namespace MainInventoryForms
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuNav = new System.Windows.Forms.MenuStrip();
             this.dashboardTool = new System.Windows.Forms.ToolStripMenuItem();
             this.usersTool = new System.Windows.Forms.ToolStripMenuItem();
@@ -68,11 +69,11 @@ namespace MainInventoryForms
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.label26 = new System.Windows.Forms.Label();
-            this.lblCInA = new System.Windows.Forms.Label();
+            this.lblCuInA = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.lblCA = new System.Windows.Forms.Label();
+            this.lblCuA = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -83,26 +84,34 @@ namespace MainInventoryForms
             this.lblSA = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.lblPInA = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.lblPA = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.lblstockSummaryNull = new System.Windows.Forms.Label();
+            this.stockSummaryGridView = new System.Windows.Forms.DataGridView();
+            this.label6 = new System.Windows.Forms.Label();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.lblIncome = new System.Windows.Forms.Label();
+            this.lblPay = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.menuNav.SuspendLayout();
-            this.panelUsers.SuspendLayout();
-            this.panelSettings.SuspendLayout();
-            this.panelCategory.SuspendLayout();
-            this.panelBrand.SuspendLayout();
-            this.panelProduct.SuspendLayout();
-            this.panelCustomer.SuspendLayout();
-            this.panelSupplier.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stockSummaryGridView)).BeginInit();
+            this.groupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuNav
@@ -253,19 +262,16 @@ namespace MainInventoryForms
             // panelUsers
             // 
             this.panelUsers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(228)))), ((int)(((byte)(248)))));
-            this.panelUsers.Controls.Add(this.panelSettings);
-            this.panelUsers.Location = new System.Drawing.Point(513, 452);
+            this.panelUsers.Location = new System.Drawing.Point(160, 0);
             this.panelUsers.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelUsers.Name = "panelUsers";
-            this.panelUsers.Padding = new System.Windows.Forms.Padding(11, 10, 11, 10);
             this.panelUsers.Size = new System.Drawing.Size(1197, 860);
             this.panelUsers.TabIndex = 0;
             // 
             // panelSettings
             // 
             this.panelSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(228)))), ((int)(((byte)(248)))));
-            this.panelSettings.Controls.Add(this.panelCategory);
-            this.panelSettings.Location = new System.Drawing.Point(14, 24);
+            this.panelSettings.Location = new System.Drawing.Point(160, 0);
             this.panelSettings.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelSettings.Name = "panelSettings";
             this.panelSettings.Size = new System.Drawing.Size(1197, 860);
@@ -274,8 +280,7 @@ namespace MainInventoryForms
             // panelCategory
             // 
             this.panelCategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(228)))), ((int)(((byte)(248)))));
-            this.panelCategory.Controls.Add(this.panelBrand);
-            this.panelCategory.Location = new System.Drawing.Point(19, 16);
+            this.panelCategory.Location = new System.Drawing.Point(160, 0);
             this.panelCategory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelCategory.Name = "panelCategory";
             this.panelCategory.Size = new System.Drawing.Size(1197, 860);
@@ -284,8 +289,7 @@ namespace MainInventoryForms
             // panelBrand
             // 
             this.panelBrand.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(228)))), ((int)(((byte)(248)))));
-            this.panelBrand.Controls.Add(this.panelProduct);
-            this.panelBrand.Location = new System.Drawing.Point(17, 19);
+            this.panelBrand.Location = new System.Drawing.Point(160, 0);
             this.panelBrand.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelBrand.Name = "panelBrand";
             this.panelBrand.Size = new System.Drawing.Size(1197, 860);
@@ -294,8 +298,7 @@ namespace MainInventoryForms
             // panelProduct
             // 
             this.panelProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(228)))), ((int)(((byte)(248)))));
-            this.panelProduct.Controls.Add(this.panelCustomer);
-            this.panelProduct.Location = new System.Drawing.Point(20, 4);
+            this.panelProduct.Location = new System.Drawing.Point(160, 0);
             this.panelProduct.Margin = new System.Windows.Forms.Padding(4);
             this.panelProduct.Name = "panelProduct";
             this.panelProduct.Size = new System.Drawing.Size(1197, 860);
@@ -304,8 +307,7 @@ namespace MainInventoryForms
             // panelCustomer
             // 
             this.panelCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(228)))), ((int)(((byte)(248)))));
-            this.panelCustomer.Controls.Add(this.panelSupplier);
-            this.panelCustomer.Location = new System.Drawing.Point(20, 12);
+            this.panelCustomer.Location = new System.Drawing.Point(160, 0);
             this.panelCustomer.Name = "panelCustomer";
             this.panelCustomer.Size = new System.Drawing.Size(1197, 860);
             this.panelCustomer.TabIndex = 0;
@@ -313,8 +315,7 @@ namespace MainInventoryForms
             // panelSupplier
             // 
             this.panelSupplier.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(228)))), ((int)(((byte)(248)))));
-            this.panelSupplier.Controls.Add(this.panelPurchaseOrder);
-            this.panelSupplier.Location = new System.Drawing.Point(15, 18);
+            this.panelSupplier.Location = new System.Drawing.Point(160, 0);
             this.panelSupplier.Name = "panelSupplier";
             this.panelSupplier.Size = new System.Drawing.Size(1197, 860);
             this.panelSupplier.TabIndex = 0;
@@ -322,7 +323,7 @@ namespace MainInventoryForms
             // panelPurchaseOrder
             // 
             this.panelPurchaseOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(228)))), ((int)(((byte)(248)))));
-            this.panelPurchaseOrder.Location = new System.Drawing.Point(18, 24);
+            this.panelPurchaseOrder.Location = new System.Drawing.Point(160, 0);
             this.panelPurchaseOrder.Name = "panelPurchaseOrder";
             this.panelPurchaseOrder.Size = new System.Drawing.Size(1197, 860);
             this.panelPurchaseOrder.TabIndex = 0;
@@ -444,9 +445,9 @@ namespace MainInventoryForms
             this.groupBox6.Controls.Add(this.label12);
             this.groupBox6.Controls.Add(this.label10);
             this.groupBox6.Controls.Add(this.lblCaA);
-            this.groupBox6.Controls.Add(this.label9);
             this.groupBox6.Controls.Add(this.label3);
             this.groupBox6.Controls.Add(this.label4);
+            this.groupBox6.Controls.Add(this.label9);
             this.groupBox6.Location = new System.Drawing.Point(408, 12);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(214, 213);
@@ -530,11 +531,11 @@ namespace MainInventoryForms
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.label26);
-            this.groupBox5.Controls.Add(this.lblCInA);
+            this.groupBox5.Controls.Add(this.lblCuInA);
             this.groupBox5.Controls.Add(this.label14);
             this.groupBox5.Controls.Add(this.label15);
             this.groupBox5.Controls.Add(this.label16);
-            this.groupBox5.Controls.Add(this.lblCA);
+            this.groupBox5.Controls.Add(this.lblCuA);
             this.groupBox5.Controls.Add(this.label27);
             this.groupBox5.Location = new System.Drawing.Point(650, 12);
             this.groupBox5.Name = "groupBox5";
@@ -553,17 +554,17 @@ namespace MainInventoryForms
             this.label26.TabIndex = 16;
             this.label26.Text = "Customer";
             // 
-            // lblCInA
+            // lblCuInA
             // 
-            this.lblCInA.AutoSize = true;
-            this.lblCInA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(154)))), ((int)(((byte)(225)))));
-            this.lblCInA.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold);
-            this.lblCInA.ForeColor = System.Drawing.Color.White;
-            this.lblCInA.Location = new System.Drawing.Point(15, 171);
-            this.lblCInA.Name = "lblCInA";
-            this.lblCInA.Size = new System.Drawing.Size(25, 26);
-            this.lblCInA.TabIndex = 13;
-            this.lblCInA.Text = "0";
+            this.lblCuInA.AutoSize = true;
+            this.lblCuInA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(154)))), ((int)(((byte)(225)))));
+            this.lblCuInA.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold);
+            this.lblCuInA.ForeColor = System.Drawing.Color.White;
+            this.lblCuInA.Location = new System.Drawing.Point(15, 171);
+            this.lblCuInA.Name = "lblCuInA";
+            this.lblCuInA.Size = new System.Drawing.Size(25, 26);
+            this.lblCuInA.TabIndex = 13;
+            this.lblCuInA.Text = "0";
             // 
             // label14
             // 
@@ -602,17 +603,17 @@ namespace MainInventoryForms
             this.label16.TabIndex = 3;
             this.label16.Text = "    ";
             // 
-            // lblCA
+            // lblCuA
             // 
-            this.lblCA.AutoSize = true;
-            this.lblCA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(154)))), ((int)(((byte)(225)))));
-            this.lblCA.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold);
-            this.lblCA.ForeColor = System.Drawing.Color.White;
-            this.lblCA.Location = new System.Drawing.Point(15, 88);
-            this.lblCA.Name = "lblCA";
-            this.lblCA.Size = new System.Drawing.Size(25, 26);
-            this.lblCA.TabIndex = 11;
-            this.lblCA.Text = "0";
+            this.lblCuA.AutoSize = true;
+            this.lblCuA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(154)))), ((int)(((byte)(225)))));
+            this.lblCuA.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold);
+            this.lblCuA.ForeColor = System.Drawing.Color.White;
+            this.lblCuA.Location = new System.Drawing.Point(15, 88);
+            this.lblCuA.Name = "lblCuA";
+            this.lblCuA.Size = new System.Drawing.Size(25, 26);
+            this.lblCuA.TabIndex = 11;
+            this.lblCuA.Text = "0";
             // 
             // label27
             // 
@@ -742,6 +743,17 @@ namespace MainInventoryForms
             this.groupBox3.TabIndex = 18;
             this.groupBox3.TabStop = false;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(1)))), ((int)(((byte)(67)))));
+            this.label5.Location = new System.Drawing.Point(6, 18);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(79, 25);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "Product";
+            // 
             // lblPInA
             // 
             this.lblPInA.AutoSize = true;
@@ -816,16 +828,166 @@ namespace MainInventoryForms
             this.label35.TabIndex = 0;
             this.label35.Text = "    ";
             // 
-            // label5
+            // groupBox4
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(1)))), ((int)(((byte)(67)))));
-            this.label5.Location = new System.Drawing.Point(6, 18);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(79, 25);
-            this.label5.TabIndex = 16;
-            this.label5.Text = "Product";
+            this.groupBox4.Controls.Add(this.lblstockSummaryNull);
+            this.groupBox4.Controls.Add(this.stockSummaryGridView);
+            this.groupBox4.Controls.Add(this.label6);
+            this.groupBox4.Location = new System.Drawing.Point(167, 245);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(697, 226);
+            this.groupBox4.TabIndex = 19;
+            this.groupBox4.TabStop = false;
+            // 
+            // lblstockSummaryNull
+            // 
+            this.lblstockSummaryNull.AutoSize = true;
+            this.lblstockSummaryNull.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(220)))), ((int)(((byte)(248)))));
+            this.lblstockSummaryNull.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblstockSummaryNull.Location = new System.Drawing.Point(279, 130);
+            this.lblstockSummaryNull.Name = "lblstockSummaryNull";
+            this.lblstockSummaryNull.Size = new System.Drawing.Size(0, 25);
+            this.lblstockSummaryNull.TabIndex = 18;
+            // 
+            // stockSummaryGridView
+            // 
+            this.stockSummaryGridView.AllowUserToAddRows = false;
+            this.stockSummaryGridView.AllowUserToDeleteRows = false;
+            this.stockSummaryGridView.AllowUserToResizeColumns = false;
+            this.stockSummaryGridView.AllowUserToResizeRows = false;
+            this.stockSummaryGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(220)))), ((int)(((byte)(248)))));
+            this.stockSummaryGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.stockSummaryGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.stockSummaryGridView.ColumnHeadersHeight = 32;
+            this.stockSummaryGridView.GridColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.stockSummaryGridView.Location = new System.Drawing.Point(11, 61);
+            this.stockSummaryGridView.MultiSelect = false;
+            this.stockSummaryGridView.Name = "stockSummaryGridView";
+            this.stockSummaryGridView.ReadOnly = true;
+            this.stockSummaryGridView.RowHeadersVisible = false;
+            this.stockSummaryGridView.RowHeadersWidth = 51;
+            this.stockSummaryGridView.RowTemplate.Height = 24;
+            this.stockSummaryGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.stockSummaryGridView.Size = new System.Drawing.Size(676, 158);
+            this.stockSummaryGridView.TabIndex = 17;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(1)))), ((int)(((byte)(67)))));
+            this.label6.Location = new System.Drawing.Point(6, 18);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(223, 25);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Product Stock Summary";
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.lblIncome);
+            this.groupBox7.Controls.Add(this.lblPay);
+            this.groupBox7.Controls.Add(this.label23);
+            this.groupBox7.Controls.Add(this.label22);
+            this.groupBox7.Controls.Add(this.label21);
+            this.groupBox7.Controls.Add(this.label17);
+            this.groupBox7.Controls.Add(this.label13);
+            this.groupBox7.Location = new System.Drawing.Point(886, 244);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(449, 226);
+            this.groupBox7.TabIndex = 20;
+            this.groupBox7.TabStop = false;
+            // 
+            // lblIncome
+            // 
+            this.lblIncome.AutoSize = true;
+            this.lblIncome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(154)))), ((int)(((byte)(225)))));
+            this.lblIncome.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold);
+            this.lblIncome.ForeColor = System.Drawing.Color.White;
+            this.lblIncome.Location = new System.Drawing.Point(15, 186);
+            this.lblIncome.Name = "lblIncome";
+            this.lblIncome.Size = new System.Drawing.Size(58, 26);
+            this.lblIncome.TabIndex = 22;
+            this.lblIncome.Text = "0.00";
+            // 
+            // lblPay
+            // 
+            this.lblPay.AutoSize = true;
+            this.lblPay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(154)))), ((int)(((byte)(225)))));
+            this.lblPay.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold);
+            this.lblPay.ForeColor = System.Drawing.Color.White;
+            this.lblPay.Location = new System.Drawing.Point(15, 106);
+            this.lblPay.Name = "lblPay";
+            this.lblPay.Size = new System.Drawing.Size(58, 26);
+            this.lblPay.TabIndex = 17;
+            this.lblPay.Text = "0.00";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(154)))), ((int)(((byte)(225)))));
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label23.ForeColor = System.Drawing.Color.White;
+            this.label23.Location = new System.Drawing.Point(16, 158);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(126, 20);
+            this.label23.TabIndex = 21;
+            this.label23.Text = "Monthly Income";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(154)))), ((int)(((byte)(225)))));
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label22.ForeColor = System.Drawing.Color.White;
+            this.label22.Location = new System.Drawing.Point(16, 79);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(100, 20);
+            this.label22.TabIndex = 17;
+            this.label22.Text = "Monthly Pay";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(154)))), ((int)(((byte)(225)))));
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold);
+            this.label21.ForeColor = System.Drawing.Color.White;
+            this.label21.Location = new System.Drawing.Point(9, 146);
+            this.label21.Name = "label21";
+            this.label21.Padding = new System.Windows.Forms.Padding(6, 38, 380, 10);
+            this.label21.Size = new System.Drawing.Size(426, 74);
+            this.label21.TabIndex = 20;
+            this.label21.Text = "    ";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(154)))), ((int)(((byte)(225)))));
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold);
+            this.label17.ForeColor = System.Drawing.Color.White;
+            this.label17.Location = new System.Drawing.Point(9, 62);
+            this.label17.Name = "label17";
+            this.label17.Padding = new System.Windows.Forms.Padding(6, 38, 380, 10);
+            this.label17.Size = new System.Drawing.Size(426, 74);
+            this.label17.TabIndex = 17;
+            this.label17.Text = "    ";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(1)))), ((int)(((byte)(67)))));
+            this.label13.Location = new System.Drawing.Point(6, 19);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(238, 25);
+            this.label13.TabIndex = 19;
+            this.label13.Text = "Month Payment Summary";
             // 
             // frmMain
             // 
@@ -833,12 +995,21 @@ namespace MainInventoryForms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1359, 860);
+            this.Controls.Add(this.panelPurchaseOrder);
+            this.Controls.Add(this.panelSupplier);
+            this.Controls.Add(this.panelCustomer);
+            this.Controls.Add(this.panelProduct);
+            this.Controls.Add(this.panelBrand);
+            this.Controls.Add(this.panelCategory);
+            this.Controls.Add(this.panelSettings);
+            this.Controls.Add(this.panelUsers);
+            this.Controls.Add(this.groupBox7);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.panelUsers);
             this.Controls.Add(this.menuNav);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -849,13 +1020,6 @@ namespace MainInventoryForms
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.menuNav.ResumeLayout(false);
             this.menuNav.PerformLayout();
-            this.panelUsers.ResumeLayout(false);
-            this.panelSettings.ResumeLayout(false);
-            this.panelCategory.ResumeLayout(false);
-            this.panelBrand.ResumeLayout(false);
-            this.panelProduct.ResumeLayout(false);
-            this.panelCustomer.ResumeLayout(false);
-            this.panelSupplier.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox6.ResumeLayout(false);
@@ -866,6 +1030,11 @@ namespace MainInventoryForms
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stockSummaryGridView)).EndInit();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -913,11 +1082,11 @@ namespace MainInventoryForms
         private Label label10;
         private GroupBox groupBox5;
         private Label label26;
-        private Label lblCInA;
+        private Label lblCuInA;
         private Label label14;
         private Label label15;
         private Label label16;
-        private Label lblCA;
+        private Label lblCuA;
         private Label label27;
         private GroupBox groupBox2;
         private Label label11;
@@ -935,5 +1104,17 @@ namespace MainInventoryForms
         private Label label20;
         private Label lblPA;
         private Label label35;
+        private GroupBox groupBox4;
+        private Label label6;
+        private DataGridView stockSummaryGridView;
+        private Label lblstockSummaryNull;
+        private GroupBox groupBox7;
+        private Label label13;
+        private Label label17;
+        private Label label21;
+        private Label label22;
+        private Label label23;
+        private Label lblPay;
+        private Label lblIncome;
     }
 }
