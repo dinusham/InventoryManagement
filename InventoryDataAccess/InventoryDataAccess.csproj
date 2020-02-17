@@ -68,6 +68,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DashboardSummaryDataAccess.cs" />
     <Compile Include="AdminDataAccess.cs" />
     <Compile Include="DataDTOs\PurchaseItemDTO.cs" />
     <Compile Include="DataDTOs\PurchaseOrderDTO.cs" />
