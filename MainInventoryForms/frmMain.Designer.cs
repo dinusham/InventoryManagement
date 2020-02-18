@@ -32,7 +32,7 @@ namespace MainInventoryForms
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuNav = new System.Windows.Forms.MenuStrip();
             this.dashboardTool = new System.Windows.Forms.ToolStripMenuItem();
             this.usersTool = new System.Windows.Forms.ToolStripMenuItem();
@@ -65,8 +65,8 @@ namespace MainInventoryForms
             this.label12 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.lblCaA = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.label26 = new System.Windows.Forms.Label();
             this.lblCuInA = new System.Windows.Forms.Label();
@@ -103,6 +103,8 @@ namespace MainInventoryForms
             this.label21 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.salesOrderTool = new System.Windows.Forms.ToolStripMenuItem();
+            this.panelSalesOrder = new System.Windows.Forms.Panel();
             this.menuNav.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -131,6 +133,7 @@ namespace MainInventoryForms
             this.customersTool,
             this.suppliersTool,
             this.purchaseOrderTool,
+            this.salesOrderTool,
             this.settingsTool});
             this.menuNav.Location = new System.Drawing.Point(0, 0);
             this.menuNav.Margin = new System.Windows.Forms.Padding(1);
@@ -148,10 +151,10 @@ namespace MainInventoryForms
             this.dashboardTool.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(1)))), ((int)(((byte)(67)))));
             this.dashboardTool.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.dashboardTool.ForeColor = System.Drawing.Color.White;
-            this.dashboardTool.Margin = new System.Windows.Forms.Padding(8, 5, 0, 5);
+            this.dashboardTool.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
             this.dashboardTool.Name = "dashboardTool";
             this.dashboardTool.Padding = new System.Windows.Forms.Padding(5, 7, 5, 7);
-            this.dashboardTool.Size = new System.Drawing.Size(141, 41);
+            this.dashboardTool.Size = new System.Drawing.Size(149, 41);
             this.dashboardTool.Text = "Dashboard";
             this.dashboardTool.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.dashboardTool.Click += new System.EventHandler(this.dashboardTool_Click);
@@ -161,10 +164,10 @@ namespace MainInventoryForms
             this.usersTool.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(1)))), ((int)(((byte)(67)))));
             this.usersTool.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.usersTool.ForeColor = System.Drawing.Color.White;
-            this.usersTool.Margin = new System.Windows.Forms.Padding(8, 5, 0, 5);
+            this.usersTool.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
             this.usersTool.Name = "usersTool";
             this.usersTool.Padding = new System.Windows.Forms.Padding(5, 7, 5, 7);
-            this.usersTool.Size = new System.Drawing.Size(141, 41);
+            this.usersTool.Size = new System.Drawing.Size(149, 41);
             this.usersTool.Text = "Users";
             this.usersTool.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.usersTool.Click += new System.EventHandler(this.usersTool_Click);
@@ -174,10 +177,10 @@ namespace MainInventoryForms
             this.categoryTool.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(1)))), ((int)(((byte)(67)))));
             this.categoryTool.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.categoryTool.ForeColor = System.Drawing.Color.White;
-            this.categoryTool.Margin = new System.Windows.Forms.Padding(8, 5, 0, 5);
+            this.categoryTool.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
             this.categoryTool.Name = "categoryTool";
             this.categoryTool.Padding = new System.Windows.Forms.Padding(5, 7, 5, 7);
-            this.categoryTool.Size = new System.Drawing.Size(141, 41);
+            this.categoryTool.Size = new System.Drawing.Size(149, 41);
             this.categoryTool.Text = "Category";
             this.categoryTool.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.categoryTool.Click += new System.EventHandler(this.categoryTool_Click);
@@ -187,10 +190,10 @@ namespace MainInventoryForms
             this.brandsTool.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(1)))), ((int)(((byte)(67)))));
             this.brandsTool.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.brandsTool.ForeColor = System.Drawing.Color.White;
-            this.brandsTool.Margin = new System.Windows.Forms.Padding(8, 5, 0, 5);
+            this.brandsTool.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
             this.brandsTool.Name = "brandsTool";
             this.brandsTool.Padding = new System.Windows.Forms.Padding(5, 7, 5, 7);
-            this.brandsTool.Size = new System.Drawing.Size(141, 41);
+            this.brandsTool.Size = new System.Drawing.Size(149, 41);
             this.brandsTool.Text = "Brands";
             this.brandsTool.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.brandsTool.Click += new System.EventHandler(this.brandsTool_Click);
@@ -200,10 +203,10 @@ namespace MainInventoryForms
             this.productTool.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(1)))), ((int)(((byte)(67)))));
             this.productTool.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.productTool.ForeColor = System.Drawing.Color.White;
-            this.productTool.Margin = new System.Windows.Forms.Padding(8, 5, 0, 5);
+            this.productTool.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
             this.productTool.Name = "productTool";
             this.productTool.Padding = new System.Windows.Forms.Padding(5, 7, 5, 7);
-            this.productTool.Size = new System.Drawing.Size(141, 41);
+            this.productTool.Size = new System.Drawing.Size(149, 41);
             this.productTool.Text = "Products";
             this.productTool.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.productTool.Click += new System.EventHandler(this.productTool_Click);
@@ -213,10 +216,10 @@ namespace MainInventoryForms
             this.customersTool.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(1)))), ((int)(((byte)(67)))));
             this.customersTool.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.customersTool.ForeColor = System.Drawing.Color.White;
-            this.customersTool.Margin = new System.Windows.Forms.Padding(8, 5, 0, 5);
+            this.customersTool.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
             this.customersTool.Name = "customersTool";
             this.customersTool.Padding = new System.Windows.Forms.Padding(5, 7, 5, 7);
-            this.customersTool.Size = new System.Drawing.Size(141, 41);
+            this.customersTool.Size = new System.Drawing.Size(149, 41);
             this.customersTool.Text = "Customers";
             this.customersTool.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.customersTool.Click += new System.EventHandler(this.customersTool_Click);
@@ -226,10 +229,10 @@ namespace MainInventoryForms
             this.suppliersTool.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(1)))), ((int)(((byte)(67)))));
             this.suppliersTool.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.suppliersTool.ForeColor = System.Drawing.Color.White;
-            this.suppliersTool.Margin = new System.Windows.Forms.Padding(8, 5, 0, 5);
+            this.suppliersTool.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
             this.suppliersTool.Name = "suppliersTool";
             this.suppliersTool.Padding = new System.Windows.Forms.Padding(5, 7, 5, 7);
-            this.suppliersTool.Size = new System.Drawing.Size(141, 41);
+            this.suppliersTool.Size = new System.Drawing.Size(149, 41);
             this.suppliersTool.Text = "Suppliers";
             this.suppliersTool.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.suppliersTool.Click += new System.EventHandler(this.suppliersTool_Click);
@@ -238,10 +241,10 @@ namespace MainInventoryForms
             // 
             this.purchaseOrderTool.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.purchaseOrderTool.ForeColor = System.Drawing.Color.White;
-            this.purchaseOrderTool.Margin = new System.Windows.Forms.Padding(8, 5, 0, 5);
+            this.purchaseOrderTool.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
             this.purchaseOrderTool.Name = "purchaseOrderTool";
             this.purchaseOrderTool.Padding = new System.Windows.Forms.Padding(5, 7, 5, 7);
-            this.purchaseOrderTool.Size = new System.Drawing.Size(141, 41);
+            this.purchaseOrderTool.Size = new System.Drawing.Size(149, 41);
             this.purchaseOrderTool.Text = "Purchase Order";
             this.purchaseOrderTool.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.purchaseOrderTool.Click += new System.EventHandler(this.purchaseOrderTool_Click);
@@ -251,10 +254,10 @@ namespace MainInventoryForms
             this.settingsTool.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(1)))), ((int)(((byte)(67)))));
             this.settingsTool.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.settingsTool.ForeColor = System.Drawing.Color.White;
-            this.settingsTool.Margin = new System.Windows.Forms.Padding(8, 5, 0, 5);
+            this.settingsTool.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
             this.settingsTool.Name = "settingsTool";
             this.settingsTool.Padding = new System.Windows.Forms.Padding(5, 7, 5, 7);
-            this.settingsTool.Size = new System.Drawing.Size(141, 41);
+            this.settingsTool.Size = new System.Drawing.Size(149, 41);
             this.settingsTool.Text = "Settings";
             this.settingsTool.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.settingsTool.Click += new System.EventHandler(this.settingsTool_Click);
@@ -502,19 +505,6 @@ namespace MainInventoryForms
             this.lblCaA.TabIndex = 14;
             this.lblCaA.Text = "0";
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(154)))), ((int)(((byte)(225)))));
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold);
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(6, 132);
-            this.label9.Name = "label9";
-            this.label9.Padding = new System.Windows.Forms.Padding(6, 38, 150, 10);
-            this.label9.Size = new System.Drawing.Size(196, 74);
-            this.label9.TabIndex = 16;
-            this.label9.Text = "    ";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -527,6 +517,19 @@ namespace MainInventoryForms
             this.label3.Size = new System.Drawing.Size(196, 74);
             this.label3.TabIndex = 16;
             this.label3.Text = "    ";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(154)))), ((int)(((byte)(225)))));
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold);
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(6, 132);
+            this.label9.Name = "label9";
+            this.label9.Padding = new System.Windows.Forms.Padding(6, 38, 150, 10);
+            this.label9.Size = new System.Drawing.Size(196, 74);
+            this.label9.TabIndex = 16;
+            this.label9.Text = "    ";
             // 
             // groupBox5
             // 
@@ -857,14 +860,14 @@ namespace MainInventoryForms
             this.stockSummaryGridView.AllowUserToResizeRows = false;
             this.stockSummaryGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(220)))), ((int)(((byte)(248)))));
             this.stockSummaryGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.Blue;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.stockSummaryGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.stockSummaryGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.stockSummaryGridView.ColumnHeadersHeight = 32;
             this.stockSummaryGridView.GridColor = System.Drawing.SystemColors.ButtonHighlight;
             this.stockSummaryGridView.Location = new System.Drawing.Point(11, 61);
@@ -989,12 +992,33 @@ namespace MainInventoryForms
             this.label13.TabIndex = 19;
             this.label13.Text = "Month Payment Summary";
             // 
+            // salesOrderTool
+            // 
+            this.salesOrderTool.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.salesOrderTool.ForeColor = System.Drawing.Color.White;
+            this.salesOrderTool.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.salesOrderTool.Name = "salesOrderTool";
+            this.salesOrderTool.Padding = new System.Windows.Forms.Padding(5, 7, 5, 7);
+            this.salesOrderTool.Size = new System.Drawing.Size(149, 41);
+            this.salesOrderTool.Text = "Sales Order";
+            this.salesOrderTool.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.salesOrderTool.Click += new System.EventHandler(this.salesOrderTool_Click);
+            // 
+            // panelSalesOrder
+            // 
+            this.panelSalesOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(228)))), ((int)(((byte)(248)))));
+            this.panelSalesOrder.Location = new System.Drawing.Point(160, 0);
+            this.panelSalesOrder.Name = "panelSalesOrder";
+            this.panelSalesOrder.Size = new System.Drawing.Size(1197, 860);
+            this.panelSalesOrder.TabIndex = 0;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1359, 860);
+            this.Controls.Add(this.panelSalesOrder);
             this.Controls.Add(this.panelPurchaseOrder);
             this.Controls.Add(this.panelSupplier);
             this.Controls.Add(this.panelCustomer);
@@ -1116,5 +1140,7 @@ namespace MainInventoryForms
         private Label label23;
         private Label lblPay;
         private Label lblIncome;
+        private ToolStripMenuItem salesOrderTool;
+        private Panel panelSalesOrder;
     }
 }

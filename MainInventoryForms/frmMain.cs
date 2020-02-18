@@ -273,6 +273,19 @@ namespace MainInventoryForms
             frmPurchaseOrder.Show();
         }
 
+        private void salesOrderTool_Click(object sender, EventArgs e)
+        {
+            ManagefrmView(salesOrderTool, panelSalesOrder);
+
+            var frmSalesOrder = new frmSalesOrders(adminDto.Id);
+            frmSalesOrder.TopLevel = false;
+            frmSalesOrder.AutoScroll = true;
+            frmSalesOrder.FormBorderStyle = FormBorderStyle.None;
+            panelSalesOrder.Controls.Add(frmSalesOrder);
+
+            frmSalesOrder.Show();
+        }
+
         private void ManagefrmView(ToolStripMenuItem selectedMenuItem, Panel selectedPanel)
         {
             selectedMenuItem.BackColor = Color.RoyalBlue;
