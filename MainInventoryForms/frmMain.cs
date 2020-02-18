@@ -80,7 +80,7 @@ namespace MainInventoryForms
             //panelSettings.Visible = false;
             //panelMain.Visible = true;
             //label1.Visible = true;
-
+            ManagefrmView(dashboardTool, null);
             ViewTypeSummary();
             ViewProductStockSummary();
             ViewPaymentSummary();
@@ -182,8 +182,8 @@ namespace MainInventoryForms
                             lblSInA.Text = summaryDto.InActiveCount.ToString();
                             break;
                         case "Product":
-                            lblBrandA.Text = summaryDto.ActiveCount.ToString();
-                            lblBrandInA.Text = summaryDto.InActiveCount.ToString();
+                            lblPA.Text = summaryDto.ActiveCount.ToString();
+                            lblPInA.Text = summaryDto.InActiveCount.ToString();
                             break;
                     }
                 }
