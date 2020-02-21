@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using static PurchaseOrder.PurchaseOrderInfo;
+using static Common.OrderInfo;
 
 namespace PurchaseOrder
 {

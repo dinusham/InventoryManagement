@@ -32,7 +32,7 @@ namespace MainInventoryForms
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuNav = new System.Windows.Forms.MenuStrip();
             this.dashboardTool = new System.Windows.Forms.ToolStripMenuItem();
             this.usersTool = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,6 +42,7 @@ namespace MainInventoryForms
             this.customersTool = new System.Windows.Forms.ToolStripMenuItem();
             this.suppliersTool = new System.Windows.Forms.ToolStripMenuItem();
             this.purchaseOrderTool = new System.Windows.Forms.ToolStripMenuItem();
+            this.salesOrderTool = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsTool = new System.Windows.Forms.ToolStripMenuItem();
             this.panelUsers = new System.Windows.Forms.Panel();
             this.panelSettings = new System.Windows.Forms.Panel();
@@ -51,6 +52,7 @@ namespace MainInventoryForms
             this.panelCustomer = new System.Windows.Forms.Panel();
             this.panelSupplier = new System.Windows.Forms.Panel();
             this.panelPurchaseOrder = new System.Windows.Forms.Panel();
+            this.panelSalesOrder = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.lbl = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -103,8 +105,6 @@ namespace MainInventoryForms
             this.label21 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.salesOrderTool = new System.Windows.Forms.ToolStripMenuItem();
-            this.panelSalesOrder = new System.Windows.Forms.Panel();
             this.menuNav.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -249,6 +249,18 @@ namespace MainInventoryForms
             this.purchaseOrderTool.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.purchaseOrderTool.Click += new System.EventHandler(this.purchaseOrderTool_Click);
             // 
+            // salesOrderTool
+            // 
+            this.salesOrderTool.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.salesOrderTool.ForeColor = System.Drawing.Color.White;
+            this.salesOrderTool.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.salesOrderTool.Name = "salesOrderTool";
+            this.salesOrderTool.Padding = new System.Windows.Forms.Padding(5, 7, 5, 7);
+            this.salesOrderTool.Size = new System.Drawing.Size(149, 41);
+            this.salesOrderTool.Text = "Sales Order";
+            this.salesOrderTool.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.salesOrderTool.Click += new System.EventHandler(this.salesOrderTool_Click);
+            // 
             // settingsTool
             // 
             this.settingsTool.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(1)))), ((int)(((byte)(67)))));
@@ -330,6 +342,14 @@ namespace MainInventoryForms
             this.panelPurchaseOrder.Name = "panelPurchaseOrder";
             this.panelPurchaseOrder.Size = new System.Drawing.Size(1197, 860);
             this.panelPurchaseOrder.TabIndex = 0;
+            // 
+            // panelSalesOrder
+            // 
+            this.panelSalesOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(228)))), ((int)(((byte)(248)))));
+            this.panelSalesOrder.Location = new System.Drawing.Point(160, 0);
+            this.panelSalesOrder.Name = "panelSalesOrder";
+            this.panelSalesOrder.Size = new System.Drawing.Size(1197, 860);
+            this.panelSalesOrder.TabIndex = 1;
             // 
             // label1
             // 
@@ -860,14 +880,14 @@ namespace MainInventoryForms
             this.stockSummaryGridView.AllowUserToResizeRows = false;
             this.stockSummaryGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(220)))), ((int)(((byte)(248)))));
             this.stockSummaryGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Blue;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.stockSummaryGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.stockSummaryGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.stockSummaryGridView.ColumnHeadersHeight = 32;
             this.stockSummaryGridView.GridColor = System.Drawing.SystemColors.ButtonHighlight;
             this.stockSummaryGridView.Location = new System.Drawing.Point(11, 61);
@@ -991,26 +1011,6 @@ namespace MainInventoryForms
             this.label13.Size = new System.Drawing.Size(238, 25);
             this.label13.TabIndex = 19;
             this.label13.Text = "Month Payment Summary";
-            // 
-            // salesOrderTool
-            // 
-            this.salesOrderTool.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.salesOrderTool.ForeColor = System.Drawing.Color.White;
-            this.salesOrderTool.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.salesOrderTool.Name = "salesOrderTool";
-            this.salesOrderTool.Padding = new System.Windows.Forms.Padding(5, 7, 5, 7);
-            this.salesOrderTool.Size = new System.Drawing.Size(149, 41);
-            this.salesOrderTool.Text = "Sales Order";
-            this.salesOrderTool.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.salesOrderTool.Click += new System.EventHandler(this.salesOrderTool_Click);
-            // 
-            // panelSalesOrder
-            // 
-            this.panelSalesOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(228)))), ((int)(((byte)(248)))));
-            this.panelSalesOrder.Location = new System.Drawing.Point(160, 0);
-            this.panelSalesOrder.Name = "panelSalesOrder";
-            this.panelSalesOrder.Size = new System.Drawing.Size(1197, 860);
-            this.panelSalesOrder.TabIndex = 0;
             // 
             // frmMain
             // 

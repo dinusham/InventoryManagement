@@ -34,7 +34,7 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.salesOrderGridView = new System.Windows.Forms.DataGridView();
-            this.cmbPaidStatus = new System.Windows.Forms.ComboBox();
+            this.cmbPayType = new System.Windows.Forms.ComboBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.salesOrderGridView)).BeginInit();
@@ -52,6 +52,7 @@
             this.btnViewItems.TabIndex = 18;
             this.btnViewItems.Text = "View Items";
             this.btnViewItems.UseVisualStyleBackColor = false;
+            this.btnViewItems.Click += new System.EventHandler(this.btnViewItems_Click);
             // 
             // btnAddItems
             // 
@@ -65,6 +66,7 @@
             this.btnAddItems.TabIndex = 17;
             this.btnAddItems.Text = "Add Item";
             this.btnAddItems.UseVisualStyleBackColor = false;
+            this.btnAddItems.Click += new System.EventHandler(this.btnAddItems_Click);
             // 
             // btnDelete
             // 
@@ -78,6 +80,7 @@
             this.btnDelete.TabIndex = 16;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEdit
             // 
@@ -91,6 +94,7 @@
             this.btnEdit.TabIndex = 15;
             this.btnEdit.Text = "Edit Order";
             this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnAdd
             // 
@@ -104,6 +108,7 @@
             this.btnAdd.TabIndex = 14;
             this.btnAdd.Text = "Add Order";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // salesOrderGridView
             // 
@@ -124,15 +129,17 @@
             this.salesOrderGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.salesOrderGridView.Size = new System.Drawing.Size(967, 759);
             this.salesOrderGridView.TabIndex = 19;
+            this.salesOrderGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataRowDouble_Click);
             // 
-            // cmbPaidStatus
+            // cmbPayType
             // 
-            this.cmbPaidStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbPaidStatus.FormattingEnabled = true;
-            this.cmbPaidStatus.Location = new System.Drawing.Point(430, 17);
-            this.cmbPaidStatus.Name = "cmbPaidStatus";
-            this.cmbPaidStatus.Size = new System.Drawing.Size(172, 24);
-            this.cmbPaidStatus.TabIndex = 22;
+            this.cmbPayType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPayType.FormattingEnabled = true;
+            this.cmbPayType.Location = new System.Drawing.Point(430, 17);
+            this.cmbPayType.Name = "cmbPayType";
+            this.cmbPayType.Size = new System.Drawing.Size(172, 24);
+            this.cmbPayType.TabIndex = 22;
+            this.cmbPayType.SelectedIndexChanged += new System.EventHandler(this.cmbPayType_SelectedIndexChanged);
             // 
             // txtSearch
             // 
@@ -160,7 +167,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(228)))), ((int)(((byte)(248)))));
             this.ClientSize = new System.Drawing.Size(1179, 814);
-            this.Controls.Add(this.cmbPaidStatus);
+            this.Controls.Add(this.cmbPayType);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.salesOrderGridView);
@@ -188,7 +195,7 @@
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.DataGridView salesOrderGridView;
-        private System.Windows.Forms.ComboBox cmbPaidStatus;
+        private System.Windows.Forms.ComboBox cmbPayType;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnSearch;
     }

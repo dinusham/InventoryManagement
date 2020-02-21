@@ -12,6 +12,7 @@ using System.Collections.Generic;
 using PurchaseOrder;
 using System.Linq;
 using System.Data;
+using SalesOrder;
 
 namespace MainInventoryForms
 {

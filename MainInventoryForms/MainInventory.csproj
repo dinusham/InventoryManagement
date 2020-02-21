@@ -127,6 +127,10 @@
       <Project>{2c07002f-c0c2-42b1-8b67-00219f6dc2a4}</Project>
       <Name>PurchaseOrder</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SalesOrder\SalesOrder.csproj">
+      <Project>{ADE0CF13-29BC-4018-BE45-8736B926A4DF}</Project>
+      <Name>SalesOrder</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Supplier\Supplier.csproj">
       <Project>{371be112-ebd3-4151-9975-e9b8165235c7}</Project>
       <Name>Supplier</Name>

@@ -1,6 +1,6 @@
-﻿namespace PurchaseOrder
+﻿namespace Common
 {
-    internal class PurchaseOrderInfo
+    public class OrderInfo
     {
         public enum PayType
         {
