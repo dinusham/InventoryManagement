@@ -44,14 +44,15 @@
             this.salesItemGridView.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.salesItemGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.salesItemGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.salesItemGridView.Location = new System.Drawing.Point(3, 3);
+            this.salesItemGridView.Location = new System.Drawing.Point(4, 4);
+            this.salesItemGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.salesItemGridView.MultiSelect = false;
             this.salesItemGridView.Name = "salesItemGridView";
             this.salesItemGridView.ReadOnly = true;
             this.salesItemGridView.RowHeadersVisible = false;
             this.salesItemGridView.RowHeadersWidth = 51;
             this.salesItemGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.salesItemGridView.Size = new System.Drawing.Size(725, 654);
+            this.salesItemGridView.Size = new System.Drawing.Size(967, 805);
             this.salesItemGridView.TabIndex = 11;
             this.salesItemGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataRowDouble_Click);
             // 
@@ -59,11 +60,11 @@
             // 
             this.btnDelete.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.btnDelete.Location = new System.Drawing.Point(769, 120);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDelete.Location = new System.Drawing.Point(1025, 148);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Padding = new System.Windows.Forms.Padding(1);
-            this.btnDelete.Size = new System.Drawing.Size(80, 29);
+            this.btnDelete.Size = new System.Drawing.Size(107, 36);
             this.btnDelete.TabIndex = 14;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
@@ -73,11 +74,11 @@
             // 
             this.btnEdit.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.btnEdit.Location = new System.Drawing.Point(769, 81);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEdit.Location = new System.Drawing.Point(1025, 100);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Padding = new System.Windows.Forms.Padding(1);
-            this.btnEdit.Size = new System.Drawing.Size(80, 29);
+            this.btnEdit.Size = new System.Drawing.Size(107, 36);
             this.btnEdit.TabIndex = 13;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = false;
@@ -87,11 +88,11 @@
             // 
             this.btnAdd.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.btnAdd.Location = new System.Drawing.Point(769, 43);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAdd.Location = new System.Drawing.Point(1025, 53);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Padding = new System.Windows.Forms.Padding(1);
-            this.btnAdd.Size = new System.Drawing.Size(80, 29);
+            this.btnAdd.Size = new System.Drawing.Size(107, 36);
             this.btnAdd.TabIndex = 12;
             this.btnAdd.Text = "Add New";
             this.btnAdd.UseVisualStyleBackColor = false;
@@ -99,14 +100,16 @@
             // 
             // frmSalesItems
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(228)))), ((int)(((byte)(248)))));
-            this.ClientSize = new System.Drawing.Size(884, 661);
+            this.ClientSize = new System.Drawing.Size(1179, 814);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.salesItemGridView);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "frmSalesItems";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -17,6 +17,7 @@ namespace SalesItem
         private List<int> productsIds = new List<int>();
         private List<int> productItems = new List<int>();
         private List<AvailableProductsDTO> availableProducts;
+        private List<ProductItemStockDTO> productItemStock;
         bool isRefresh;
 
         public frmSalesItemAdd(Form frmSalesItem, int userId, int salesId, bool isRefresh = false)
@@ -129,8 +130,9 @@ namespace SalesItem
         {
             if (salesItem != null && salesItem.Id > 0 && salesItem.SalesId > 0)
             {
-                salesItem.ProductId = cmbProduct.SelectedIndex + 1;
-                salesItem.BrandId = cmbSalesItem.SelectedIndex + 1;
+                salesItem.ProductId = productsIds[cmbProduct.SelectedIndex];
+                salesItem.PurchaseHItemId = productItems[cmbSalesItem.SelectedIndex];
+                salesItem.BrandId = productItemStock[cmbSalesItem.SelectedIndex].BrandId;
                 salesItem.Quntity = int.Parse(txtQuantity.Text);
                 salesItem.Price = Convert.ToDecimal(txtSUnitPrice.Text);
                 salesItem.UpdatedBy = userId;
@@ -141,9 +143,9 @@ namespace SalesItem
                 var salesItem = new SalesItemDTO
                 {
                     SalesId = salesId,
-                    ProductId = cmbProduct.SelectedIndex + 1,
-                    BrandId = cmbSalesItem.SelectedIndex + 1,
-                    //PurchaseHItemId = cmbOrderItem.SelectedIndex + 1,
+                    ProductId = productsIds[cmbProduct.SelectedIndex],
+                    BrandId = productItemStock[cmbSalesItem.SelectedIndex].BrandId,
+                    PurchaseHItemId = productItems[cmbSalesItem.SelectedIndex],
                     Quntity = int.Parse(txtQuantity.Text),
                     Price = Convert.ToDecimal(txtSUnitPrice.Text),
                     CreatedBy = userId
@@ -155,16 +157,22 @@ namespace SalesItem
         private void cmbProduct_SelectedIndexChanged(object sender, EventArgs e)
         {
             int productId = cmbProduct.SelectedIndex+1;
-            var productItemStock = SalesOrderItemDataAccess.GetProductItemsForSales(productId);
+            productItemStock = SalesOrderItemDataAccess.GetProductItemsForSales(productId);
 
             cmbSalesItem.Items.Clear();
+            productItems.Clear();
             if (productItemStock != null && productItemStock.Any())
             {
                 foreach (var item in productItemStock)
                 {
                     cmbSalesItem.Items.Add(item.Brand + " | Price - " + item.UnitPrice + " Avalilable - " + item.AvailableItemCount);
-
+                    productItems.Add(item.PurchaseId);
                 }
+            }
+
+            if (itemId > 0 && salesId > 0)
+            {
+
             }
         }
     }

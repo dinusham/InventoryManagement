@@ -19,7 +19,7 @@ namespace InventoryDataAccess
 
         public static int AddSalesItems(SalesItemDTO salesItemDto)
         {
-            string query = "INSERT INTO sale_has_item (sales_id, product_id, brand_id, phi_id, qty, unit_price, created_by) VALUES " +
+            string query = "INSERT INTO sale_has_item (sale_id, product_id, brand_id, phi_id, qty, unit_price, created_by) VALUES " +
                 "( " +  "" + salesItemDto.SalesId + "," + salesItemDto.ProductId + "," + salesItemDto.BrandId + "," +
                 salesItemDto.PurchaseHItemId + "," + salesItemDto.Quntity + "," + salesItemDto.Price + "," + salesItemDto.CreatedBy + ")";
 
@@ -39,7 +39,7 @@ namespace InventoryDataAccess
 
         public static int UpdateSalesItems(SalesItemDTO salesItemDto)
         {
-            string query = "UPDATE sale_has_item SET sales_id = " + salesItemDto.SalesId +  ", phi_id = " + salesItemDto.PurchaseHItemId + ", brand_id = " + salesItemDto.BrandId + ", qty = " +
+            string query = "UPDATE sale_has_item SET sale_id = " + salesItemDto.SalesId +  ", phi_id = " + salesItemDto.PurchaseHItemId + ", brand_id = " + salesItemDto.BrandId + ", qty = " +
                 salesItemDto.Quntity + ", unit_price = " + salesItemDto.Price + ", updated_by = " + salesItemDto.UpdatedBy + ", updated_at = '" + 
                 DateTime.Now + "' WHERE id = " + salesItemDto.Id;
 
