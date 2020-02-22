@@ -4,33 +4,33 @@ using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace PurchaseItem
+namespace SalesItem
 {
-    public partial class frmPurchaseItems : Form
+    public partial class frmSalesItems : Form
     {
-        private Form frmPurchaseItem;
+        private Form frmSalesItem;
         private int orderId;
         private int userId;
-        private DataTable orderItemTable;
+        private DataTable salesItemTable;
 
-        public frmPurchaseItems(Form frmPurchaseItem, int userId, int orderId, DataTable dataTable)
+        public frmSalesItems(Form frmSalesItem, int userId, int orderId, DataTable dataTable)
         {
-            this.frmPurchaseItem = frmPurchaseItem;
+            this.frmSalesItem = frmSalesItem;
             this.userId = userId;
             this.orderId = orderId;
-            orderItemTable = dataTable;
+            salesItemTable = dataTable;
             InitializeComponent();
         }
 
-        public void frmPurchaseItems_Load(object sender, System.EventArgs e)
+        private void frmSalesItems_Load(object sender, EventArgs e)
         {
-            //if (orderItemTable == null || orderItemTable.Rows.Count < 0)
+            //if (salesItemTable == null || salesItemTable.Rows.Count < 0)
             //{
-            //    orderItemTable = PurchaseOrderItemDataAccess.GetOrderItems(orderId);
+            //    salesItemTable = .GetOrderItems(orderId);
             //}
-            orderItemTable = PurchaseOrderItemDataAccess.GetOrderItems(orderId);
-            this.purchaseItemGridView.DataSource = orderItemTable;
-            FormatGrid(ref this.purchaseItemGridView);
+            salesItemTable = SalesOrderItemDataAccess.GetSalesItems(orderId);
+            this.salesItemGridView.DataSource = salesItemTable;
+            FormatGrid(ref this.salesItemGridView);
         }
 
         private void FormatGrid(ref DataGridView orderGridView)
@@ -41,7 +41,7 @@ namespace PurchaseItem
                 switch (colunmName)
                 {
                     case "id":
-                    case "purchase_id":
+                    case "sale_id":
                         orderGridView.Columns[i].Visible = false;
                         break;
                     case "Product":
@@ -81,21 +81,21 @@ namespace PurchaseItem
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            var frmPurchaseItemAdd = new frmPurchaseItemAdd(this, userId, orderId, true);
-            frmPurchaseItemAdd.ShowDialog();
+            var frmSalesItemAdd = new frmSalesItemAdd(this, userId, orderId, true);
+            frmSalesItemAdd.ShowDialog();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (purchaseItemGridView.SelectedRows.Count > 0)
+            if (salesItemGridView.SelectedRows.Count > 0)
             {
-                DataGridViewRow dataRow = purchaseItemGridView.SelectedRows[0];
+                DataGridViewRow dataRow = salesItemGridView.SelectedRows[0];
                 int.TryParse(dataRow.Cells["id"].Value.ToString(), out int id);
                 if (id < 0)
                     return;
 
-                var frmPurchaseItemAdd = new frmPurchaseItemAdd(this, userId, orderId, id);
-                frmPurchaseItemAdd.ShowDialog();
+                var frmSalesItemAdd = new frmSalesItemAdd(this, userId, orderId, id);
+                frmSalesItemAdd.ShowDialog();
             }
             else
             {
@@ -107,13 +107,13 @@ namespace PurchaseItem
         {
             if (e.RowIndex < 0) return;
 
-            var dataRow = purchaseItemGridView.Rows[e.RowIndex];
+            var dataRow = salesItemGridView.Rows[e.RowIndex];
             int.TryParse(dataRow.Cells["id"].Value.ToString(), out int id);
             if (id < 0)
                 return;
 
-            var frmPurchaseItemAdd = new frmPurchaseItemAdd(this, userId, orderId, id);
-            frmPurchaseItemAdd.ShowDialog();
+            var frmSalesItemAdd = new frmSalesItemAdd(this, userId, orderId, id);
+            frmSalesItemAdd.ShowDialog();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)

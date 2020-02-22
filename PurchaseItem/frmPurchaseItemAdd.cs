@@ -1,12 +1,6 @@
 ﻿using InventoryDataAccess;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PurchaseItem
@@ -144,10 +138,6 @@ namespace PurchaseItem
             {
                 e.Handled = true;
             }
-            //if (System.Text.RegularExpressions.Regex.IsMatch(txtQuantity.Text, "  ^ [0-9]"))
-            //{
-            //    txtQuantity.Text = "";
-            //}
         }
 
         private void txtPrice_KeyPress(object sender, KeyPressEventArgs e)

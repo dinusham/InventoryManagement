@@ -1,6 +1,6 @@
 ﻿using InventoryDataAccess;
+using SalesItem;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
@@ -11,7 +11,6 @@ namespace SalesOrder
     public partial class frmSalesOrders : Form
     {
         private int userId;
-        private IDictionary<int, string> keyValues;
 
         public frmSalesOrders(int userId)
         {
@@ -134,12 +133,45 @@ namespace SalesOrder
 
         private void btnAddItems_Click(object sender, EventArgs e)
         {
+            if (salesOrderGridView.SelectedRows.Count > 0)
+            {
+                DataGridViewRow dataRow = salesOrderGridView.SelectedRows[0];
+                int.TryParse(dataRow.Cells["id"].Value.ToString(), out int id);
+                if (id < 0)
+                    return;
 
+                var frmSalesItemAdd = new frmSalesItemAdd(this, userId, id);
+                frmSalesItemAdd.ShowDialog();
+            }
+            else
+                MessageBox.Show("Please select an order to add items");
         }
 
         private void btnViewItems_Click(object sender, EventArgs e)
         {
+            if (salesOrderGridView.SelectedRows.Count > 0)
+            {
+                DataGridViewRow dataRow = salesOrderGridView.SelectedRows[0];
+                int.TryParse(dataRow.Cells["id"].Value.ToString(), out int id);
+                if (id < 0)
+                    return;
 
+                DataTable dt = SalesOrderItemDataAccess.GetSalesItems(id);
+                if (dt != null && dt.Rows.Count > 0)
+                {
+                    var frmSalesItems = new frmSalesItems(this, userId, id, dt);
+                    frmSalesItems.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Order doesn't have any item to view");
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select an order to view items");
+            }
         }
     }
 }

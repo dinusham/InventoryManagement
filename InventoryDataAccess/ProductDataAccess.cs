@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InventoryDataAccess.DataDTOs;
+using System;
 using System.Collections.Generic;
 using System.Data;
 
@@ -98,7 +99,7 @@ namespace InventoryDataAccess
 
         public static IDictionary<int, string> GetProductsForPurchaseItem()
         {
-            string query = "SELECT id, name FROM product WHERE is_active = " + true + " ORDER By id";
+            string query = "SELECT id, name, code FROM product WHERE is_active = " + true + " ORDER By id";
 
             DataTable products = DatabaseConnection.ConnectWithServer(query);
 
@@ -107,9 +108,37 @@ namespace InventoryDataAccess
                 var keyValues = new Dictionary<int, string>();
                 foreach (DataRow row in products.Rows)
                 {
-                    keyValues.Add(int.Parse(row["id"].ToString()), row["name"].ToString());
+                    keyValues.Add(int.Parse(row["id"].ToString()), row["code"].ToString() + " -" + row["name"].ToString());
                 }
                 return keyValues;
+            }
+            return null;
+        }
+
+        public static List<AvailableProductsDTO> GetProductsForSalesItem(bool isAddAllItems)
+        {
+            string query = "SELECT product_id, product, available_item FROM v_product_stock ";
+
+            if (!isAddAllItems)
+                query += " WHERE available_item > 0";
+
+            query += " ORDER By product_id";
+
+            DataTable products = DatabaseConnection.ConnectWithServer(query);
+            var availableProductsDto = new List<AvailableProductsDTO>();
+
+            if (products != null && products.Rows.Count > 0)
+            {
+                foreach (DataRow row in products.Rows)
+                {
+                    availableProductsDto.Add(new AvailableProductsDTO
+                    {
+                        Id = int.Parse(row["product_id"].ToString()),
+                        Product = row["product"].ToString(),
+                        AvailableCount = int.Parse(row["available_item"].ToString())
+                    });
+                }
+                return availableProductsDto;
             }
             return null;
         }

@@ -1,11 +1,12 @@
 ﻿namespace InventoryDataAccess
 {
-    public class PurchaseItemDTO
+    public class SalesItemDTO
     {
         public int Id { get; set; }
-        public int PurchaseId { get; set; }
+        public int SalesId { get; set; }
         public int ProductId { get; set; }
         public int BrandId { get; set; }
+        public int PurchaseHItemId { get; set; }
         public int Quntity { get; set; }
         public decimal Price { get; set; }
         public int CreatedBy { get; set; }

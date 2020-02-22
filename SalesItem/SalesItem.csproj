@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{ADE0CF13-29BC-4018-BE45-8736B926A4DF}</ProjectGuid>
+    <ProjectGuid>{C344D1BE-4A11-4EB4-AA37-E69AA02E1CC9}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>SalesOrder</RootNamespace>
-    <AssemblyName>SalesOrder</AssemblyName>
+    <RootNamespace>SalesItem</RootNamespace>
+    <AssemblyName>SalesItem</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,25 +46,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmSalesOrderAdd.cs">
+    <Compile Include="frmSalesItemAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSalesOrderAdd.Designer.cs">
-      <DependentUpon>frmSalesOrderAdd.cs</DependentUpon>
+    <Compile Include="frmSalesItemAdd.Designer.cs">
+      <DependentUpon>frmSalesItemAdd.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmSalesOrders.cs">
+    <Compile Include="frmSalesItems.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSalesOrders.Designer.cs">
-      <DependentUpon>frmSalesOrders.cs</DependentUpon>
+    <Compile Include="frmSalesItems.Designer.cs">
+      <DependentUpon>frmSalesItems.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmSalesOrderAdd.resx">
-      <DependentUpon>frmSalesOrderAdd.cs</DependentUpon>
+    <EmbeddedResource Include="frmSalesItemAdd.resx">
+      <DependentUpon>frmSalesItemAdd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSalesOrders.resx">
-      <DependentUpon>frmSalesOrders.cs</DependentUpon>
+    <EmbeddedResource Include="frmSalesItems.resx">
+      <DependentUpon>frmSalesItems.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -89,17 +89,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Common\Common.csproj">
-      <Project>{62C61CBD-5900-49DF-BEBC-DE1304995772}</Project>
-      <Name>Common</Name>
-    </ProjectReference>
     <ProjectReference Include="..\InventoryDataAccess\InventoryDataAccess.csproj">
       <Project>{BABCA3EB-8F69-408C-8712-7B0D05C03413}</Project>
       <Name>InventoryDataAccess</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SalesItem\SalesItem.csproj">
-      <Project>{C344D1BE-4A11-4EB4-AA37-E69AA02E1CC9}</Project>
-      <Name>SalesItem</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

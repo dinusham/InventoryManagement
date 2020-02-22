@@ -71,11 +71,15 @@
     <Compile Include="DashboardSummaryDataAccess.cs" />
     <Compile Include="AdminDataAccess.cs" />
     <Compile Include="DashboardSummaryInfo.cs" />
+    <Compile Include="DataDTOs\AvailableProductsDTO.cs" />
     <Compile Include="DataDTOs\DashboardSummaryDTO.cs" />
+    <Compile Include="DataDTOs\ProductItemStockDTO.cs" />
+    <Compile Include="DataDTOs\SalesItemDTO.cs" />
     <Compile Include="DataDTOs\PurchaseItemDTO.cs" />
     <Compile Include="DataDTOs\SalesOrderDTO.cs" />
     <Compile Include="DataDTOs\PurchaseOrderDTO.cs" />
     <Compile Include="DataDTOs\SupplierDTO.cs" />
+    <Compile Include="SalesOrderItemDataAccess.cs" />
     <Compile Include="SalesOrderDataAccess.cs" />
     <Compile Include="PurchaseOrderItemDataAccess.cs" />
     <Compile Include="PurchaseOrderDataAccess.cs" />
