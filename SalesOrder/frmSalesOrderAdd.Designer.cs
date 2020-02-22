@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.grpStockStatus = new System.Windows.Forms.GroupBox();
-            this.radioBtnFinish = new System.Windows.Forms.RadioButton();
-            this.radioBtnAvailable = new System.Windows.Forms.RadioButton();
+            this.grpSalesStatus = new System.Windows.Forms.GroupBox();
+            this.radioBtnDelivered = new System.Windows.Forms.RadioButton();
+            this.radioBtnPending = new System.Windows.Forms.RadioButton();
             this.grpPayType = new System.Windows.Forms.GroupBox();
             this.radioBtnInstalment = new System.Windows.Forms.RadioButton();
             this.radioBtnCash = new System.Windows.Forms.RadioButton();
@@ -53,7 +53,7 @@
             this.lblPname = new System.Windows.Forms.Label();
             this.cmbCustomer = new System.Windows.Forms.ComboBox();
             this.lblCustomer = new System.Windows.Forms.Label();
-            this.grpStockStatus.SuspendLayout();
+            this.grpSalesStatus.SuspendLayout();
             this.grpPayType.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,45 +68,45 @@
             this.label1.TabIndex = 62;
             this.label1.Text = "%";
             // 
-            // grpStockStatus
+            // grpSalesStatus
             // 
-            this.grpStockStatus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.grpStockStatus.Controls.Add(this.radioBtnFinish);
-            this.grpStockStatus.Controls.Add(this.radioBtnAvailable);
-            this.grpStockStatus.Location = new System.Drawing.Point(166, 269);
-            this.grpStockStatus.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.grpStockStatus.Name = "grpStockStatus";
-            this.grpStockStatus.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.grpStockStatus.Size = new System.Drawing.Size(188, 40);
-            this.grpStockStatus.TabIndex = 61;
-            this.grpStockStatus.TabStop = false;
+            this.grpSalesStatus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.grpSalesStatus.Controls.Add(this.radioBtnDelivered);
+            this.grpSalesStatus.Controls.Add(this.radioBtnPending);
+            this.grpSalesStatus.Location = new System.Drawing.Point(166, 269);
+            this.grpSalesStatus.Margin = new System.Windows.Forms.Padding(2);
+            this.grpSalesStatus.Name = "grpSalesStatus";
+            this.grpSalesStatus.Padding = new System.Windows.Forms.Padding(2);
+            this.grpSalesStatus.Size = new System.Drawing.Size(188, 40);
+            this.grpSalesStatus.TabIndex = 61;
+            this.grpSalesStatus.TabStop = false;
             // 
-            // radioBtnFinish
+            // radioBtnDelivered
             // 
-            this.radioBtnFinish.AutoSize = true;
-            this.radioBtnFinish.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.radioBtnFinish.Location = new System.Drawing.Point(92, 11);
-            this.radioBtnFinish.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.radioBtnFinish.Name = "radioBtnFinish";
-            this.radioBtnFinish.Size = new System.Drawing.Size(86, 21);
-            this.radioBtnFinish.TabIndex = 36;
-            this.radioBtnFinish.TabStop = true;
-            this.radioBtnFinish.Text = "Delivered";
-            this.radioBtnFinish.UseVisualStyleBackColor = true;
+            this.radioBtnDelivered.AutoSize = true;
+            this.radioBtnDelivered.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.radioBtnDelivered.Location = new System.Drawing.Point(92, 11);
+            this.radioBtnDelivered.Margin = new System.Windows.Forms.Padding(2);
+            this.radioBtnDelivered.Name = "radioBtnDelivered";
+            this.radioBtnDelivered.Size = new System.Drawing.Size(86, 21);
+            this.radioBtnDelivered.TabIndex = 36;
+            this.radioBtnDelivered.TabStop = true;
+            this.radioBtnDelivered.Text = "Delivered";
+            this.radioBtnDelivered.UseVisualStyleBackColor = true;
             // 
-            // radioBtnAvailable
+            // radioBtnPending
             // 
-            this.radioBtnAvailable.AutoSize = true;
-            this.radioBtnAvailable.Checked = true;
-            this.radioBtnAvailable.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.radioBtnAvailable.Location = new System.Drawing.Point(12, 9);
-            this.radioBtnAvailable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.radioBtnAvailable.Name = "radioBtnAvailable";
-            this.radioBtnAvailable.Size = new System.Drawing.Size(78, 21);
-            this.radioBtnAvailable.TabIndex = 35;
-            this.radioBtnAvailable.TabStop = true;
-            this.radioBtnAvailable.Text = "Pending";
-            this.radioBtnAvailable.UseVisualStyleBackColor = true;
+            this.radioBtnPending.AutoSize = true;
+            this.radioBtnPending.Checked = true;
+            this.radioBtnPending.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.radioBtnPending.Location = new System.Drawing.Point(12, 9);
+            this.radioBtnPending.Margin = new System.Windows.Forms.Padding(2);
+            this.radioBtnPending.Name = "radioBtnPending";
+            this.radioBtnPending.Size = new System.Drawing.Size(78, 21);
+            this.radioBtnPending.TabIndex = 35;
+            this.radioBtnPending.TabStop = true;
+            this.radioBtnPending.Text = "Pending";
+            this.radioBtnPending.UseVisualStyleBackColor = true;
             // 
             // grpPayType
             // 
@@ -116,9 +116,9 @@
             this.grpPayType.Controls.Add(this.radioBtnOther);
             this.grpPayType.Controls.Add(this.radioBtnCredit);
             this.grpPayType.Location = new System.Drawing.Point(166, 233);
-            this.grpPayType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpPayType.Margin = new System.Windows.Forms.Padding(2);
             this.grpPayType.Name = "grpPayType";
-            this.grpPayType.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpPayType.Padding = new System.Windows.Forms.Padding(2);
             this.grpPayType.Size = new System.Drawing.Size(306, 34);
             this.grpPayType.TabIndex = 60;
             this.grpPayType.TabStop = false;
@@ -128,7 +128,7 @@
             this.radioBtnInstalment.AutoSize = true;
             this.radioBtnInstalment.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.radioBtnInstalment.Location = new System.Drawing.Point(145, 11);
-            this.radioBtnInstalment.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioBtnInstalment.Margin = new System.Windows.Forms.Padding(2);
             this.radioBtnInstalment.Name = "radioBtnInstalment";
             this.radioBtnInstalment.Size = new System.Drawing.Size(90, 21);
             this.radioBtnInstalment.TabIndex = 32;
@@ -141,7 +141,7 @@
             this.radioBtnCash.Checked = true;
             this.radioBtnCash.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.radioBtnCash.Location = new System.Drawing.Point(12, 10);
-            this.radioBtnCash.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioBtnCash.Margin = new System.Windows.Forms.Padding(2);
             this.radioBtnCash.Name = "radioBtnCash";
             this.radioBtnCash.Size = new System.Drawing.Size(58, 21);
             this.radioBtnCash.TabIndex = 30;
@@ -154,7 +154,7 @@
             this.radioBtnOther.AutoSize = true;
             this.radioBtnOther.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.radioBtnOther.Location = new System.Drawing.Point(237, 11);
-            this.radioBtnOther.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioBtnOther.Margin = new System.Windows.Forms.Padding(2);
             this.radioBtnOther.Name = "radioBtnOther";
             this.radioBtnOther.Size = new System.Drawing.Size(62, 21);
             this.radioBtnOther.TabIndex = 31;
@@ -166,7 +166,7 @@
             this.radioBtnCredit.AutoSize = true;
             this.radioBtnCredit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.radioBtnCredit.Location = new System.Drawing.Point(76, 11);
-            this.radioBtnCredit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioBtnCredit.Margin = new System.Windows.Forms.Padding(2);
             this.radioBtnCredit.Name = "radioBtnCredit";
             this.radioBtnCredit.Size = new System.Drawing.Size(63, 21);
             this.radioBtnCredit.TabIndex = 33;
@@ -175,11 +175,10 @@
             // 
             // datePaid
             // 
-            //this.datePaid.CustomFormat = " ";
             this.datePaid.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.datePaid.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.datePaid.Location = new System.Drawing.Point(178, 351);
-            this.datePaid.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.datePaid.Margin = new System.Windows.Forms.Padding(2);
             this.datePaid.Name = "datePaid";
             this.datePaid.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.datePaid.Size = new System.Drawing.Size(91, 23);
@@ -201,7 +200,7 @@
             this.dateSalesOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.dateSalesOrder.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateSalesOrder.Location = new System.Drawing.Point(178, 197);
-            this.dateSalesOrder.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateSalesOrder.Margin = new System.Windows.Forms.Padding(2);
             this.dateSalesOrder.Name = "dateSalesOrder";
             this.dateSalesOrder.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dateSalesOrder.Size = new System.Drawing.Size(91, 23);
@@ -255,7 +254,7 @@
             this.btnAdd.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnAdd.Location = new System.Drawing.Point(356, 396);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(81, 32);
             this.btnAdd.TabIndex = 52;
@@ -345,7 +344,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(228)))), ((int)(((byte)(248)))));
             this.ClientSize = new System.Drawing.Size(484, 452);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.grpStockStatus);
+            this.Controls.Add(this.grpSalesStatus);
             this.Controls.Add(this.grpPayType);
             this.Controls.Add(this.datePaid);
             this.Controls.Add(this.lblPaidDate);
@@ -364,15 +363,16 @@
             this.Controls.Add(this.cmbCustomer);
             this.Controls.Add(this.lblCustomer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmSalesOrderAdd";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmSalesOrderAdd";
             this.Closed += new System.EventHandler(this.frmPurchaseOrderAdd_FormClosing);
             this.Load += new System.EventHandler(this.frmSalesOrderAdd_Load);
-            this.grpStockStatus.ResumeLayout(false);
-            this.grpStockStatus.PerformLayout();
+            this.grpSalesStatus.ResumeLayout(false);
+            this.grpSalesStatus.PerformLayout();
             this.grpPayType.ResumeLayout(false);
             this.grpPayType.PerformLayout();
             this.ResumeLayout(false);
@@ -383,9 +383,9 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox grpStockStatus;
-        private System.Windows.Forms.RadioButton radioBtnFinish;
-        private System.Windows.Forms.RadioButton radioBtnAvailable;
+        private System.Windows.Forms.GroupBox grpSalesStatus;
+        private System.Windows.Forms.RadioButton radioBtnDelivered;
+        private System.Windows.Forms.RadioButton radioBtnPending;
         private System.Windows.Forms.GroupBox grpPayType;
         private System.Windows.Forms.RadioButton radioBtnInstalment;
         private System.Windows.Forms.RadioButton radioBtnCash;

@@ -50,8 +50,8 @@ namespace PurchaseOrder
             {
                 cmbSupplier.Text = keyValues[purchaseOrder.Supplier].ToString();
                 txtDescription.Text = purchaseOrder.Description;
-                txtPrice.Text = string.Format("{0: 0.00}", purchaseOrder.Price);
-                txtDiscount.Text = string.Format("{0: 0.00}", purchaseOrder.Discount * 100);
+                txtPrice.Text = string.Format("{0: 0.00}", purchaseOrder.Price).Trim();
+                txtDiscount.Text = string.Format("{0: 0.00}", purchaseOrder.Discount * 100).Trim();
                 dateOrder.Value = purchaseOrder.OrderDate;
                 chkPaid.Checked = purchaseOrder.IsPaid;
 

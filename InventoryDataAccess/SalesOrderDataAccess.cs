@@ -17,13 +17,13 @@ namespace InventoryDataAccess
             return salesOrdrTable;
         }
 
-        public static int AddSalesOrder(PurchaseOrderDTO purchaseOrderDto)
+        public static int AddSalesOrder(SalesOrderDTO salesOrderDto)
         {
-            string query = "INSERT INTO purchase_order (supplier_id, discription, total_price, discount, date, pay_type, is_paid," +
+            string query = "INSERT INTO sale_order (customer_id, discription, total_price, discount, date, pay_type, is_paid," +
                 "paid_at, status, created_by) VALUES " +
-                "( " +  "" + purchaseOrderDto.Supplier + ",'" + purchaseOrderDto.Description + "'," + purchaseOrderDto.Price + "," + 
-                purchaseOrderDto.Discount/100 + ",'" + purchaseOrderDto.OrderDate + "'," + purchaseOrderDto.PayType + 
-                "," + purchaseOrderDto.IsPaid + ",'" + DateTime.Now + "'," + purchaseOrderDto.StockStatus + "," + purchaseOrderDto.CreatedBy + ")";
+                "( " +  "" + salesOrderDto.Customer + ",'" + salesOrderDto.Description + "'," + salesOrderDto.Price + "," + 
+                salesOrderDto.Discount/100 + ",'" + salesOrderDto.SalesOrderDate + "'," + salesOrderDto.PayType + 
+                "," + salesOrderDto.IsPaid + ",'" + DateTime.Now + "'," + salesOrderDto.SalesStatus + "," + salesOrderDto.CreatedBy + ")";
 
             try
             {
@@ -39,12 +39,12 @@ namespace InventoryDataAccess
             }
         }
 
-        public static int UpdateSalesOrder(PurchaseOrderDTO purchaseOrderDto)
+        public static int UpdateSalesOrder(SalesOrderDTO salesOrderDto)
         {
-            string query = "UPDATE purchase_order SET supplier_id = " + purchaseOrderDto.Supplier + "" + ", discription = '" + purchaseOrderDto.Description + "', total_price = " + 
-                purchaseOrderDto.Price + ", discount = " + purchaseOrderDto.Discount/100 + ", date = '" + purchaseOrderDto.OrderDate + "', pay_type = " + 
-                purchaseOrderDto.PayType + ", is_paid = " + purchaseOrderDto.IsPaid + ", paid_at = '" + purchaseOrderDto.PaidDate + 
-                "', status = " + purchaseOrderDto.StockStatus + ", update_by = " + purchaseOrderDto.UpdatedBy + ", update_at = '" + DateTime.Now + "' WHERE id = " + purchaseOrderDto.Id;
+            string query = "UPDATE sale_order SET customer_id = " + salesOrderDto.Customer + "" + ", discription = '" + salesOrderDto.Description + "', total_price = " + 
+                salesOrderDto.Price + ", discount = " + salesOrderDto.Discount/100 + ", date = '" + salesOrderDto.SalesOrderDate + "', pay_type = " + 
+                salesOrderDto.PayType + ", is_paid = " + salesOrderDto.IsPaid + ", paid_at = '" + salesOrderDto.PaidDate + 
+                "', status = " + salesOrderDto.SalesStatus + ", update_by = " + salesOrderDto.UpdatedBy + ", update_at = '" + DateTime.Now + "' WHERE id = " + salesOrderDto.Id;
 
             try
             {
@@ -79,7 +79,7 @@ namespace InventoryDataAccess
                         Price = Convert.ToDecimal(dataRow["total_price"].ToString()),
                         Discount = Convert.ToDecimal(dataRow["discount"].ToString()),
                         PayType = int.Parse(dataRow["pay_type"].ToString()),
-                        Date = Convert.ToDateTime(dataRow["date"].ToString()),
+                        SalesOrderDate = Convert.ToDateTime(dataRow["date"].ToString()),
                         IsPaid = (dataRow["is_paid"].ToString() == "1") ? true : false,
                         PaidDate = Convert.ToDateTime(dataRow["paid_at"].ToString()),
                         SalesStatus = int.Parse(dataRow["status"].ToString()),

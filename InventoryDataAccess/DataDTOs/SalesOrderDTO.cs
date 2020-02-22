@@ -8,7 +8,7 @@ namespace InventoryDataAccess
         public string Description { get; set; }
         public decimal Price { get; set; }
         public decimal Discount { get; set; }
-        public DateTime Date { get; set; }
+        public DateTime SalesOrderDate { get; set; }
         public int PayType { get; set; }
         public bool IsPaid { get; set; }
         public DateTime? PaidDate { get; set; }
