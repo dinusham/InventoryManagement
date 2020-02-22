@@ -60,7 +60,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PurchaseOrderInfo.cs" />
     <EmbeddedResource Include="frmPurchaseOrderAdd.resx">
       <DependentUpon>frmPurchaseOrderAdd.cs</DependentUpon>
     </EmbeddedResource>
@@ -90,6 +89,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{62C61CBD-5900-49DF-BEBC-DE1304995772}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\InventoryDataAccess\InventoryDataAccess.csproj">
       <Project>{BABCA3EB-8F69-408C-8712-7B0D05C03413}</Project>
       <Name>InventoryDataAccess</Name>

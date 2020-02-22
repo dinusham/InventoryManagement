@@ -1,22 +1,16 @@
 ﻿using InventoryDataAccess;
 using PurchaseItem;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static PurchaseOrder.PurchaseOrderInfo;
+using static Common.OrderInfo;
 
 namespace PurchaseOrder
 {
     public partial class frmPurchaseOrders : Form
     {
         private int userId;
-        private IDictionary<int, string> keyValues;
 
         public frmPurchaseOrders(int userId)
         {
