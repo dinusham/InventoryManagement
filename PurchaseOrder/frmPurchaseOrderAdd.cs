@@ -125,6 +125,8 @@ namespace PurchaseOrder
             }
             if (orderId > 0)
                 btnAdd.Text = "Update";
+            else
+                dateOrder.Value = DateTime.Now.Date;
         }
         
         private void datePaid_ValueChanged(object sender, EventArgs e)
@@ -135,13 +137,14 @@ namespace PurchaseOrder
         private void chkPaid_CheckedChanged(object sender, EventArgs e)
         {
             if (chkPaid.Checked)
-                datePaid.Enabled = true;
-            else
             {
-                datePaid.Enabled = false;
+                datePaid.Enabled = true;
                 datePaid.Format = DateTimePickerFormat.Custom;
-                datePaid.CustomFormat = " ";
+                datePaid.CustomFormat = "";
+                datePaid.Value = DateTime.Now.Date;
             }
+            else
+                datePaid.Enabled = false;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

@@ -50,9 +50,9 @@ namespace SalesOrder
             {
                 cmbCustomer.Text = keyValues[salesOrder.Customer].ToString();
                 txtDescription.Text = salesOrder.Description;
-                txtPrice.Text = string.Format("{0: 0.00}", salesOrder.Price);
-                txtDiscount.Text = string.Format("{0: 0.00}", salesOrder.Discount * 100);
-                dateOrder.Value = salesOrder.Date;
+                txtPrice.Text = string.Format("{0: 0.00}", salesOrder.Price).Trim();
+                txtDiscount.Text = string.Format("{0: 0.00}", salesOrder.Discount * 100).Trim();
+                dateSalesOrder.Value = salesOrder.Date.Date;
                 chkPaid.Checked = salesOrder.IsPaid;
 
                 if (chkPaid.Checked && salesOrder.PaidDate != null)
@@ -121,10 +121,13 @@ namespace SalesOrder
             {
                 datePaid.Enabled = false;
                 datePaid.Format = DateTimePickerFormat.Custom;
-                datePaid.CustomFormat = " ";
+                datePaid.CustomFormat = "";
+                datePaid.Value = DateTime.Now.Date;
             }
             if (orderId > 0)
                 btnAdd.Text = "Update";
+            else
+                dateSalesOrder.Value = DateTime.Now.Date;
         }
 
         private void btnAdd_Click(object sender, System.EventArgs e)
@@ -151,6 +154,21 @@ namespace SalesOrder
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
                 e.Handled = true;
+            }
+        }
+
+        private void chkPaid_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkPaid.Checked)
+            {
+                datePaid.Enabled = true;
+                datePaid.Format = DateTimePickerFormat.Custom;
+                datePaid.CustomFormat = "";
+                datePaid.Value = DateTime.Now.Date;
+            }
+            else
+            {
+                datePaid.Enabled = true;
             }
         }
     }

@@ -30,12 +30,12 @@ namespace MainInventoryForms
             menuItems = new List<ToolStripMenuItem>()
             {
                 dashboardTool, usersTool, brandsTool, categoryTool, settingsTool, productTool, customersTool,
-                suppliersTool, dashboardTool, purchaseOrderTool
+                suppliersTool, purchaseOrderTool, salesOrderTool
             };
             panels = new List<Panel>()
             {
                 panelUsers, panelBrand, panelCategory, panelSettings, panelProduct, panelCustomer,
-                panelSupplier, panelPurchaseOrder
+                panelSupplier, panelPurchaseOrder, panelSalesOrder
             };
 
             ManageComponents();
