@@ -7,7 +7,7 @@ namespace InventoryDataAccess
     {
         public static DataTable GetAllUsers()
         {
-            string query = "SELECT  id, concat(first_name, ' ' , last_name) as Name, tel_mobile AS Mobile, " +
+            string query = "SELECT id, concat(first_name, ' ' , last_name) as Name, tel_mobile AS Mobile, " +
                 "email AS Email, user_name AS UserName, created_at AS CreatedDate FROM admin ORDER BY id";
 
             DataTable users = DatabaseConnection.ConnectWithServer(query);
