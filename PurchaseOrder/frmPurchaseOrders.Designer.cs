@@ -99,7 +99,7 @@
             this.orderGridView.RowHeadersVisible = false;
             this.orderGridView.RowHeadersWidth = 51;
             this.orderGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.orderGridView.Size = new System.Drawing.Size(967, 759);
+            this.orderGridView.Size = new System.Drawing.Size(967, 730);
             this.orderGridView.TabIndex = 7;
             this.orderGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataRowDouble_Click);
             // 
