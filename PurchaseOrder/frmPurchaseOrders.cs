@@ -1,8 +1,13 @@
-﻿using InventoryDataAccess;
+﻿using ClosedXML.Excel;
+using DocumentFormat.OpenXml.Spreadsheet;
+using InventoryDataAccess;
+using Microsoft.AspNetCore.Http;
 using PurchaseItem;
+using Syncfusion.XlsIO;
 using System;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 using static Common.OrderInfo;
 
@@ -11,6 +16,7 @@ namespace PurchaseOrder
     public partial class frmPurchaseOrders : Form
     {
         private int userId;
+        private DataTable purchaseOrderTable;
 
         public frmPurchaseOrders(int userId)
         {
@@ -20,10 +26,10 @@ namespace PurchaseOrder
 
         public void frmPurchaseOrders_Load(object sender, EventArgs e)
         {
-            DataTable dt = PurchaseOrderDataAccess.GetOrders();
-            if (dt != null)
+            purchaseOrderTable = PurchaseOrderDataAccess.GetOrders();
+            if (purchaseOrderTable != null)
             {
-                this.orderGridView.DataSource = dt;
+                this.orderGridView.DataSource = purchaseOrderTable;
                 FormatGrid(ref this.orderGridView);
             }
             if (cmbPaidStatus.Items.Count < 1)
@@ -178,7 +184,7 @@ namespace PurchaseOrder
                 if (id < 0)
                     return;
 
-                DataTable dt = PurchaseOrderItemDataAccess.GetOrderItems(id);
+                System.Data.DataTable dt = PurchaseOrderItemDataAccess.GetOrderItems(id);
                 if (dt != null && dt.Rows.Count > 0)
                 {
                     var frmPurchaseItems = new frmPurchaseItems(this, userId, id, dt);
@@ -193,6 +199,55 @@ namespace PurchaseOrder
             else
             {
                 MessageBox.Show("Please select an order to view items");
+            }
+        }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            //Syncfusion.XlsIO.WinForm
+            try
+            {
+                //ExcelEngine excelEngine = new ExcelEngine();
+                //IApplication application = excelEngine.Excel;
+
+                //application.DefaultVersion = ExcelVersion.Excel2010;
+
+                ////Create a new workbook
+                //IWorkbook workbook = application.Workbooks.Create(1);
+
+                ////Access first worksheet from the workbook instance
+                //IWorksheet worksheet = workbook.Worksheets[0];
+
+                ////Exporting DataTable to worksheet
+                //worksheet.ImportDataTable(purchaseOrderDable, true, 1, 1);
+                //worksheet.UsedRange.AutofitColumns();
+
+                //var curDir = Directory.GetCurrentDirectory();
+                //var rootPath = Directory.GetDirectoryRoot(curDir);
+
+                //var folderPath = rootPath + "InventoryReports\\";
+                //DirectoryInfo di = null;
+                //if (!Directory.Exists(folderPath))
+                //{
+                //    //Create folder
+                //    di = Directory.CreateDirectory(folderPath);
+                //}
+
+                //var outputFilePath = folderPath + "purchaseOrderReport.xlsx";
+                //if (File.Exists(outputFilePath))
+                //{
+                //    File.Delete(outputFilePath);
+                //}
+
+                ////Save the workbook to disk in xlsx format
+                //workbook.SaveAs(outputFilePath);
+
+                //MessageBox.Show("Successfully exported to " + outputFilePath);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return;
             }
         }
     }

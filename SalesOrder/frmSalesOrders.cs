@@ -1,8 +1,10 @@
 ﻿using InventoryDataAccess;
 using SalesItem;
+using Syncfusion.XlsIO;
 using System;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 using static Common.OrderInfo;
 
@@ -11,6 +13,7 @@ namespace SalesOrder
     public partial class frmSalesOrders : Form
     {
         private int userId;
+        private DataTable salesOrderTable;
 
         public frmSalesOrders(int userId)
         {
@@ -20,10 +23,10 @@ namespace SalesOrder
 
         public void frmSalesOrders_Load(object sender, EventArgs e)
         {
-            DataTable dt = SalesOrderDataAccess.GetSalesOrders();
-            if (dt != null)
+            salesOrderTable = SalesOrderDataAccess.GetSalesOrders();
+            if (salesOrderTable != null)
             {
-                this.salesOrderGridView.DataSource = dt;
+                this.salesOrderGridView.DataSource = salesOrderTable;
                 FormatGrid(ref this.salesOrderGridView);
             }
             if (cmbPayType.Items.Count < 1)
@@ -171,6 +174,53 @@ namespace SalesOrder
             else
             {
                 MessageBox.Show("Please select an order to view items");
+            }
+        }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ExcelEngine excelEngine = new ExcelEngine();
+                IApplication application = excelEngine.Excel;
+
+                application.DefaultVersion = ExcelVersion.Excel2010;
+
+                //Create a new workbook
+                IWorkbook workbook = application.Workbooks.Create(1);
+
+                //Access first worksheet from the workbook instance
+                IWorksheet worksheet = workbook.Worksheets[0];
+
+                //Exporting DataTable to worksheet
+                worksheet.ImportDataTable(salesOrderTable, true, 1, 1);
+                worksheet.UsedRange.AutofitColumns();
+
+                var curDir = Directory.GetCurrentDirectory();
+                var rootPath = Directory.GetDirectoryRoot(curDir);
+
+                var folderPath = rootPath + "InventoryReports\\";
+                DirectoryInfo di = null;
+                if (!Directory.Exists(folderPath))
+                {
+                    //Create folder
+                    di = Directory.CreateDirectory(folderPath);
+                }
+
+                var outputFilePath = folderPath + "salesOrderReport.xlsx";
+                if (File.Exists(outputFilePath))
+                {
+                    File.Delete(outputFilePath);
+                }
+
+                //Save the workbook to disk in xlsx format
+                workbook.SaveAs(outputFilePath);
+                MessageBox.Show("Successfully exported to " + outputFilePath);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return;
             }
         }
     }

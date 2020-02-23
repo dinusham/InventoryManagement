@@ -37,6 +37,7 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnAddItems = new System.Windows.Forms.Button();
             this.btnViewItems = new System.Windows.Forms.Button();
+            this.btnExport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.orderGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,7 +45,7 @@
             // 
             this.btnDelete.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.btnDelete.Location = new System.Drawing.Point(1025, 148);
+            this.btnDelete.Location = new System.Drawing.Point(1025, 172);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Padding = new System.Windows.Forms.Padding(1);
@@ -58,7 +59,7 @@
             // 
             this.btnEdit.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.btnEdit.Location = new System.Drawing.Point(1025, 100);
+            this.btnEdit.Location = new System.Drawing.Point(1025, 124);
             this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Padding = new System.Windows.Forms.Padding(1);
@@ -72,7 +73,7 @@
             // 
             this.btnAdd.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.btnAdd.Location = new System.Drawing.Point(1025, 53);
+            this.btnAdd.Location = new System.Drawing.Point(1025, 77);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Padding = new System.Windows.Forms.Padding(1);
@@ -138,7 +139,7 @@
             // 
             this.btnAddItems.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnAddItems.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.btnAddItems.Location = new System.Drawing.Point(1025, 214);
+            this.btnAddItems.Location = new System.Drawing.Point(1025, 238);
             this.btnAddItems.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddItems.Name = "btnAddItems";
             this.btnAddItems.Padding = new System.Windows.Forms.Padding(1);
@@ -152,7 +153,7 @@
             // 
             this.btnViewItems.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnViewItems.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.btnViewItems.Location = new System.Drawing.Point(1025, 262);
+            this.btnViewItems.Location = new System.Drawing.Point(1025, 286);
             this.btnViewItems.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnViewItems.Name = "btnViewItems";
             this.btnViewItems.Padding = new System.Windows.Forms.Padding(1);
@@ -162,12 +163,27 @@
             this.btnViewItems.UseVisualStyleBackColor = false;
             this.btnViewItems.Click += new System.EventHandler(this.btnViewItems_Click);
             // 
+            // btnExport
+            // 
+            this.btnExport.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.btnExport.Location = new System.Drawing.Point(1009, 15);
+            this.btnExport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Padding = new System.Windows.Forms.Padding(1);
+            this.btnExport.Size = new System.Drawing.Size(134, 36);
+            this.btnExport.TabIndex = 14;
+            this.btnExport.Text = "Export to Excel";
+            this.btnExport.UseVisualStyleBackColor = false;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+            // 
             // frmPurchaseOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(228)))), ((int)(((byte)(248)))));
             this.ClientSize = new System.Drawing.Size(1179, 814);
+            this.Controls.Add(this.btnExport);
             this.Controls.Add(this.btnViewItems);
             this.Controls.Add(this.btnAddItems);
             this.Controls.Add(this.cmbPaidStatus);
@@ -199,5 +215,6 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnAddItems;
         private System.Windows.Forms.Button btnViewItems;
+        private System.Windows.Forms.Button btnExport;
     }
 }
