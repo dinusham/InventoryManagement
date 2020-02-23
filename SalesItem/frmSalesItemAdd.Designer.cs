@@ -159,6 +159,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SalesItemAdd";
             this.Load += new System.EventHandler(this.frmSalesItemAdd_Load);
+            this.Closed += new System.EventHandler(this.frmSalesItemAdd_Closing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

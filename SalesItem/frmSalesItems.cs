@@ -22,7 +22,7 @@ namespace SalesItem
             InitializeComponent();
         }
 
-        private void frmSalesItems_Load(object sender, EventArgs e)
+        public void frmSalesItems_Load(object sender, EventArgs e)
         {
             //if (salesItemTable == null || salesItemTable.Rows.Count < 0)
             //{

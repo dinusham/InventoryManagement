@@ -83,8 +83,8 @@ namespace PurchaseItem
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtQuantity.Text) || string.IsNullOrEmpty(txtPrice.Text) || 
-                cmbProduct.SelectedIndex == -1 || cmbBrand.SelectedIndex == -1)
+            if (string.IsNullOrEmpty(txtQuantity.Text) || string.IsNullOrEmpty(txtPrice.Text) ||
+                txtPrice.Text == "0.00" || cmbProduct.SelectedIndex == -1 || cmbBrand.SelectedIndex == -1)
             {
                 MessageBox.Show("Values cannot be null");
                 return;

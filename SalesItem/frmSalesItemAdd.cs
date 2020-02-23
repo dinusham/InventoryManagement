@@ -104,10 +104,19 @@ namespace SalesItem
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtQuantity.Text) || string.IsNullOrEmpty(txtSUnitPrice.Text) ||
-                cmbProduct.SelectedIndex == -1 || cmbSalesItem.SelectedIndex == -1)
+                txtSUnitPrice.Text == "0.00" || cmbProduct.SelectedIndex == -1 || cmbSalesItem.SelectedIndex == -1)
             {
                 MessageBox.Show("Values cannot be null");
                 return;
+            }
+            else
+            {
+                var selectedItemQt = productItemStock[cmbProduct.SelectedIndex].AvailableItemCount;
+                if (int.Parse(txtQuantity.Text) > selectedItemQt)
+                {
+                    MessageBox.Show("quantity exceed available count");
+                    return;
+                }
             }
             int status = AddUpdateSalesItem();
             if (status > 0)
@@ -173,6 +182,15 @@ namespace SalesItem
             if (itemId > 0 && salesId > 0)
             {
 
+            }
+        }
+
+        private void frmSalesItemAdd_Closing(object sender, EventArgs e)
+        {
+            if (isRefresh)
+            {
+                var parent = (frmSalesItems)frmSalesItem;
+                parent.frmSalesItems_Load(sender, e);
             }
         }
     }
